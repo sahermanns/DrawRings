@@ -9,7 +9,11 @@
 #import "ScrollTableViewController.h"
 
 @interface ScrollTableViewController ()
-
+@property (nonatomic) NSInteger numberOfRows;
+@property (strong, nonatomic) NSString *seedPrompt;
+@property (strong, nonatomic) NSString *currentPrompt;
+@property (strong, nonatomic) NSMutableArray *promptArray;
+@property (strong, nonatomic) NSMutableArray *drawingArray;
 @end
 
 @implementation ScrollTableViewController
