@@ -8,7 +8,17 @@
 
 #import "ScrollTableViewController.h"
 
+
 @interface ScrollTableViewController ()
+
+@property (nonatomic) NSInteger numberOfRows;
+@property (strong, nonatomic) NSString *seedPrompt;
+@property (strong, nonatomic) NSString *currentPrompt;
+@property (strong, nonatomic) NSMutableArray *promptArray;
+@property (strong, nonatomic) NSMutableArray *drawingArray;
+
+@property (strong, nonatomic) IBOutlet UITableView *scrollTableView;
+
 
 @end
 
@@ -16,6 +26,14 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+  
+  self.numberOfRows = 4;
+
+  UINib *wordsCell = [UINib nibWithNibName:@"wordsCell" bundle:nil];
+  [self.scrollTableView registerNib:wordsCell forCellReuseIdentifier:@"wordsCell"];
+  
+  UINib *drawingCell = [UINib nibWithNibName:@"drawingCell" bundle:nil];
+  [self.scrollTableView registerNib:drawingCell forCellReuseIdentifier:@"drawingCell"];
     
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -31,25 +49,25 @@
 
 #pragma mark - Table view data source
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Incomplete implementation, return the number of sections
-    return 0;
-}
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete implementation, return the number of rows
-    return 0;
+
+    return _numberOfRows;
 }
 
-/*
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
-    
-    // Configure the cell...
-    
+  if (indexPath.row % 2 == 0) {
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"drawingCell" forIndexPath:indexPath];
     return cell;
+  } else {
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"wordsCell" forIndexPath:indexPath];
+    return cell;
+  }
+
+
 }
-*/
+
 
 /*
 // Override to support conditional editing of the table view.

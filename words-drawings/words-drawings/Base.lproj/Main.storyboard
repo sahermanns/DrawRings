@@ -12,21 +12,21 @@
             <string>Avenir-Book</string>
             <string>Avenir-Book</string>
             <string>Avenir-Book</string>
+            <string>Avenir-Heavy</string>
+            <string>Avenir-Heavy</string>
+            <string>Avenir-Heavy</string>
+            <string>Avenir-Heavy</string>
+            <string>Avenir-Heavy</string>
+            <string>Avenir-Heavy</string>
+            <string>Avenir-Heavy</string>
+            <string>Avenir-Heavy</string>
+            <string>Avenir-Heavy</string>
+            <string>Avenir-Heavy</string>
+            <string>Avenir-Heavy</string>
+            <string>Avenir-Heavy</string>
             <string>Avenir-Book</string>
             <string>Avenir-Book</string>
             <string>Avenir-Book</string>
-            <string>Avenir-Heavy</string>
-            <string>Avenir-Heavy</string>
-            <string>Avenir-Heavy</string>
-            <string>Avenir-Heavy</string>
-            <string>Avenir-Heavy</string>
-            <string>Avenir-Heavy</string>
-            <string>Avenir-Heavy</string>
-            <string>Avenir-Heavy</string>
-            <string>Avenir-Heavy</string>
-            <string>Avenir-Heavy</string>
-            <string>Avenir-Heavy</string>
-            <string>Avenir-Heavy</string>
             <string>Avenir-Heavy</string>
             <string>Avenir-Heavy</string>
             <string>Avenir-Heavy</string>
@@ -311,8 +311,8 @@
                                         </constraints>
                                         <variation key="default">
                                             <mask key="constraints">
-                                                <exclude reference="haU-Az-jyX"/>
                                                 <exclude reference="GRU-9J-MfQ"/>
+                                                <exclude reference="haU-Az-jyX"/>
                                                 <exclude reference="inA-ue-3Eh"/>
                                             </mask>
                                         </variation>
@@ -762,7 +762,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="ekw-W0-RNj">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ScrollCell" id="ekw-W0-RNj">
                                 <rect key="frame" x="0.0" y="22" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ekw-W0-RNj" id="b7M-Un-hPs">
@@ -777,6 +777,8 @@
                         </connections>
                     </tableView>
                     <connections>
+                        <outlet property="scrollTableView" destination="pvb-FF-QTJ" id="FdE-Da-vgZ"/>
+                        <outlet property="tableView" destination="pvb-FF-QTJ" id="xMU-kt-p1F"/>
                         <segue destination="kHD-aP-E7i" kind="show" identifier="ShowEndOfGame" id="k7z-lh-UZ8"/>
                     </connections>
                 </tableViewController>
