@@ -15,7 +15,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <viewController id="zO1-rT-Sa1">
+        <viewController nibName="wordsCell" id="zO1-rT-Sa1">
             <layoutGuides>
                 <viewControllerLayoutGuide type="top" id="vm5-jB-5Xw"/>
                 <viewControllerLayoutGuide type="bottom" id="PRv-ze-Wxa"/>
