@@ -27,6 +27,8 @@
 		34A681FA1BAF1C430053C9F0 /* BackgroundGradient.m in Sources */ = {isa = PBXBuildFile; fileRef = 34A681F91BAF1C430053C9F0 /* BackgroundGradient.m */; settings = {ASSET_TAGS = (); }; };
 		34A681FD1BAF267F0053C9F0 /* ChooseCategoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34A681FC1BAF267F0053C9F0 /* ChooseCategoryViewController.m */; settings = {ASSET_TAGS = (); }; };
 		34A682001BAF268D0053C9F0 /* ChooseOptionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34A681FF1BAF268D0053C9F0 /* ChooseOptionViewController.m */; settings = {ASSET_TAGS = (); }; };
+		3EF50B281BB074EE007CCCD4 /* FacebookLogin.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EF50B271BB074EE007CCCD4 /* FacebookLogin.m */; settings = {ASSET_TAGS = (); }; };
+		3EF50B2B1BB08642007CCCD4 /* FacebookShareService.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EF50B2A1BB08642007CCCD4 /* FacebookShareService.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,6 +86,10 @@
 		34A681FC1BAF267F0053C9F0 /* ChooseCategoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChooseCategoryViewController.m; sourceTree = "<group>"; };
 		34A681FE1BAF268D0053C9F0 /* ChooseOptionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChooseOptionViewController.h; sourceTree = "<group>"; };
 		34A681FF1BAF268D0053C9F0 /* ChooseOptionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChooseOptionViewController.m; sourceTree = "<group>"; };
+		3EF50B261BB074EE007CCCD4 /* FacebookLogin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FacebookLogin.h; sourceTree = "<group>"; };
+		3EF50B271BB074EE007CCCD4 /* FacebookLogin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FacebookLogin.m; sourceTree = "<group>"; };
+		3EF50B291BB08642007CCCD4 /* FacebookShareService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FacebookShareService.h; sourceTree = "<group>"; };
+		3EF50B2A1BB08642007CCCD4 /* FacebookShareService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FacebookShareService.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -178,6 +184,10 @@
 		3430FC1E1BA3A043007C108D /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				3EF50B261BB074EE007CCCD4 /* FacebookLogin.h */,
+				3EF50B271BB074EE007CCCD4 /* FacebookLogin.m */,
+				3EF50B291BB08642007CCCD4 /* FacebookShareService.h */,
+				3EF50B2A1BB08642007CCCD4 /* FacebookShareService.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -360,6 +370,7 @@
 			files = (
 				3430FBF61BA3A00D007C108D /* words_drawings.xcdatamodeld in Sources */,
 				34A682001BAF268D0053C9F0 /* ChooseOptionViewController.m in Sources */,
+				3EF50B2B1BB08642007CCCD4 /* FacebookShareService.m in Sources */,
 				34A681FD1BAF267F0053C9F0 /* ChooseCategoryViewController.m in Sources */,
 				348667B51BAF499B002C5825 /* SettingsViewController.m in Sources */,
 				348667B81BAF6AFF002C5825 /* EndOfGameViewController.m in Sources */,
@@ -371,6 +382,7 @@
 				3430FBEA1BA3A00D007C108D /* main.m in Sources */,
 				3430FC261BA3A86C007C108D /* SetUpGameViewController.m in Sources */,
 				3430FC231BA3A07C007C108D /* MainViewController.m in Sources */,
+				3EF50B281BB074EE007CCCD4 /* FacebookLogin.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
