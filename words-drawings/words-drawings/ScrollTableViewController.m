@@ -18,9 +18,8 @@
 @property (strong, nonatomic) NSString *currentPrompt;
 @property (strong, nonatomic) NSMutableArray *promptArray;
 @property (strong, nonatomic) NSMutableArray *drawingArray;
-
 @property (strong, nonatomic) IBOutlet UITableView *scrollTableView;
-
+@property int counter;
 
 @end
 
@@ -29,7 +28,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
   self.scrollTableView.allowsSelection = NO;
-  
+  //[self scrollToRowAtIndexPath:indexPath atScrollPosition:UITableViewScrollPositionBottom animated:YES];
+
   self.numberOfRows = 4;
 
   UINib *wordsCell = [UINib nibWithNibName:@"wordsCell" bundle:nil];
@@ -37,6 +37,10 @@
   
   UINib *drawingCell = [UINib nibWithNibName:@"drawingCell" bundle:nil];
   [self.scrollTableView registerNib:drawingCell forCellReuseIdentifier:@"drawingCell"];
+//  NSIndexPath *indexPath = [NSIndexPath indexPathForItem:1 inSection:0];
+//  [self.scrollTableView scrollToRowAtIndexPath:indexPath
+//                        atScrollPosition:UITableViewScrollPositionMiddle
+//                                animated:NO];
   /*
   NSIndexPath *indexPath = 1;
   
@@ -47,6 +51,20 @@
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+}
+
+- (void)showNextCell {
+  
+  NSIndexPath *indexPath = [NSIndexPath indexPathForItem:_counter inSection:0];
+  [self.scrollTableView scrollToRowAtIndexPath:indexPath
+                              atScrollPosition:UITableViewScrollPositionMiddle
+                                      animated:NO];
+  if (_counter < _numberOfRows) {
+    _counter++;
+  } else {
+    //go to souvenir page ending
+  }
+  
 }
 
 - (void)didReceiveMemoryWarning {
@@ -73,6 +91,7 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+  //[self.scrollTableView scrollToRowAtIndexPath:indexPath atScrollPosition: UITableViewScrollPositionMiddle animated: YES];
   CGFloat cellHeight = tableView.frame.size.height;
   return cellHeight;
 }

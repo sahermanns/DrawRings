@@ -10,6 +10,11 @@
 
 @implementation WordsTableViewCell
 
+- (IBAction)doneButtonPressed:(UIButton *)sender {
+  
+}
+
+
 - (void)awakeFromNib {
     // Initialization code
 }

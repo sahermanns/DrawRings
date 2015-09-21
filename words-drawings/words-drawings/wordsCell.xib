@@ -67,6 +67,9 @@
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lbA-Uy-MpF">
                                 <rect key="frame" x="514" y="40" width="37" height="30"/>
                                 <state key="normal" title="Done"/>
+                                <connections>
+                                    <action selector="doneButtonPressed:" destination="XDK-0J-VW8" eventType="touchUpInside" id="FUI-Ne-Xrk"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.55450760690000001" green="0.6978091488" blue="0.73460629109999998" alpha="0.85999999999999999" colorSpace="calibratedRGB"/>
