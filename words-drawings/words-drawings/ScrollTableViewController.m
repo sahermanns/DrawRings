@@ -7,6 +7,8 @@
 //
 
 #import "ScrollTableViewController.h"
+#import "DrawingTableViewCell.h"
+#import "WordsTableViewCell.h"
 
 
 @interface ScrollTableViewController ()
@@ -26,6 +28,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+  self.scrollTableView.allowsSelection = NO;
   
   self.numberOfRows = 4;
 
@@ -34,7 +37,11 @@
   
   UINib *drawingCell = [UINib nibWithNibName:@"drawingCell" bundle:nil];
   [self.scrollTableView registerNib:drawingCell forCellReuseIdentifier:@"drawingCell"];
-    
+  /*
+  NSIndexPath *indexPath = 1;
+  
+  [self.scrollTableView scrollToRowAtIndexPath: atScrollPosition: UITableViewScrollPositionTop animated: YES];
+    */
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
@@ -55,19 +62,20 @@
     return _numberOfRows;
 }
 
-
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
   if (indexPath.row % 2 == 0) {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"drawingCell" forIndexPath:indexPath];
+    DrawingTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"drawingCell" forIndexPath:indexPath];
     return cell;
   } else {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"wordsCell" forIndexPath:indexPath];
+    WordsTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"wordsCell" forIndexPath:indexPath];
     return cell;
   }
-
-
 }
 
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+  CGFloat cellHeight = tableView.frame.size.height;
+  return cellHeight;
+}
 
 /*
 // Override to support conditional editing of the table view.
