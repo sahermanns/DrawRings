@@ -7,8 +7,18 @@
 //
 
 #import "DrawingTableViewCell.h"
+#import "ScrollTableViewController.h"
 
 @implementation DrawingTableViewCell
+
+- (IBAction)doneButtonPressed:(UIButton *)sender {
+  ScrollTableViewController *scrollTableVC = [[ScrollTableViewController alloc] init];
+  [scrollTableVC showNextCell];
+//  int thisCounter = [scrollTableVC counter];
+//  thisCounter++;
+  NSLog(@"UFO");
+  //NSLog(@"DSUFIODSUDIOFU");
+}
 
 - (void)awakeFromNib {
     // Initialization code

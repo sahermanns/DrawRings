@@ -19,7 +19,8 @@
 @property (strong, nonatomic) NSMutableArray *promptArray;
 @property (strong, nonatomic) NSMutableArray *drawingArray;
 @property (strong, nonatomic) IBOutlet UITableView *scrollTableView;
-@property int counter;
+//@property int counter;
+
 
 @end
 
@@ -29,7 +30,8 @@
     [super viewDidLoad];
   self.scrollTableView.allowsSelection = NO;
   //[self scrollToRowAtIndexPath:indexPath atScrollPosition:UITableViewScrollPositionBottom animated:YES];
-
+  self.counter = 0;
+  NSLog(@"counter starts at %d", _counter);
   self.numberOfRows = 4;
 
   UINib *wordsCell = [UINib nibWithNibName:@"wordsCell" bundle:nil];
@@ -37,7 +39,7 @@
   
   UINib *drawingCell = [UINib nibWithNibName:@"drawingCell" bundle:nil];
   [self.scrollTableView registerNib:drawingCell forCellReuseIdentifier:@"drawingCell"];
-//  NSIndexPath *indexPath = [NSIndexPath indexPathForItem:1 inSection:0];
+//  NSIndexPath *indexPath = [NSIndexPath indexPathForItem:_counter inSection:0];
 //  [self.scrollTableView scrollToRowAtIndexPath:indexPath
 //                        atScrollPosition:UITableViewScrollPositionMiddle
 //                                animated:NO];
@@ -54,13 +56,15 @@
 }
 
 - (void)showNextCell {
-  
+  self.counter++;
+  NSLog(@"UMM %d", self.counter);
   NSIndexPath *indexPath = [NSIndexPath indexPathForItem:_counter inSection:0];
   [self.scrollTableView scrollToRowAtIndexPath:indexPath
                               atScrollPosition:UITableViewScrollPositionMiddle
                                       animated:NO];
+  
   if (_counter < _numberOfRows) {
-    _counter++;
+    //
   } else {
     //go to souvenir page ending
   }

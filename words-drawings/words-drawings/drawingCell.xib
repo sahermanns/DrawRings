@@ -7,8 +7,8 @@
     </dependencies>
     <customFonts key="customFonts">
         <mutableArray key="Avenir.ttc">
-            <string>Avenir-Book</string>
             <string>Avenir-Heavy</string>
+            <string>Avenir-Book</string>
         </mutableArray>
     </customFonts>
     <objects>
@@ -126,6 +126,9 @@
                                 <state key="normal" title="Done">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="doneButtonPressed:" destination="6jh-gQ-TMP" eventType="touchUpInside" id="biw-DN-0OH"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>

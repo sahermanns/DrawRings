@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+@class WordsTableViewCell;
+
 @interface WordsTableViewCell : UITableViewCell
 
 @end

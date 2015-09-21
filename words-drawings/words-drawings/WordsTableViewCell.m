@@ -7,11 +7,22 @@
 //
 
 #import "WordsTableViewCell.h"
+#import "ScrollTableViewController.h"
+
+@interface WordsTableViewCell ()
+
+@end
 
 @implementation WordsTableViewCell
 
+
+
 - (IBAction)doneButtonPressed:(UIButton *)sender {
-  
+  ScrollTableViewController *scrollTableVC = [[ScrollTableViewController alloc] init];
+  [scrollTableVC showNextCell];
+  int thisCounter = [scrollTableVC counter];
+  thisCounter++;
+  NSLog(@"wordsXibButtonPressed");
 }
 
 

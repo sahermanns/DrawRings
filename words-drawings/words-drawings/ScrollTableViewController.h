@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
+@class WordsTableViewCell;
 @interface ScrollTableViewController : UITableViewController
+
+- (void)showNextCell;
+@property int counter;
 
 @end
