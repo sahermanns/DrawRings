@@ -23,15 +23,25 @@
 
 
 - (IBAction)shareToFB:(id)sender {
+  
+  [FacebookLogin LoginServiceForFacebook:^(ACAccount *account) {
+    [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+      if (!account) {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Not logged into Facebook" message:@"Go into settings and log into Facebook." delegate:nil cancelButtonTitle:@"Okay" otherButtonTitles: nil];
+        [alert show];
+      } else {
+        if ([SLComposeViewController isAvailableForServiceType:SLServiceTypeFacebook]) {
+          
+          SLComposeViewController *fbComposeVC = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeFacebook];
+          [fbComposeVC setInitialText:@"This is where I will add text with the post"];
+            //[fbComposeVC addImage:[UIImage imageNamed:@"my omage to share"]];
+          
+          [self presentViewController:fbComposeVC animated:YES completion:nil];
+        }
+      }
+      }];
+    }];
 
-  if ([SLComposeViewController isAvailableForServiceType:SLServiceTypeFacebook]) {
-    
-    SLComposeViewController *fbSheetOBJ = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeFacebook];
-    [fbSheetOBJ setInitialText:@"This is where I will add text with the post"];
-    [fbSheetOBJ addImage:[UIImage imageNamed:@"my omage to share"]];
-    
-    [self presentViewController:fbSheetOBJ animated:YES completion:nil];
-  }
   
 }
 

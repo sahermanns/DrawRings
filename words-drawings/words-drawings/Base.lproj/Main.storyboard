@@ -776,13 +776,13 @@
                         <color key="backgroundColor" red="0.55450760690000001" green="0.6978091488" blue="0.73460629109999998" alpha="0.85999999999999999" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="HiT-IS-EhS" firstAttribute="trailing" secondItem="Ivl-z2-XWk" secondAttribute="trailingMargin" id="0HH-u0-xqJ"/>
+                            <constraint firstItem="pt8-gw-6O7" firstAttribute="top" secondItem="Qsr-Jp-g0K" secondAttribute="bottom" constant="52" id="5D8-a9-taF"/>
                             <constraint firstItem="aEm-cd-7bk" firstAttribute="top" secondItem="4Rk-9y-JV1" secondAttribute="bottom" constant="13" id="9Pz-UM-u1G"/>
-                            <constraint firstItem="HiT-IS-EhS" firstAttribute="top" secondItem="Uj6-w7-obq" secondAttribute="bottom" id="FmJ-zG-qxX"/>
                             <constraint firstItem="HiT-IS-EhS" firstAttribute="leading" secondItem="Ivl-z2-XWk" secondAttribute="leadingMargin" id="Ofv-oo-o8k"/>
                             <constraint firstItem="4Rk-9y-JV1" firstAttribute="top" secondItem="HiT-IS-EhS" secondAttribute="bottom" constant="27" id="eNF-xI-T2L"/>
                             <constraint firstItem="Qsr-Jp-g0K" firstAttribute="top" secondItem="aEm-cd-7bk" secondAttribute="bottom" constant="14" id="ew3-V3-Sf8"/>
-                            <constraint firstItem="pt8-gw-6O7" firstAttribute="top" secondItem="Qsr-Jp-g0K" secondAttribute="bottom" constant="52" id="h8O-Wl-6wb"/>
                             <constraint firstItem="aEm-cd-7bk" firstAttribute="centerX" secondItem="Ivl-z2-XWk" secondAttribute="centerX" id="iVW-NS-QhE"/>
+                            <constraint firstItem="HiT-IS-EhS" firstAttribute="top" secondItem="Uj6-w7-obq" secondAttribute="bottom" id="iyG-sO-TT0"/>
                             <constraint firstItem="4Rk-9y-JV1" firstAttribute="centerX" secondItem="Ivl-z2-XWk" secondAttribute="centerX" id="y4c-w7-LIg"/>
                             <constraint firstItem="Qsr-Jp-g0K" firstAttribute="centerX" secondItem="Ivl-z2-XWk" secondAttribute="centerX" id="zZb-qI-z5K"/>
                         </constraints>

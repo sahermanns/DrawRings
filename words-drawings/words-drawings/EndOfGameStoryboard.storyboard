@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="1dj-UI-2IB">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="Avenir.ttc">
+            <string>Avenir-Heavy</string>
+            <string>Avenir-Heavy</string>
+        </mutableArray>
+    </customFonts>
+    <scenes>
+        <!--End Of Game View Controller-->
+        <scene sceneID="ioh-Be-vym">
+            <objects>
+                <viewController id="1dj-UI-2IB" customClass="EndOfGameViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="bKZ-fe-P8Q"/>
+                        <viewControllerLayoutGuide type="bottom" id="Bgx-HY-o5x"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="DsO-77-8GH">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6l8-GN-VIg">
+                                <rect key="frame" x="20" y="20" width="560" height="430"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <button autoresizesSubviews="NO" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m7A-US-ZUU">
+                                <rect key="frame" x="20" y="472" width="150" height="52"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="T13-9X-X6z"/>
+                                    <constraint firstAttribute="height" constant="52" id="qoE-r9-4f3"/>
+                                </constraints>
+                                <state key="normal" image="FBShare"/>
+                                <connections>
+                                    <action selector="shareToFB:" destination="1dj-UI-2IB" eventType="touchUpInside" id="Hhc-0P-6Ar"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IJs-PO-QGz">
+                                <rect key="frame" x="430" y="472" width="150" height="52"/>
+                                <color key="backgroundColor" red="0.64001527960000004" green="0.8359912343" blue="0.8215960283" alpha="0.73999999999999999" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="2DJ-c2-b3u"/>
+                                    <constraint firstAttribute="height" constant="52" id="B7k-MM-X01"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="24"/>
+                                <state key="normal" title="Main Menu">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8ic-vw-Fr4">
+                                <rect key="frame" x="225" y="472" width="150" height="52"/>
+                                <color key="backgroundColor" red="0.64001527960000004" green="0.8359912343" blue="0.8215960283" alpha="0.73999999999999999" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="P3D-G8-UZQ"/>
+                                    <constraint firstAttribute="height" constant="52" id="nry-8b-Uy6"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="24"/>
+                                <state key="normal" title="Play Again">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.55450760690000001" green="0.6978091488" blue="0.73460629109999998" alpha="0.85999999999999999" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="8ic-vw-Fr4" firstAttribute="leading" secondItem="m7A-US-ZUU" secondAttribute="trailing" constant="55" id="19q-7H-DZO"/>
+                            <constraint firstItem="IJs-PO-QGz" firstAttribute="leading" secondItem="8ic-vw-Fr4" secondAttribute="trailing" constant="55" id="CrH-wB-ufc"/>
+                            <constraint firstItem="IJs-PO-QGz" firstAttribute="top" secondItem="6l8-GN-VIg" secondAttribute="bottom" constant="22" id="Egg-kf-ljB"/>
+                            <constraint firstItem="m7A-US-ZUU" firstAttribute="top" secondItem="6l8-GN-VIg" secondAttribute="bottom" constant="22" id="bHr-4h-6jS"/>
+                            <constraint firstItem="8ic-vw-Fr4" firstAttribute="top" secondItem="6l8-GN-VIg" secondAttribute="bottom" constant="22" id="bIJ-Vp-IPp"/>
+                            <constraint firstItem="IJs-PO-QGz" firstAttribute="trailing" secondItem="DsO-77-8GH" secondAttribute="trailingMargin" id="fJG-1P-IAg"/>
+                            <constraint firstItem="6l8-GN-VIg" firstAttribute="trailing" secondItem="DsO-77-8GH" secondAttribute="trailingMargin" id="jRK-gq-p7j"/>
+                            <constraint firstItem="Bgx-HY-o5x" firstAttribute="top" secondItem="6l8-GN-VIg" secondAttribute="bottom" constant="150" id="kSc-Fc-wki"/>
+                            <constraint firstItem="6l8-GN-VIg" firstAttribute="leading" secondItem="DsO-77-8GH" secondAttribute="leadingMargin" id="rgv-Mb-DPZ"/>
+                            <constraint firstItem="6l8-GN-VIg" firstAttribute="top" secondItem="bKZ-fe-P8Q" secondAttribute="bottom" id="sTZ-rZ-BEd"/>
+                            <constraint firstItem="m7A-US-ZUU" firstAttribute="leading" secondItem="DsO-77-8GH" secondAttribute="leadingMargin" id="xI3-cT-nI4"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wJj-eM-Z7f" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2884" y="1605"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="FBShare" width="186" height="68"/>
+    </resources>
+</document>

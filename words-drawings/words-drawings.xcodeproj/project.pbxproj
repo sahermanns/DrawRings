@@ -32,6 +32,7 @@
 		3EF50B281BB074EE007CCCD4 /* FacebookLogin.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EF50B271BB074EE007CCCD4 /* FacebookLogin.m */; settings = {ASSET_TAGS = (); }; };
 		3EF50B2B1BB08642007CCCD4 /* FacebookShareService.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EF50B2A1BB08642007CCCD4 /* FacebookShareService.m */; settings = {ASSET_TAGS = (); }; };
 		3EF50B361BB0CAE7007CCCD4 /* UIViewToPDF.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EF50B351BB0CAE7007CCCD4 /* UIViewToPDF.m */; settings = {ASSET_TAGS = (); }; };
+		3EF50B381BB1BBE4007CCCD4 /* EndOfGameStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3EF50B371BB1BBE4007CCCD4 /* EndOfGameStoryboard.storyboard */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -99,6 +100,7 @@
 		3EF50B2A1BB08642007CCCD4 /* FacebookShareService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FacebookShareService.m; sourceTree = "<group>"; };
 		3EF50B341BB0CAE7007CCCD4 /* UIViewToPDF.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIViewToPDF.h; sourceTree = "<group>"; };
 		3EF50B351BB0CAE7007CCCD4 /* UIViewToPDF.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIViewToPDF.m; sourceTree = "<group>"; };
+		3EF50B371BB1BBE4007CCCD4 /* EndOfGameStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = EndOfGameStoryboard.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -207,6 +209,7 @@
 			isa = PBXGroup;
 			children = (
 				3430FBF11BA3A00D007C108D /* Main.storyboard */,
+				3EF50B371BB1BBE4007CCCD4 /* EndOfGameStoryboard.storyboard */,
 				3481D33E1BA7BF7400BFBCC5 /* wordsCell.xib */,
 				3488D26D1BB08A78007384FA /* WordsTableViewCell.h */,
 				3488D26E1BB08A78007384FA /* WordsTableViewCell.m */,
@@ -356,6 +359,7 @@
 			files = (
 				3430FBFB1BA3A00D007C108D /* LaunchScreen.storyboard in Resources */,
 				3481D33F1BA7BF7400BFBCC5 /* wordsCell.xib in Resources */,
+				3EF50B381BB1BBE4007CCCD4 /* EndOfGameStoryboard.storyboard in Resources */,
 				3430FBF81BA3A00D007C108D /* Assets.xcassets in Resources */,
 				3481D3411BA7BF8500BFBCC5 /* drawingCell.xib in Resources */,
 				3430FBF31BA3A00D007C108D /* Main.storyboard in Resources */,
