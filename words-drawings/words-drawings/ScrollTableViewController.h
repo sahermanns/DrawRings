@@ -8,7 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@class WordsTableViewCell;
+@class WordsTableViewCell, PassItOnViewController;
+
 @interface ScrollTableViewController : UITableViewController <UITableViewDataSource, UITableViewDelegate>
 
 @property (strong,nonatomic) NSString *seedPrompt;
