@@ -40,8 +40,8 @@
     ScrollTableViewController *scrollTVC = (ScrollTableViewController *)[navController topViewController];
     [scrollTVC setNavController:navController];
 //     ScrollTableViewController *scrollTVC = (ScrollTableViewController *)[segue destinationViewController];
-//     scrollTVC.seedPrompt = self.stringToPass;
-//    
+     scrollTVC.seedPrompt = self.stringToPass;
+//
 //     
 //    ScrollTableViewController *scrollTVC = [segue destinationViewController];
 //    //passItOnVC.stringToPass = self.seedPrompt;

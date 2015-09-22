@@ -18,7 +18,6 @@
 
 - (IBAction)goBack:(UIButton *)sender;
 
-
 @property (weak, nonatomic) IBOutlet UIButton *option1Button;
 @property (weak, nonatomic) IBOutlet UIButton *option2Button;
 @property (weak, nonatomic) IBOutlet UIButton *option3Button;
@@ -38,10 +37,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
   self.chosenCategoryLabel.text = self.chosenCategory;
-  NSLog(@"chosen category %@", self.chosenCategory);
-  
+//  NSLog(@"chosen category %@", self.chosenCategory);
+  NSLog(@"PASSED ARRAY COUNT IN CHOOSE OPTION VC: %lu", (unsigned long)_passedArrayOfOptions.count);
   _pickedObjects = [NSMutableArray new];
   
   int remaining = 4;
@@ -67,12 +66,7 @@
   NSString *option4Text = (NSString *)[_pickedObjects objectAtIndex:3];
   [_option4Button setTitle: option4Text forState: UIControlStateNormal];
   
-  /*
-  NSString *optionText = [_passedArrayOfOptions objectAtIndex:1];
-  NSLog(@"THIS IS OPTION TEXT %@", optionText);
-  NSString *buttonText = [NSString stringWithFormat:@"%@", optionText];
-  [_option1Button setTitle: buttonText forState: UIControlStateNormal];
-  */
+
 }
 
 
