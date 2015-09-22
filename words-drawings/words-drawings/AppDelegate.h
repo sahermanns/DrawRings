@@ -8,8 +8,13 @@
 
 #import <UIKit/UIKit.h>
 #import <CoreData/CoreData.h>
+#import <Accounts/Accounts.h>
+#import "FacebookLogin.h"
+
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
+
++(void) LoginServiceForFacebook:(void(^)(ACAccount *))completionHandler;
 
 @property (strong, nonatomic) UIWindow *window;
 
