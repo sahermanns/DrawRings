@@ -28,7 +28,7 @@
                                 <rect key="frame" x="552" y="8" width="40" height="40"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="30" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4vb-MG-1hG">
-                                        <rect key="frame" x="8" y="8" width="24" height="28"/>
+                                        <rect key="frame" x="8" y="8" width="24" height="27.5"/>
                                         <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="20"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
@@ -119,8 +119,8 @@
                                     <constraint firstAttribute="width" constant="63" id="FAt-A7-y6v"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rSM-7x-KAD">
-                                <rect key="frame" x="546" y="25" width="46" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rSM-7x-KAD">
+                                <rect key="frame" x="533" y="17.5" width="59" height="45"/>
                                 <color key="backgroundColor" red="0.64001527960000004" green="0.8359912343" blue="0.8215960283" alpha="0.73999999999999999" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="24"/>
                                 <state key="normal" title="Done">
@@ -162,14 +162,21 @@
                             </mask>
                         </variation>
                     </view>
+                    <glkView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" enableSetNeedsDisplay="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WLn-Vh-jQY" customClass="PPSSignatureView">
+                        <rect key="frame" x="0.0" y="56" width="600" height="201"/>
+                    </glkView>
                 </subviews>
                 <constraints>
                     <constraint firstAttribute="bottomMargin" secondItem="YJ0-HI-u58" secondAttribute="bottom" constant="-8" id="2aY-0J-ovc"/>
                     <constraint firstItem="YJ0-HI-u58" firstAttribute="leading" secondItem="FQl-nB-aQb" secondAttribute="leadingMargin" constant="-8" id="8rw-D7-fGJ"/>
+                    <constraint firstItem="WLn-Vh-jQY" firstAttribute="top" secondItem="y5w-iw-PH2" secondAttribute="bottom" id="Vft-T4-sjg"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="WLn-Vh-jQY" secondAttribute="trailing" constant="-8" id="XXS-mr-A0E"/>
                     <constraint firstItem="y5w-iw-PH2" firstAttribute="leading" secondItem="FQl-nB-aQb" secondAttribute="leadingMargin" constant="-8" id="ZVI-RA-eu5"/>
                     <constraint firstAttribute="trailingMargin" secondItem="YJ0-HI-u58" secondAttribute="trailing" constant="-8" id="bEU-2M-gBs"/>
                     <constraint firstAttribute="trailingMargin" secondItem="y5w-iw-PH2" secondAttribute="trailing" constant="-8" id="mSm-vJ-9wF"/>
+                    <constraint firstItem="YJ0-HI-u58" firstAttribute="top" secondItem="WLn-Vh-jQY" secondAttribute="bottom" id="rLc-7h-qJX"/>
                     <constraint firstItem="y5w-iw-PH2" firstAttribute="top" secondItem="FQl-nB-aQb" secondAttribute="topMargin" constant="-8" id="zdd-eo-KeS"/>
+                    <constraint firstItem="WLn-Vh-jQY" firstAttribute="leading" secondItem="FQl-nB-aQb" secondAttribute="leadingMargin" constant="-8" id="zz0-3L-uSG"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
