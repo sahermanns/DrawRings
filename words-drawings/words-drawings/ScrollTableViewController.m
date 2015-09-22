@@ -63,18 +63,19 @@
     [self showNextCell];
 
     PassViewController *passView = [[PassViewController alloc] initWithNibName:@"PassViewController" bundle:[NSBundle mainBundle]];
-    [_navController pushViewController:passView animated:NO];
+    [_navController pushViewController:passView animated:YES];
+    
   }];
   
   [[NSNotificationCenter defaultCenter] addObserverForName:@"popButtonPressed" object:nil queue:nil usingBlock:^(NSNotification * _Nonnull note) {
-    [_navController popViewControllerAnimated:NO];
+    [_navController popViewControllerAnimated:YES];
   }];
   
   [[NSNotificationCenter defaultCenter] addObserverForName:@"doneGuessingNotification" object:nil queue:nil usingBlock:^(NSNotification * _Nonnull note) {
     [self showNextCell];
     
     PassViewController *passView = [[PassViewController alloc] initWithNibName:@"PassViewController" bundle:[NSBundle mainBundle]];
-    [_navController pushViewController:passView animated:NO];
+    [_navController pushViewController:passView animated:YES];
   }];
 }
 
