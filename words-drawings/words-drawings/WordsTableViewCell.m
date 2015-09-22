@@ -8,6 +8,7 @@
 
 #import "WordsTableViewCell.h"
 #import "ScrollTableViewController.h"
+#import "PassItOnViewController.h"
 
 @interface WordsTableViewCell ()
 
@@ -18,11 +19,15 @@
 
 
 - (IBAction)doneButtonPressed:(UIButton *)sender {
-  ScrollTableViewController *scrollTableVC = [[ScrollTableViewController alloc] init];
-  [scrollTableVC showNextCell];
-  int thisCounter = [scrollTableVC counter];
-  thisCounter++;
-  NSLog(@"wordsXibButtonPressed");
+//  PassItOnViewController *passViewController = [[PassItOnViewController alloc] initWithNibName:@"PassItOnViewController" bundle:[NSBundle mainBundle]];
+  
+  
+  //  ScrollTableViewController *scrollTableVC = [[ScrollTableViewController alloc] init];
+//  [scrollTableVC showNextCell];
+//  int thisCounter = [scrollTableVC counter];
+//  thisCounter++;
+//  NSLog(@"wordsXibButtonPressed");
+  [[NSNotificationCenter defaultCenter] postNotificationName:@"doneGuessingNotification" object:self];
 }
 
 

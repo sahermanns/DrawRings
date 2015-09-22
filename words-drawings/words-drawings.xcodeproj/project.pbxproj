@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		172D2A061BB1180C00120637 /* PassViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 172D2A051BB1180C00120637 /* PassViewController.xib */; settings = {ASSET_TAGS = (); }; };
+		172D2A091BB123AB00120637 /* PassViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 172D2A081BB123AB00120637 /* PassViewController.m */; settings = {ASSET_TAGS = (); }; };
 		342BE8291BA3D27D00700F02 /* ScrollTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 342BE8281BA3D27D00700F02 /* ScrollTableViewController.m */; };
 		3430FBEA1BA3A00D007C108D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3430FBE91BA3A00D007C108D /* main.m */; };
 		3430FBED1BA3A00D007C108D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3430FBEC1BA3A00D007C108D /* AppDelegate.m */; };
@@ -52,6 +54,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		172D2A051BB1180C00120637 /* PassViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PassViewController.xib; sourceTree = "<group>"; };
+		172D2A071BB123AB00120637 /* PassViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PassViewController.h; sourceTree = "<group>"; };
+		172D2A081BB123AB00120637 /* PassViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PassViewController.m; sourceTree = "<group>"; };
 		342BE8271BA3D27D00700F02 /* ScrollTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScrollTableViewController.h; sourceTree = "<group>"; };
 		342BE8281BA3D27D00700F02 /* ScrollTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScrollTableViewController.m; sourceTree = "<group>"; };
 		3430FBE51BA3A00D007C108D /* words-drawings.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "words-drawings.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -208,6 +213,7 @@
 			children = (
 				3430FBF11BA3A00D007C108D /* Main.storyboard */,
 				3481D33E1BA7BF7400BFBCC5 /* wordsCell.xib */,
+				172D2A051BB1180C00120637 /* PassViewController.xib */,
 				3488D26D1BB08A78007384FA /* WordsTableViewCell.h */,
 				3488D26E1BB08A78007384FA /* WordsTableViewCell.m */,
 				3481D3401BA7BF8500BFBCC5 /* drawingCell.xib */,
@@ -226,6 +232,8 @@
 				3430FC221BA3A07C007C108D /* MainViewController.m */,
 				3486387B1BA3CC99001AA58D /* PassItOnViewController.h */,
 				3486387C1BA3CC99001AA58D /* PassItOnViewController.m */,
+				172D2A071BB123AB00120637 /* PassViewController.h */,
+				172D2A081BB123AB00120637 /* PassViewController.m */,
 				34A681FB1BAF267F0053C9F0 /* ChooseCategoryViewController.h */,
 				34A681FC1BAF267F0053C9F0 /* ChooseCategoryViewController.m */,
 				34A681FE1BAF268D0053C9F0 /* ChooseOptionViewController.h */,
@@ -358,6 +366,7 @@
 				3481D33F1BA7BF7400BFBCC5 /* wordsCell.xib in Resources */,
 				3430FBF81BA3A00D007C108D /* Assets.xcassets in Resources */,
 				3481D3411BA7BF8500BFBCC5 /* drawingCell.xib in Resources */,
+				172D2A061BB1180C00120637 /* PassViewController.xib in Resources */,
 				3430FBF31BA3A00D007C108D /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -389,6 +398,7 @@
 				34A681FD1BAF267F0053C9F0 /* ChooseCategoryViewController.m in Sources */,
 				3488D26F1BB08A78007384FA /* WordsTableViewCell.m in Sources */,
 				348667B51BAF499B002C5825 /* SettingsViewController.m in Sources */,
+				172D2A091BB123AB00120637 /* PassViewController.m in Sources */,
 				348667B81BAF6AFF002C5825 /* EndOfGameViewController.m in Sources */,
 				3486387A1BA3CBC0001AA58D /* SeedViewController.m in Sources */,
 				3430FBED1BA3A00D007C108D /* AppDelegate.m in Sources */,

@@ -14,8 +14,8 @@
 
 
 - (IBAction)doneButtonPressed:(UIButton *)sender {
-  ScrollTableViewController *scrollTableVC = [[ScrollTableViewController alloc] init];
-  [scrollTableVC showNextCell];
+  [[NSNotificationCenter defaultCenter] postNotificationName:@"doneDrawingNotification" object:self];
+
 //  int thisCounter = [scrollTableVC counter];
 //  thisCounter++;
   NSLog(@"UFO");
