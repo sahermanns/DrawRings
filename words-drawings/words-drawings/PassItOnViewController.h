@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@class ChooseOptionViewController; 
+@class ChooseOptionViewController, ScrollTableViewController;
 
 @interface PassItOnViewController : UIViewController
 

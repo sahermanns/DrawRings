@@ -7,8 +7,21 @@
 //
 
 #import "ScrollTableViewController.h"
+#import "DrawingTableViewCell.h"
+#import "WordsTableViewCell.h"
+#import "PassItOnViewController.h"
+
 
 @interface ScrollTableViewController ()
+
+@property (nonatomic) NSInteger numberOfRows;
+//@property (strong, nonatomic) NSString *seedPrompt;
+@property (strong, nonatomic) NSString *currentPrompt;
+@property (strong, nonatomic) NSMutableArray *promptArray;
+@property (strong, nonatomic) NSMutableArray *drawingArray;
+@property (strong, nonatomic) IBOutlet UITableView *scrollTableView;
+//@property int counter;
+
 
 @end
 
@@ -16,12 +29,51 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+  
+  self.scrollTableView.allowsSelection = NO;
+  //[self scrollToRowAtIndexPath:indexPath atScrollPosition:UITableViewScrollPositionBottom animated:YES];
+  //_seedPrompt = @"ARRRRGGGGHHH";
+  NSLog(@"SEED PROMPT: %@", _seedPrompt);
+  
+  self.counter = 0;
+  //NSLog(@"counter starts at %d", _counter);
+  self.numberOfRows = 4;
+
+  UINib *wordsCell = [UINib nibWithNibName:@"wordsCell" bundle:nil];
+  [self.scrollTableView registerNib:wordsCell forCellReuseIdentifier:@"wordsCell"];
+  
+  UINib *drawingCell = [UINib nibWithNibName:@"drawingCell" bundle:nil];
+  [self.scrollTableView registerNib:drawingCell forCellReuseIdentifier:@"drawingCell"];
+//  NSIndexPath *indexPath = [NSIndexPath indexPathForItem:_counter inSection:0];
+//  [self.scrollTableView scrollToRowAtIndexPath:indexPath
+//                        atScrollPosition:UITableViewScrollPositionMiddle
+//                                animated:NO];
+  /*
+  NSIndexPath *indexPath = 1;
+  
+  [self.scrollTableView scrollToRowAtIndexPath: atScrollPosition: UITableViewScrollPositionTop animated: YES];
+    */
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+}
+
+- (void)showNextCell {
+  self.counter++;
+  NSLog(@"UMM %d", self.counter);
+  NSIndexPath *indexPath = [NSIndexPath indexPathForItem:_counter inSection:0];
+  [self.scrollTableView scrollToRowAtIndexPath:indexPath
+                              atScrollPosition:UITableViewScrollPositionMiddle
+                                      animated:NO];
+  
+  if (_counter < _numberOfRows) {
+    //
+  } else {
+    //go to souvenir page ending
+  }
+  
 }
 
 - (void)didReceiveMemoryWarning {
@@ -31,25 +83,28 @@
 
 #pragma mark - Table view data source
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Incomplete implementation, return the number of sections
-    return 0;
-}
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete implementation, return the number of rows
-    return 0;
+
+    return _numberOfRows;
 }
 
-/*
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
-    
-    // Configure the cell...
-    
+  if (indexPath.row % 2 == 0) {
+    DrawingTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"drawingCell" forIndexPath:indexPath];
+    cell.promptLabel.text = _seedPrompt;
     return cell;
+  } else {
+    WordsTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"wordsCell" forIndexPath:indexPath];
+    return cell;
+  }
 }
-*/
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+  //[self.scrollTableView scrollToRowAtIndexPath:indexPath atScrollPosition: UITableViewScrollPositionMiddle animated: YES];
+  CGFloat cellHeight = tableView.frame.size.height;
+  return cellHeight;
+}
 
 /*
 // Override to support conditional editing of the table view.

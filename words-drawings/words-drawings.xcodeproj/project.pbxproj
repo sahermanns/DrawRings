@@ -24,6 +24,8 @@
 		3486387D1BA3CC99001AA58D /* PassItOnViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3486387C1BA3CC99001AA58D /* PassItOnViewController.m */; };
 		348667B51BAF499B002C5825 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 348667B41BAF499B002C5825 /* SettingsViewController.m */; settings = {ASSET_TAGS = (); }; };
 		348667B81BAF6AFF002C5825 /* EndOfGameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 348667B71BAF6AFF002C5825 /* EndOfGameViewController.m */; settings = {ASSET_TAGS = (); }; };
+		3488D26F1BB08A78007384FA /* WordsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3488D26E1BB08A78007384FA /* WordsTableViewCell.m */; settings = {ASSET_TAGS = (); }; };
+		3488D2721BB08C5D007384FA /* DrawingTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3488D2711BB08C5D007384FA /* DrawingTableViewCell.m */; settings = {ASSET_TAGS = (); }; };
 		34A681FA1BAF1C430053C9F0 /* BackgroundGradient.m in Sources */ = {isa = PBXBuildFile; fileRef = 34A681F91BAF1C430053C9F0 /* BackgroundGradient.m */; settings = {ASSET_TAGS = (); }; };
 		34A681FD1BAF267F0053C9F0 /* ChooseCategoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34A681FC1BAF267F0053C9F0 /* ChooseCategoryViewController.m */; settings = {ASSET_TAGS = (); }; };
 		34A682001BAF268D0053C9F0 /* ChooseOptionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34A681FF1BAF268D0053C9F0 /* ChooseOptionViewController.m */; settings = {ASSET_TAGS = (); }; };
@@ -81,6 +83,10 @@
 		348667B41BAF499B002C5825 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
 		348667B61BAF6AFF002C5825 /* EndOfGameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EndOfGameViewController.h; sourceTree = "<group>"; };
 		348667B71BAF6AFF002C5825 /* EndOfGameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EndOfGameViewController.m; sourceTree = "<group>"; };
+		3488D26D1BB08A78007384FA /* WordsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WordsTableViewCell.h; sourceTree = "<group>"; };
+		3488D26E1BB08A78007384FA /* WordsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WordsTableViewCell.m; sourceTree = "<group>"; };
+		3488D2701BB08C5D007384FA /* DrawingTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrawingTableViewCell.h; sourceTree = "<group>"; };
+		3488D2711BB08C5D007384FA /* DrawingTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrawingTableViewCell.m; sourceTree = "<group>"; };
 		34A681F81BAF1C430053C9F0 /* BackgroundGradient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BackgroundGradient.h; sourceTree = "<group>"; };
 		34A681F91BAF1C430053C9F0 /* BackgroundGradient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BackgroundGradient.m; sourceTree = "<group>"; };
 		34A681FB1BAF267F0053C9F0 /* ChooseCategoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChooseCategoryViewController.h; sourceTree = "<group>"; };
@@ -202,7 +208,11 @@
 			children = (
 				3430FBF11BA3A00D007C108D /* Main.storyboard */,
 				3481D33E1BA7BF7400BFBCC5 /* wordsCell.xib */,
+				3488D26D1BB08A78007384FA /* WordsTableViewCell.h */,
+				3488D26E1BB08A78007384FA /* WordsTableViewCell.m */,
 				3481D3401BA7BF8500BFBCC5 /* drawingCell.xib */,
+				3488D2701BB08C5D007384FA /* DrawingTableViewCell.h */,
+				3488D2711BB08C5D007384FA /* DrawingTableViewCell.m */,
 				34A681F81BAF1C430053C9F0 /* BackgroundGradient.h */,
 				34A681F91BAF1C430053C9F0 /* BackgroundGradient.m */,
 			);
@@ -377,6 +387,7 @@
 				34A682001BAF268D0053C9F0 /* ChooseOptionViewController.m in Sources */,
 				3EF50B2B1BB08642007CCCD4 /* FacebookShareService.m in Sources */,
 				34A681FD1BAF267F0053C9F0 /* ChooseCategoryViewController.m in Sources */,
+				3488D26F1BB08A78007384FA /* WordsTableViewCell.m in Sources */,
 				348667B51BAF499B002C5825 /* SettingsViewController.m in Sources */,
 				348667B81BAF6AFF002C5825 /* EndOfGameViewController.m in Sources */,
 				3486387A1BA3CBC0001AA58D /* SeedViewController.m in Sources */,
@@ -385,6 +396,7 @@
 				3486387D1BA3CC99001AA58D /* PassItOnViewController.m in Sources */,
 				342BE8291BA3D27D00700F02 /* ScrollTableViewController.m in Sources */,
 				3430FBEA1BA3A00D007C108D /* main.m in Sources */,
+				3488D2721BB08C5D007384FA /* DrawingTableViewCell.m in Sources */,
 				3430FC261BA3A86C007C108D /* SetUpGameViewController.m in Sources */,
 				3430FC231BA3A07C007C108D /* MainViewController.m in Sources */,
 				3EF50B361BB0CAE7007CCCD4 /* UIViewToPDF.m in Sources */,

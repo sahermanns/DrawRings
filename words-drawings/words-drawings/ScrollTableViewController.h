@@ -8,6 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ScrollTableViewController : UITableViewController
+@class WordsTableViewCell;
+@interface ScrollTableViewController : UITableViewController <UITableViewDataSource, UITableViewDelegate>
+
+@property (strong,nonatomic) NSString *seedPrompt;
+- (void)showNextCell;
+@property int counter;
 
 @end
