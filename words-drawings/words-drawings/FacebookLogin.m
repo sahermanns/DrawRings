@@ -18,17 +18,19 @@
 
 +(void) LoginServiceForFacebook:(void(^)(ACAccount *))completionHandler {
   ACAccountStore *store = [[ACAccountStore alloc] init];
+  NSDictionary *options = @{
+                            @"ACFacebookAppIdKey" : @"1484481991878533",
+                            @"ACFacebookPermissionsKey" : @[@"email"],
+                            @"ACFacebookAudienceKey" : ACFacebookAudienceFriends};
   ACAccountType *faceBook= [store accountTypeWithAccountTypeIdentifier:ACAccountTypeIdentifierFacebook];
-  [store requestAccessToAccountsWithType:faceBook options: nil completion:^(BOOL granted, NSError *error) {
-    if (granted) {
+  [store requestAccessToAccountsWithType:faceBook options: options completion:^(BOOL granted, NSError *error) {
+    if (!granted) {
+        completionHandler(nil);
+      
+    } else {
       NSArray *facebookAccounts = [store accountsWithAccountType:faceBook];
-      if (facebookAccounts == nil || [facebookAccounts count] == 0) {
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Not logged into Facebook" message:@"Go into settings and log into Facebook." delegate:nil cancelButtonTitle:@"Okay" otherButtonTitles: nil];
-        [alert show];
-      } else {
-        ACAccount *facebookAccount = [facebookAccounts objectAtIndex:0];
-        completionHandler(facebookAccount);
-      }
+      ACAccount *facebookAccount = [facebookAccounts objectAtIndex:0];
+      completionHandler(facebookAccount);
     }
   }];
 }

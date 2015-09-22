@@ -35,6 +35,7 @@
 		3EF50B281BB074EE007CCCD4 /* FacebookLogin.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EF50B271BB074EE007CCCD4 /* FacebookLogin.m */; settings = {ASSET_TAGS = (); }; };
 		3EF50B2B1BB08642007CCCD4 /* FacebookShareService.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EF50B2A1BB08642007CCCD4 /* FacebookShareService.m */; settings = {ASSET_TAGS = (); }; };
 		3EF50B361BB0CAE7007CCCD4 /* UIViewToPDF.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EF50B351BB0CAE7007CCCD4 /* UIViewToPDF.m */; settings = {ASSET_TAGS = (); }; };
+		3EF50B381BB1BBE4007CCCD4 /* EndOfGameStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3EF50B371BB1BBE4007CCCD4 /* EndOfGameStoryboard.storyboard */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -106,6 +107,7 @@
 		3EF50B2A1BB08642007CCCD4 /* FacebookShareService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FacebookShareService.m; sourceTree = "<group>"; };
 		3EF50B341BB0CAE7007CCCD4 /* UIViewToPDF.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIViewToPDF.h; sourceTree = "<group>"; };
 		3EF50B351BB0CAE7007CCCD4 /* UIViewToPDF.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIViewToPDF.m; sourceTree = "<group>"; };
+		3EF50B371BB1BBE4007CCCD4 /* EndOfGameStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = EndOfGameStoryboard.storyboard; sourceTree = "<group>"; };
 		8B8F9765CC7BC07A43A7A7D6 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		FAC4FF7C4ADB7504CC95B3BF /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -219,6 +221,7 @@
 			isa = PBXGroup;
 			children = (
 				3430FBF11BA3A00D007C108D /* Main.storyboard */,
+				3EF50B371BB1BBE4007CCCD4 /* EndOfGameStoryboard.storyboard */,
 				3481D33E1BA7BF7400BFBCC5 /* wordsCell.xib */,
 				172D2A051BB1180C00120637 /* PassViewController.xib */,
 				3488D26D1BB08A78007384FA /* WordsTableViewCell.h */,
@@ -390,6 +393,7 @@
 			files = (
 				3430FBFB1BA3A00D007C108D /* LaunchScreen.storyboard in Resources */,
 				3481D33F1BA7BF7400BFBCC5 /* wordsCell.xib in Resources */,
+				3EF50B381BB1BBE4007CCCD4 /* EndOfGameStoryboard.storyboard in Resources */,
 				3430FBF81BA3A00D007C108D /* Assets.xcassets in Resources */,
 				3481D3411BA7BF8500BFBCC5 /* drawingCell.xib in Resources */,
 				172D2A061BB1180C00120637 /* PassViewController.xib in Resources */,
