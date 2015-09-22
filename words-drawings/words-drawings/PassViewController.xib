@@ -62,14 +62,14 @@
                                     </state>
                                     <variation key="default">
                                         <mask key="constraints">
-                                            <exclude reference="vQM-s6-sSq"/>
                                             <exclude reference="qVr-Dh-nIQ"/>
+                                            <exclude reference="vQM-s6-sSq"/>
                                         </mask>
                                     </variation>
                                     <variation key="widthClass=regular">
                                         <mask key="constraints">
-                                            <exclude reference="vQM-s6-sSq"/>
                                             <exclude reference="qVr-Dh-nIQ"/>
+                                            <exclude reference="vQM-s6-sSq"/>
                                         </mask>
                                     </variation>
                                     <connections>
@@ -121,10 +121,14 @@
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
+                <constraint firstItem="3ua-5z-bdY" firstAttribute="leading" secondItem="6QB-TG-fo6" secondAttribute="leading" id="CO4-sf-ER0"/>
+                <constraint firstItem="3ua-5z-bdY" firstAttribute="top" secondItem="6QB-TG-fo6" secondAttribute="top" id="Gw7-9F-JAI"/>
                 <constraint firstItem="3ua-5z-bdY" firstAttribute="leading" secondItem="6QB-TG-fo6" secondAttribute="leadingMargin" constant="-8" id="HSg-yh-Sio"/>
                 <constraint firstItem="3ua-5z-bdY" firstAttribute="top" secondItem="6QB-TG-fo6" secondAttribute="topMargin" constant="-8" id="KAf-r4-pa3"/>
                 <constraint firstAttribute="trailingMargin" secondItem="3ua-5z-bdY" secondAttribute="trailing" constant="-8" id="Vqv-Ws-o2f"/>
+                <constraint firstAttribute="trailing" secondItem="3ua-5z-bdY" secondAttribute="trailing" id="ajL-xY-dWb"/>
                 <constraint firstItem="3ua-5z-bdY" firstAttribute="centerY" secondItem="6QB-TG-fo6" secondAttribute="centerY" id="fdK-i3-Ivx"/>
+                <constraint firstAttribute="bottom" secondItem="3ua-5z-bdY" secondAttribute="bottom" id="sgz-Md-gAe"/>
             </constraints>
         </view>
     </objects>

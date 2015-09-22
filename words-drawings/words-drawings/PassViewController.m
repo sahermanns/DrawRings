@@ -14,7 +14,10 @@
 
 @implementation PassViewController
 
+- (void)viewDidLoad {
+  [super viewDidLoad];
 
+}
 
 - (IBAction)button:(id)sender {
   [[NSNotificationCenter defaultCenter] postNotificationName:@"popButtonPressed" object:self];
