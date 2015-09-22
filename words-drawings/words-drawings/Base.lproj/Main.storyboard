@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Hdr-ej-w49">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="LeC-lg-oZz">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
@@ -27,12 +27,12 @@
             <string>Avenir-Book</string>
             <string>Avenir-Book</string>
             <string>Avenir-Book</string>
-            <string>Avenir-Heavy</string>
-            <string>Avenir-Heavy</string>
-            <string>Avenir-Heavy</string>
-            <string>Avenir-Heavy</string>
-            <string>Avenir-Heavy</string>
             <string>Avenir-Book</string>
+            <string>Avenir-Heavy</string>
+            <string>Avenir-Heavy</string>
+            <string>Avenir-Heavy</string>
+            <string>Avenir-Heavy</string>
+            <string>Avenir-Heavy</string>
             <string>Avenir-Book</string>
         </mutableArray>
     </customFonts>
@@ -703,7 +703,7 @@
                                             </mask>
                                         </variation>
                                         <connections>
-                                            <segue destination="kOg-su-Nlq" kind="show" identifier="showScrollTVC" id="Sbg-ZW-VFR"/>
+                                            <segue destination="Txt-go-Zwj" kind="show" identifier="showScrollTVC" id="Sbg-ZW-VFR"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -812,6 +812,7 @@
                         </connections>
                     </tableView>
                     <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
+                    <navigationItem key="navigationItem" id="Ks3-Gb-aa1"/>
                     <nil key="simulatedStatusBarMetrics"/>
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
@@ -822,7 +823,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9nK-eZ-pP1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2884" y="863"/>
+            <point key="canvasLocation" x="3696" y="863"/>
         </scene>
         <!--Choose Category View Controller-->
         <scene sceneID="hpg-wj-2JL">
@@ -900,14 +901,14 @@
                                 </state>
                                 <variation key="default">
                                     <mask key="constraints">
-                                        <exclude reference="VKz-yJ-ech"/>
                                         <exclude reference="OHo-vI-VG7"/>
+                                        <exclude reference="VKz-yJ-ech"/>
                                     </mask>
                                 </variation>
                                 <variation key="widthClass=regular">
                                     <mask key="constraints">
-                                        <exclude reference="VKz-yJ-ech"/>
                                         <exclude reference="OHo-vI-VG7"/>
+                                        <exclude reference="VKz-yJ-ech"/>
                                     </mask>
                                 </variation>
                                 <connections>
@@ -952,26 +953,25 @@
             <point key="canvasLocation" x="1507" y="143"/>
         </scene>
         <!--Navigation Controller-->
-        <scene sceneID="Z0Z-IY-dE9">
+        <scene sceneID="l1J-XW-7ob">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="Hdr-ej-w49" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Txt-go-Zwj" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="FKA-eJ-ahe">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="wQg-KF-WRQ">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="LeC-lg-oZz" kind="relationship" relationship="rootViewController" id="cas-tc-m0c"/>
+                        <segue destination="kOg-su-Nlq" kind="relationship" relationship="rootViewController" id="Hdt-sZ-gGJ"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="22B-XR-IpD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="55q-sJ-Mvr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-588" y="143"/>
+            <point key="canvasLocation" x="2924" y="857"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="eae-sn-5RZ"/>
         <segue reference="YRi-cj-0kP"/>
     </inferredMetricsTieBreakers>
 </document>

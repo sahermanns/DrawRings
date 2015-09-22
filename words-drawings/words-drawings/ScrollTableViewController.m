@@ -10,7 +10,7 @@
 #import "DrawingTableViewCell.h"
 #import "WordsTableViewCell.h"
 #import "PassItOnViewController.h"
-
+#import "PassViewController.h"
 
 @interface ScrollTableViewController ()
 
@@ -58,6 +58,24 @@
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+  
+  [[NSNotificationCenter defaultCenter] addObserverForName:@"doneDrawingNotification" object:nil queue:nil usingBlock:^(NSNotification * _Nonnull note) {
+    [self showNextCell];
+
+    PassViewController *passView = [[PassViewController alloc] initWithNibName:@"PassViewController" bundle:[NSBundle mainBundle]];
+    [_navController pushViewController:passView animated:NO];
+  }];
+  
+  [[NSNotificationCenter defaultCenter] addObserverForName:@"popButtonPressed" object:nil queue:nil usingBlock:^(NSNotification * _Nonnull note) {
+    [_navController popViewControllerAnimated:NO];
+  }];
+  
+  [[NSNotificationCenter defaultCenter] addObserverForName:@"doneGuessingNotification" object:nil queue:nil usingBlock:^(NSNotification * _Nonnull note) {
+    [self showNextCell];
+    
+    PassViewController *passView = [[PassViewController alloc] initWithNibName:@"PassViewController" bundle:[NSBundle mainBundle]];
+    [_navController pushViewController:passView animated:NO];
+  }];
 }
 
 - (void)showNextCell {
