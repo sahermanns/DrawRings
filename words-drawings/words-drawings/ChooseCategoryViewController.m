@@ -13,11 +13,17 @@
 
 @property (strong,nonatomic) NSString *categoryPressed;
 
+- (IBAction)goBack:(UIButton *)sender;
 
 
 - (IBAction)category1Pressed:(UIButton *)sender;
 - (IBAction)category2Pressed:(UIButton *)sender;
 - (IBAction)category3Pressed:(UIButton *)sender;
+
+@property (strong,nonatomic) NSMutableArray *category1Array;
+@property (strong,nonatomic) NSMutableArray *category2Array;
+@property (strong,nonatomic) NSMutableArray *category3Array;
+@property (strong,nonatomic) NSMutableArray *selectedArray;
 
 @end
 
@@ -26,6 +32,15 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+  //NSString *cat1item1 = @"The Godfather";
+  
+  _category1Array = [NSMutableArray arrayWithObjects: @"The Godfather", @"Rocky", @"Rushmore", @"Back to the Future II", @"Alice in Wonderland", @"Boogie Nights", @"Mission: Impossible", @"Annie Hall", @"Star Trek", nil];
+  
+  _category2Array = [NSMutableArray arrayWithObjects: @"Madonna", @"Beethoven", @"Heartbreak Hotel", @"U Can't Touch This", @"Thriller", @"The Sound of Silence", @"I Feel Pretty", @"November Rain", @"Paranoid Android", nil];
+  
+  _category3Array = [NSMutableArray arrayWithObjects: @"Donald Trump", @"The French Revolution", @"Neil Armstrong", @"Ed's Moustache", @"Gilligan's Island", @"Thomas Edison", @"1776", @"Elon Musk", @"World War I", nil];
+  
+  
 }
 
 
@@ -42,24 +57,32 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
   if ([[segue identifier] isEqualToString:@"ShowOptions"])
   {
-//    ExistingReservationsViewController *existingReservationsVC = [[ExistingReservationsViewController alloc] init];
-//    [self.navigationController pushViewController:existingReservationsVC animated:YES];
-    ChooseOptionViewController *chooseOptionVC = [[ChooseOptionViewController alloc] init];
+    ChooseOptionViewController *chooseOptionVC = [segue destinationViewController];
     chooseOptionVC.chosenCategory = self.categoryPressed;
-    //***i know this isn't correct:
-    [self.navigationController pushViewController:chooseOptionVC animated:YES];
+    chooseOptionVC.passedArrayOfOptions = self.selectedArray;
   }
 }
 
 
+- (IBAction)goBack:(UIButton *)sender {
+   [self.navigationController popViewControllerAnimated:YES];
+}
+
 - (IBAction)category1Pressed:(UIButton *)sender {
   self.categoryPressed = sender.titleLabel.text;
-  NSLog(@"category1Pressed() %@", self.categoryPressed);
+  self.selectedArray = _category1Array;
  [self performSegueWithIdentifier:@"ShowOptions" sender:self];
 }
 
 - (IBAction)category2Pressed:(UIButton *)sender {
+  self.categoryPressed = sender.titleLabel.text;
+  self.selectedArray = _category2Array;
+  [self performSegueWithIdentifier:@"ShowOptions" sender:self];
 }
 - (IBAction)category3Pressed:(UIButton *)sender {
+  self.categoryPressed = sender.titleLabel.text;
+  self.selectedArray = _category3Array;
+  [self performSegueWithIdentifier:@"ShowOptions" sender:self];
 }
+
 @end

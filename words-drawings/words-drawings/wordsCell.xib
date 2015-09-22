@@ -7,9 +7,9 @@
     </dependencies>
     <customFonts key="customFonts">
         <mutableArray key="Avenir.ttc">
+            <string>Avenir-Heavy</string>
+            <string>Avenir-Heavy</string>
             <string>Avenir-Book</string>
-            <string>Avenir-Heavy</string>
-            <string>Avenir-Heavy</string>
         </mutableArray>
     </customFonts>
     <objects>

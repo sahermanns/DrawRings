@@ -13,5 +13,6 @@
 @interface ChooseOptionViewController : UIViewController
 
 @property (strong,nonatomic) NSString *chosenCategory;
+@property (strong,nonatomic) NSMutableArray *passedArrayOfOptions;
 
 @end

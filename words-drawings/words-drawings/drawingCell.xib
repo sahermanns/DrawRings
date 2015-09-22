@@ -172,6 +172,9 @@
                     <constraint firstItem="y5w-iw-PH2" firstAttribute="top" secondItem="FQl-nB-aQb" secondAttribute="topMargin" constant="-8" id="zdd-eo-KeS"/>
                 </constraints>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="promptLabel" destination="W4f-ND-WL7" id="scf-r7-wTv"/>
+            </connections>
             <point key="canvasLocation" x="363" y="-350"/>
         </tableViewCell>
     </objects>

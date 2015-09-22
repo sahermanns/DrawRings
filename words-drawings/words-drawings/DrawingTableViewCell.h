@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
+@class ScrollTableViewController;
+
 @interface DrawingTableViewCell : UITableViewCell
+@property (weak, nonatomic) IBOutlet UILabel *promptLabel;
 
 @end

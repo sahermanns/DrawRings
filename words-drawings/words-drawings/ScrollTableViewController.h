@@ -9,8 +9,9 @@
 #import <UIKit/UIKit.h>
 
 @class WordsTableViewCell;
-@interface ScrollTableViewController : UITableViewController
+@interface ScrollTableViewController : UITableViewController <UITableViewDataSource, UITableViewDelegate>
 
+@property (strong,nonatomic) NSString *seedPrompt;
 - (void)showNextCell;
 @property int counter;
 

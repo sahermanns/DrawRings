@@ -9,12 +9,13 @@
 #import "ScrollTableViewController.h"
 #import "DrawingTableViewCell.h"
 #import "WordsTableViewCell.h"
+#import "PassItOnViewController.h"
 
 
 @interface ScrollTableViewController ()
 
 @property (nonatomic) NSInteger numberOfRows;
-@property (strong, nonatomic) NSString *seedPrompt;
+//@property (strong, nonatomic) NSString *seedPrompt;
 @property (strong, nonatomic) NSString *currentPrompt;
 @property (strong, nonatomic) NSMutableArray *promptArray;
 @property (strong, nonatomic) NSMutableArray *drawingArray;
@@ -28,10 +29,14 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+  
   self.scrollTableView.allowsSelection = NO;
   //[self scrollToRowAtIndexPath:indexPath atScrollPosition:UITableViewScrollPositionBottom animated:YES];
+  //_seedPrompt = @"ARRRRGGGGHHH";
+  NSLog(@"SEED PROMPT: %@", _seedPrompt);
+  
   self.counter = 0;
-  NSLog(@"counter starts at %d", _counter);
+  //NSLog(@"counter starts at %d", _counter);
   self.numberOfRows = 4;
 
   UINib *wordsCell = [UINib nibWithNibName:@"wordsCell" bundle:nil];
@@ -87,6 +92,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
   if (indexPath.row % 2 == 0) {
     DrawingTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"drawingCell" forIndexPath:indexPath];
+    cell.promptLabel.text = _seedPrompt;
     return cell;
   } else {
     WordsTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"wordsCell" forIndexPath:indexPath];
