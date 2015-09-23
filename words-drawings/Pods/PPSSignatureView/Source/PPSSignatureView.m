@@ -1,8 +1,8 @@
 #import "PPSSignatureView.h"
 #import <OpenGLES/ES2/glext.h>
 
-#define             STROKE_WIDTH_MIN 0.004 // Stroke width determined by touch velocity
-#define             STROKE_WIDTH_MAX 0.030
+#define             STROKE_WIDTH_MIN 0.005 // Stroke width determined by touch velocity
+#define             STROKE_WIDTH_MAX 0.020
 #define       STROKE_WIDTH_SMOOTHING 0.5   // Low pass filter alpha
 
 #define           VELOCITY_CLAMP_MIN 20
@@ -240,7 +240,10 @@ static PPSSignaturePoint ViewPointToGL(CGPoint viewPoint, CGRect bounds, GLKVect
         addVertex(&dotsLength, touchPoint);
         
         PPSSignaturePoint centerPoint = touchPoint;
-        centerPoint.color = StrokeColor;
+        //centerPoint.color = StrokeColor;
+//      union GLKVector3 *uMMColor = { struct { float 3, 4, 5 };
+//      centerPoint.color =
+
         addVertex(&dotsLength, centerPoint);
 
         static int segments = 20;

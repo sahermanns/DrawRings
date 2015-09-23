@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+@class ChooseCategoryViewController;
 
 @interface SettingsViewController : UIViewController
+
+@property NSInteger numberOfPlayers;
+@property NSInteger durationOfRound;
 
 @end

@@ -8,6 +8,7 @@
 
 #import "SeedViewController.h"
 #import "PassItOnViewController.h"
+#import "ChooseCategoryViewController.h"
 
 @interface SeedViewController ()
 
