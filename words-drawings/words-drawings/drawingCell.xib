@@ -77,49 +77,8 @@
                                     <constraint firstAttribute="width" secondItem="krz-QI-y03" secondAttribute="height" multiplier="161:64" id="FJ0-Ga-JQ3"/>
                                 </constraints>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="blackRect" translatesAutoresizingMaskIntoConstraints="NO" id="4Rr-XA-EHL">
-                                <rect key="frame" x="177" y="8" width="3" height="64"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="4Rr-XA-EHL" secondAttribute="height" multiplier="13:64" id="f7u-dw-IZE"/>
-                                </constraints>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="f7u-dw-IZE"/>
-                                    </mask>
-                                </variation>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="blackRect" translatesAutoresizingMaskIntoConstraints="NO" id="UeW-an-Uq2">
-                                <rect key="frame" x="198" y="8" width="6" height="64"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="6" id="Jd3-lL-qLq"/>
-                                    <constraint firstAttribute="width" secondItem="UeW-an-Uq2" secondAttribute="height" multiplier="13:64" id="S2W-GG-IFh"/>
-                                    <constraint firstAttribute="height" constant="64" id="kfz-ro-P7E"/>
-                                </constraints>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="S2W-GG-IFh"/>
-                                    </mask>
-                                </variation>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="blackRect" translatesAutoresizingMaskIntoConstraints="NO" id="8vk-5W-ABP">
-                                <rect key="frame" x="219" y="8" width="9" height="64"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="8vk-5W-ABP" secondAttribute="height" multiplier="13:64" id="QLK-8Z-bdq"/>
-                                </constraints>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="QLK-8Z-bdq"/>
-                                    </mask>
-                                </variation>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Editing-Eraser-icon" translatesAutoresizingMaskIntoConstraints="NO" id="gsD-t3-tNd">
-                                <rect key="frame" x="245" y="8" width="63" height="64"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="63" id="FAt-A7-y6v"/>
-                                </constraints>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rSM-7x-KAD">
-                                <rect key="frame" x="533" y="17.5" width="59" height="45"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rSM-7x-KAD">
+                                <rect key="frame" x="546" y="25" width="46" height="30"/>
                                 <color key="backgroundColor" red="0.64001527960000004" green="0.8359912343" blue="0.8215960283" alpha="0.73999999999999999" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="24"/>
                                 <state key="normal" title="Done">
@@ -143,20 +102,20 @@
                             <constraint firstAttribute="trailing" secondItem="rSM-7x-KAD" secondAttribute="trailing" constant="8" id="zx7-CC-Wei"/>
                         </constraints>
                     </view>
-                    <glkView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" misplaced="YES" enableSetNeedsDisplay="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WLn-Vh-jQY" customClass="PPSSignatureView">
-                        <rect key="frame" x="0.0" y="56" width="600" height="201"/>
+                    <glkView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" misplaced="YES" enableSetNeedsDisplay="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JYg-fm-8TD" customClass="PPSSignatureView">
+                        <rect key="frame" x="8" y="64" width="584" height="185"/>
                     </glkView>
                 </subviews>
                 <constraints>
                     <constraint firstAttribute="bottomMargin" secondItem="YJ0-HI-u58" secondAttribute="bottom" constant="-8" id="2aY-0J-ovc"/>
                     <constraint firstItem="JYg-fm-8TD" firstAttribute="trailing" secondItem="FQl-nB-aQb" secondAttribute="trailingMargin" id="39X-Ro-Ran"/>
                     <constraint firstItem="YJ0-HI-u58" firstAttribute="leading" secondItem="FQl-nB-aQb" secondAttribute="leadingMargin" constant="-8" id="8rw-D7-fGJ"/>
-                    <constraint firstItem="WLn-Vh-jQY" firstAttribute="top" secondItem="y5w-iw-PH2" secondAttribute="bottom" id="Vft-T4-sjg"/>
-                    <constraint firstAttribute="trailingMargin" secondItem="WLn-Vh-jQY" secondAttribute="trailing" constant="-8" id="XXS-mr-A0E"/>
+                    <constraint firstItem="YJ0-HI-u58" firstAttribute="top" secondItem="JYg-fm-8TD" secondAttribute="bottom" constant="8" id="De3-Jf-9jB"/>
+                    <constraint firstItem="JYg-fm-8TD" firstAttribute="leading" secondItem="FQl-nB-aQb" secondAttribute="leadingMargin" id="KDZ-yx-Cv9"/>
                     <constraint firstItem="y5w-iw-PH2" firstAttribute="leading" secondItem="FQl-nB-aQb" secondAttribute="leadingMargin" constant="-8" id="ZVI-RA-eu5"/>
                     <constraint firstAttribute="trailingMargin" secondItem="YJ0-HI-u58" secondAttribute="trailing" constant="-8" id="bEU-2M-gBs"/>
                     <constraint firstAttribute="trailingMargin" secondItem="y5w-iw-PH2" secondAttribute="trailing" constant="-8" id="mSm-vJ-9wF"/>
-                    <constraint firstItem="YJ0-HI-u58" firstAttribute="top" secondItem="WLn-Vh-jQY" secondAttribute="bottom" id="rLc-7h-qJX"/>
+                    <constraint firstItem="JYg-fm-8TD" firstAttribute="top" secondItem="y5w-iw-PH2" secondAttribute="bottom" constant="8" id="xCN-l1-MeE"/>
                     <constraint firstItem="y5w-iw-PH2" firstAttribute="top" secondItem="FQl-nB-aQb" secondAttribute="topMargin" constant="-8" id="zdd-eo-KeS"/>
                     <constraint firstItem="WLn-Vh-jQY" firstAttribute="leading" secondItem="FQl-nB-aQb" secondAttribute="leadingMargin" constant="-8" id="zz0-3L-uSG"/>
                 </constraints>

@@ -112,7 +112,7 @@
     ChooseOptionViewController *chooseOptionVC = (ChooseOptionViewController *)[segue destinationViewController];
 
     chooseOptionVC.chosenCategory = self.categoryPressed;
-    chooseOptionVC.passedArrayOfOptions = self.selectedArray;
+//    chooseOptionVC.passedArrayOfOptions = self.selectedArray;
     chooseOptionVC.numberOfPlayers = self.numberOfPlayers;
     chooseOptionVC.durationOfRound = self.durationOfRound;
   }
@@ -138,7 +138,7 @@
   //[self selectArray:self.categoryPressed];
   //self.selectedArray = _filmArray;
   //NSLog(@"ARRAY WAS>>> %@", self.selectedArray);
-  //[self performSegueWithIdentifier:@"ShowOptions" sender:self];
+  [self performSegueWithIdentifier:@"ShowOptions" sender:self];
 }
 - (IBAction)category3Pressed:(UIButton *)sender {
   self.categoryPressed = _thisRoundsArray[2];
@@ -146,7 +146,7 @@
   //[self selectArray:self.categoryPressed];
   //self.selectedArray = _filmArray;
   //NSLog(@"ARRAY WAS>>> %@", self.selectedArray);
-  //[self performSegueWithIdentifier:@"ShowOptions" sender:self];
+  [self performSegueWithIdentifier:@"ShowOptions" sender:self];
 }
 
 @end

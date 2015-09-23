@@ -51,6 +51,34 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
   NSLog(@"%ld %ld", (long)self.numberOfPlayers, (long)self.durationOfRound);
+  
+  NSLog(@"You chose... wisely: %@", self.chosenCategory);
+  
+  
+   _filmArray = [NSMutableArray arrayWithObjects: @"The Godfather", @"Woody Allen", @"Steven Spielberg", @"Rocky", @"Rushmore", @"Back to the Future II", @"Alice in Wonderland", @"Boogie Nights", @"Space Jam", @"Mission: Impossible", @"Annie Hall", @"Being John Malkovich", @"Metropolis", @"The Dark Crystal", @"Vertigo", @"Star Trek", @"Iron Man", @"Hannibal Lecter", @"Meet the Parents", @"Beetlejuice", nil];
+   
+   _tvArray = [NSMutableArray arrayWithObjects: @"Seinfeld", @"Gilligan's Island", @"The Cosby Show", @"Arrested Development", @"Mork and Mindy", @"GI-Joe", @"Weeds", @"Lost", @"The Twilight Zone", @"24", @"House, M.D.", nil];
+   
+   _theatreArray = [NSMutableArray arrayWithObjects: @"Death of a Salesman", @"Romeo and Juliet", @"The Book of Mormon", @"Titus Andronicus", @"Neil Patrick Harris", @"The Tony Awards", @"West Side Story", @"Hamlet", @"Stephen Sondheim", @"Jesus Christ Superstar", @"Cat On a Hot Tin Roof", @"Hairspray", @"Pirates of the Carribean", @"Mean Girls", @"Tim Burton", nil];
+   
+   _musicArray = [NSMutableArray arrayWithObjects: @"Madonna", @"Beethoven", @"Heartbreak Hotel", @"U Can't Touch This", @"Thriller", @"The Sound of Silence", @"I Feel Pretty", @"November Rain", @"Paranoid Android", @"A String Quartet", @"John Cage", @"Nirvana", nil];
+   
+   _sportsArray = [NSMutableArray arrayWithObjects: @"Babe Ruth", @"Magic Johnson", @"7th Inning Stretch", @"Cricket", nil];
+   
+   _historyArray = [NSMutableArray arrayWithObjects: @"The French Revolution", @"The Cuban Missle Crisis", @"Catherine the Great", @"D-Day", nil];
+   
+   _scienceArray = [NSMutableArray arrayWithObjects: @"The Heisenberg Uncertainty Principle", @"Relativity", @"Jonas Salk", @"Isaac Newton", nil];
+   
+   _natureArray = [NSMutableArray arrayWithObjects: @"Three-Toed Sloths", @"Mt. Rainier", @"The Grand Canyon", @"The Pacific Ocean", nil];
+   
+   _geographyArray = [NSMutableArray arrayWithObjects: @"Paris", @"Antarctica", @"Las Vegas", @"The Nile River", nil];
+   
+   _artArray = [NSMutableArray arrayWithObjects: @"The Mona Lisa", @"Pablo Picasso", @"Girl With Pearl Earring", @"Guernica", nil];
+   
+   _literatureArray = [NSMutableArray arrayWithObjects: @"A Tale of Two Cities", @"Where the Sidewalk Ends", @"The Hobbit", @"Nausea", nil];
+   
+   _zanyMiscellanyArray = [NSMutableArray arrayWithObjects: @"42", @"Penguins Playing Golf", @"Insomnia", @"Public Restroom", @"Grumpy Cat", @"Prom Night", @"Cat Fight", @"Mom Jeans", nil];
+    
   self.chosenCategoryLabel.text = self.chosenCategory;
 
   _pickedObjects = [[NSMutableArray alloc] init];
