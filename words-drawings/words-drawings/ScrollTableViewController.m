@@ -20,8 +20,9 @@
 @property (strong, nonatomic) NSMutableArray *promptArray;
 @property (strong, nonatomic) NSMutableArray *drawingArray;
 @property (strong, nonatomic) IBOutlet UITableView *scrollTableView;
+@property (strong,nonatomic) DrawingTableViewCell *currentDrawingCell;
 //@property int counter;
-
+@property (weak, nonatomic) NSTimer *timer;
 
 @end
 
@@ -30,7 +31,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
   NSLog(@"%ld %ld", (long)self.numberOfPlayers, (long)self.durationOfRound);
-
+  
   self.scrollTableView.allowsSelection = NO;
   //[self scrollToRowAtIndexPath:indexPath atScrollPosition:UITableViewScrollPositionBottom animated:YES];
   //_seedPrompt = @"ARRRRGGGGHHH";
@@ -38,8 +39,8 @@
   
   self.counter = 0;
   //NSLog(@"counter starts at %d", _counter);
-  self.numberOfRows = 4;
-
+  self.numberOfRows = self.numberOfPlayers;
+  
   UINib *wordsCell = [UINib nibWithNibName:@"wordsCell" bundle:nil];
   [self.scrollTableView registerNib:wordsCell forCellReuseIdentifier:@"wordsCell"];
   
@@ -77,7 +78,26 @@
     
     PassViewController *passView = [[PassViewController alloc] initWithNibName:@"PassViewController" bundle:[NSBundle mainBundle]];
     [_navController pushViewController:passView animated:YES];
+    
   }];
+  
+  
+}
+
+-(void)viewDidAppear:(BOOL)animated {
+  [super viewDidAppear:animated];
+//  self.currentDrawingCell.timerLabel.text = [NSString stringWithFormat:@"%ld", self.durationOfRound];
+  self.timer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(decrementTimeLabel:) userInfo:nil repeats:true];
+}
+
+-(void)decrementTimeLabel:(NSTimer *)timer {
+  NSInteger newTime = [self.currentDrawingCell.timerLabel.text integerValue] -1;
+  NSString *newTimeString = [NSString stringWithFormat: @"%ld",newTime];
+  self.currentDrawingCell.timerLabel.text = newTimeString;
+  
+  if (newTime == 0) {
+    [timer invalidate];
+  }
 }
 
 - (void)showNextCell {
@@ -113,6 +133,7 @@
   if (indexPath.row % 2 == 0) {
     DrawingTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"drawingCell" forIndexPath:indexPath];
     cell.promptLabel.text = _seedPrompt;
+    self.currentDrawingCell = cell;
     return cell;
   } else {
     WordsTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"wordsCell" forIndexPath:indexPath];

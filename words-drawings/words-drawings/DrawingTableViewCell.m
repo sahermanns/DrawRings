@@ -24,6 +24,7 @@
 
 - (void)awakeFromNib {
     // Initialization code
+//    self.timerLabel.text = @"%@", ;
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
