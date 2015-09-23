@@ -111,6 +111,9 @@
                     <constraint firstAttribute="bottomMargin" secondItem="COb-hc-R3f" secondAttribute="bottom" constant="-8" id="k7d-uN-P7w"/>
                 </constraints>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="timeLabel" destination="00m-yo-b1N" id="gGm-dB-C5t"/>
+            </connections>
             <point key="canvasLocation" x="355.5" y="-278.5"/>
         </tableViewCell>
     </objects>

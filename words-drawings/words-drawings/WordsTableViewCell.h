@@ -11,5 +11,6 @@
 @class WordsTableViewCell;
 
 @interface WordsTableViewCell : UITableViewCell
+@property (weak, nonatomic) IBOutlet UILabel *timeLabel;
 
 @end
