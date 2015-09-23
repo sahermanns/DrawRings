@@ -22,6 +22,7 @@
 @property (strong, nonatomic) NSMutableArray *drawingArray;
 @property (strong, nonatomic) IBOutlet UITableView *scrollTableView;
 @property (strong,nonatomic) DrawingTableViewCell *currentDrawingCell;
+@property (strong, nonatomic) WordsTableViewCell *currentWordsCell;
 @property (nonatomic, strong) JotViewController *jotVC;
 //@property int counter;
 @property (weak, nonatomic) NSTimer *timer;
@@ -98,6 +99,7 @@
   
   if (newTime == 0) {
     [timer invalidate];
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"doneDrawingNotification" object:self];
   }
 }
 
@@ -147,6 +149,7 @@
     return cell;
   } else {
     WordsTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"wordsCell" forIndexPath:indexPath];
+    self.currentWordsCell = cell;
     return cell;
   }
 }
