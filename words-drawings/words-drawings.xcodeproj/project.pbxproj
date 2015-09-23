@@ -35,8 +35,8 @@
 		34A681FD1BAF267F0053C9F0 /* ChooseCategoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34A681FC1BAF267F0053C9F0 /* ChooseCategoryViewController.m */; settings = {ASSET_TAGS = (); }; };
 		34A682001BAF268D0053C9F0 /* ChooseOptionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34A681FF1BAF268D0053C9F0 /* ChooseOptionViewController.m */; settings = {ASSET_TAGS = (); }; };
 		39CF558820BF152E6722B0F4 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FAC4FF7C4ADB7504CC95B3BF /* libPods.a */; };
+		3E1B2D671BB210D800EF25B7 /* ExperimentalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E1B2D661BB210D800EF25B7 /* ExperimentalViewController.m */; settings = {ASSET_TAGS = (); }; };
 		3EF50B281BB074EE007CCCD4 /* FacebookLogin.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EF50B271BB074EE007CCCD4 /* FacebookLogin.m */; settings = {ASSET_TAGS = (); }; };
-		3EF50B2B1BB08642007CCCD4 /* FacebookShareService.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EF50B2A1BB08642007CCCD4 /* FacebookShareService.m */; settings = {ASSET_TAGS = (); }; };
 		3EF50B361BB0CAE7007CCCD4 /* UIViewToPDF.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EF50B351BB0CAE7007CCCD4 /* UIViewToPDF.m */; settings = {ASSET_TAGS = (); }; };
 		3EF50B381BB1BBE4007CCCD4 /* EndOfGameStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3EF50B371BB1BBE4007CCCD4 /* EndOfGameStoryboard.storyboard */; settings = {ASSET_TAGS = (); }; };
 		9E32970F1BB208D700112456 /* InstructionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E32970E1BB208D700112456 /* InstructionViewController.m */; settings = {ASSET_TAGS = (); }; };
@@ -108,10 +108,10 @@
 		34A681FE1BAF268D0053C9F0 /* ChooseOptionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChooseOptionViewController.h; sourceTree = "<group>"; };
 		34A681FF1BAF268D0053C9F0 /* ChooseOptionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChooseOptionViewController.m; sourceTree = "<group>"; };
 		3A7B88D51D617685143CB19D /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		3E1B2D651BB210D800EF25B7 /* ExperimentalViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExperimentalViewController.h; sourceTree = "<group>"; };
+		3E1B2D661BB210D800EF25B7 /* ExperimentalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExperimentalViewController.m; sourceTree = "<group>"; };
 		3EF50B261BB074EE007CCCD4 /* FacebookLogin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FacebookLogin.h; sourceTree = "<group>"; };
 		3EF50B271BB074EE007CCCD4 /* FacebookLogin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FacebookLogin.m; sourceTree = "<group>"; };
-		3EF50B291BB08642007CCCD4 /* FacebookShareService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FacebookShareService.h; sourceTree = "<group>"; };
-		3EF50B2A1BB08642007CCCD4 /* FacebookShareService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FacebookShareService.m; sourceTree = "<group>"; };
 		3EF50B341BB0CAE7007CCCD4 /* UIViewToPDF.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIViewToPDF.h; sourceTree = "<group>"; };
 		3EF50B351BB0CAE7007CCCD4 /* UIViewToPDF.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIViewToPDF.m; sourceTree = "<group>"; };
 		3EF50B371BB1BBE4007CCCD4 /* EndOfGameStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = EndOfGameStoryboard.storyboard; sourceTree = "<group>"; };
@@ -223,8 +223,6 @@
 				3EF50B351BB0CAE7007CCCD4 /* UIViewToPDF.m */,
 				3EF50B261BB074EE007CCCD4 /* FacebookLogin.h */,
 				3EF50B271BB074EE007CCCD4 /* FacebookLogin.m */,
-				3EF50B291BB08642007CCCD4 /* FacebookShareService.h */,
-				3EF50B2A1BB08642007CCCD4 /* FacebookShareService.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -268,8 +266,8 @@
 				342BE8281BA3D27D00700F02 /* ScrollTableViewController.m */,
 				348667B61BAF6AFF002C5825 /* EndOfGameViewController.h */,
 				348667B71BAF6AFF002C5825 /* EndOfGameViewController.m */,
-				9E32970D1BB208D700112456 /* InstructionViewController.h */,
-				9E32970E1BB208D700112456 /* InstructionViewController.m */,
+				3E1B2D651BB210D800EF25B7 /* ExperimentalViewController.h */,
+				3E1B2D661BB210D800EF25B7 /* ExperimentalViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -472,9 +470,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3E1B2D671BB210D800EF25B7 /* ExperimentalViewController.m in Sources */,
 				3430FBF61BA3A00D007C108D /* words_drawings.xcdatamodeld in Sources */,
 				34A682001BAF268D0053C9F0 /* ChooseOptionViewController.m in Sources */,
-				3EF50B2B1BB08642007CCCD4 /* FacebookShareService.m in Sources */,
 				34A681FD1BAF267F0053C9F0 /* ChooseCategoryViewController.m in Sources */,
 				3488D26F1BB08A78007384FA /* WordsTableViewCell.m in Sources */,
 				348667B51BAF499B002C5825 /* SettingsViewController.m in Sources */,
