@@ -17,7 +17,7 @@
 
 - (void)viewDidLoad {
   [super viewDidLoad];
-  self.view.alpha = 0.6;
+  self.view.alpha = 1;
 }
 
 - (void)didReceiveMemoryWarning {

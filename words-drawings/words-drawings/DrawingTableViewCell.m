@@ -8,10 +8,14 @@
 
 #import "DrawingTableViewCell.h"
 #import "ScrollTableViewController.h"
+#import "PPSSignatureView.h"
+#import "JotViewController.h"
 
+@interface DrawingTableViewCell ()
+
+
+@end
 @implementation DrawingTableViewCell
-
-
 
 - (IBAction)doneButtonPressed:(UIButton *)sender {
   [[NSNotificationCenter defaultCenter] postNotificationName:@"doneDrawingNotification" object:self];
@@ -23,6 +27,7 @@
 }
 
 - (void)awakeFromNib {
+  
     // Initialization code
 //    self.timerLabel.text = @"%@", ;
 }

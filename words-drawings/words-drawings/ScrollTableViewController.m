@@ -11,8 +11,9 @@
 #import "WordsTableViewCell.h"
 #import "PassItOnViewController.h"
 #import "PassViewController.h"
+#import "JotViewController.h"
 
-@interface ScrollTableViewController ()
+@interface ScrollTableViewController () <JotViewControllerDelegate>
 
 @property (nonatomic) NSInteger numberOfRows;
 //@property (strong, nonatomic) NSString *seedPrompt;
@@ -66,7 +67,6 @@
 
     PassViewController *passView = [[PassViewController alloc] initWithNibName:@"PassViewController" bundle:[NSBundle mainBundle]];
     [_navController pushViewController:passView animated:YES];
-    
   }];
   
   [[NSNotificationCenter defaultCenter] addObserverForName:@"popButtonPressed" object:nil queue:nil usingBlock:^(NSNotification * _Nonnull note) {
@@ -113,7 +113,6 @@
   } else {
     //go to souvenir page ending
   }
-  
 }
 
 - (void)didReceiveMemoryWarning {
@@ -132,6 +131,15 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
   if (indexPath.row % 2 == 0) {
     DrawingTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"drawingCell" forIndexPath:indexPath];
+    self.jotVC = [[JotViewController alloc] init];
+    self.jotVC.delegate = self;
+    self.jotVC.state = JotViewStateDrawing;
+    [self addChildViewController:self.jotVC];
+    [cell.contentView addSubview:self.jotVC.view];
+    [cell setNeedsLayout];
+    [cell layoutIfNeeded];
+    [self.jotVC didMoveToParentViewController:self];
+    self.jotVC.view.frame = cell.drawingView.frame;
     cell.promptLabel.text = _seedPrompt;
     self.currentDrawingCell = cell;
     return cell;

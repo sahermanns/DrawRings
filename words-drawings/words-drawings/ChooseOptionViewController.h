@@ -16,6 +16,6 @@
 @property NSInteger durationOfRound;
 
 @property (strong,nonatomic) NSString *chosenCategory;
-@property (strong,nonatomic) NSMutableArray *passedArrayOfOptions;
+//@property (strong,nonatomic) NSMutableArray *passedArrayOfOptions;
 
 @end
