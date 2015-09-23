@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		172D2A061BB1180C00120637 /* PassViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 172D2A051BB1180C00120637 /* PassViewController.xib */; settings = {ASSET_TAGS = (); }; };
 		172D2A091BB123AB00120637 /* PassViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 172D2A081BB123AB00120637 /* PassViewController.m */; settings = {ASSET_TAGS = (); }; };
+		172D2A0B1BB2000C00120637 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 172D2A0A1BB2000C00120637 /* Foundation.framework */; };
+		172D2A0D1BB2001400120637 /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 172D2A0C1BB2001400120637 /* GLKit.framework */; };
+		172D2A0F1BB2001D00120637 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 172D2A0E1BB2001D00120637 /* OpenGLES.framework */; };
 		342BE8291BA3D27D00700F02 /* ScrollTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 342BE8281BA3D27D00700F02 /* ScrollTableViewController.m */; };
 		3430FBEA1BA3A00D007C108D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3430FBE91BA3A00D007C108D /* main.m */; };
 		3430FBED1BA3A00D007C108D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3430FBEC1BA3A00D007C108D /* AppDelegate.m */; };
@@ -60,6 +63,9 @@
 		172D2A051BB1180C00120637 /* PassViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PassViewController.xib; sourceTree = "<group>"; };
 		172D2A071BB123AB00120637 /* PassViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PassViewController.h; sourceTree = "<group>"; };
 		172D2A081BB123AB00120637 /* PassViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PassViewController.m; sourceTree = "<group>"; };
+		172D2A0A1BB2000C00120637 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		172D2A0C1BB2001400120637 /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
+		172D2A0E1BB2001D00120637 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		342BE8271BA3D27D00700F02 /* ScrollTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScrollTableViewController.h; sourceTree = "<group>"; };
 		342BE8281BA3D27D00700F02 /* ScrollTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScrollTableViewController.m; sourceTree = "<group>"; };
 		3430FBE51BA3A00D007C108D /* words-drawings.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "words-drawings.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -120,6 +126,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				172D2A0F1BB2001D00120637 /* OpenGLES.framework in Frameworks */,
+				172D2A0D1BB2001400120637 /* GLKit.framework in Frameworks */,
+				172D2A0B1BB2000C00120637 /* Foundation.framework in Frameworks */,
 				39CF558820BF152E6722B0F4 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -277,6 +286,9 @@
 		A5DCE03D37E9E34A385032F5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				172D2A0E1BB2001D00120637 /* OpenGLES.framework */,
+				172D2A0C1BB2001400120637 /* GLKit.framework */,
+				172D2A0A1BB2000C00120637 /* Foundation.framework */,
 				FAC4FF7C4ADB7504CC95B3BF /* libPods.a */,
 			);
 			name = Frameworks;

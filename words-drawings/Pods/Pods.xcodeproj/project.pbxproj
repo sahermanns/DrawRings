@@ -7,63 +7,103 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		06195D8411AAA62D86AD12172AD00419 /* PPSSignatureView-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 5753F6502AB393AA858205B51F79A964 /* PPSSignatureView-dummy.m */; };
-		3CDE6F55FC85F9C8E83FD24BD02BB0B8 /* Pods-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = BFA4DF4695BB38D36BEFFFE1B6D65879 /* Pods-dummy.m */; };
-		6FB4E5FF2E1E76505438E1B630D9F5C1 /* PPSSignatureView.h in Headers */ = {isa = PBXBuildFile; fileRef = B6765DC4CBC80F8B6DB96D6406AECDA9 /* PPSSignatureView.h */; };
-		8C80D81809FB6CE18DA663D8B5BDFC0B /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1100C235E013FA1BDC876B9ADB56AFF3 /* GLKit.framework */; };
-		AA3215ED287493C093F56ED41457D207 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A241ACF50D2541CC8A5E3A9D66F0B559 /* OpenGLES.framework */; };
-		BFFE21688ABD7F9015BC265EAACF7BE4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55A4A3C3F9D8996451B3FA1DB84BAE84 /* Foundation.framework */; };
-		E5AA048A4E769A7701063345D7F44884 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55A4A3C3F9D8996451B3FA1DB84BAE84 /* Foundation.framework */; };
-		F4B70C409E45E1AE9FDE9A7814DDDFA8 /* PPSSignatureView.m in Sources */ = {isa = PBXBuildFile; fileRef = 227C1A065D6FED2BFAD1BE35C49630BA /* PPSSignatureView.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		093FA2F159CACA008777C5FA39E0EC3F /* UITableView+DHSmartScreenshot.h in Headers */ = {isa = PBXBuildFile; fileRef = 4ABD2936D0377F2D838BDE77A2062E4C /* UITableView+DHSmartScreenshot.h */; };
+		27AF23C6AF03B6C77C48020A5B0C100F /* UIView+DHSmartScreenshot.m in Sources */ = {isa = PBXBuildFile; fileRef = C7F9EB236F13F9D924CA32CA9243945C /* UIView+DHSmartScreenshot.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		2F5308E81553057DADB26BB855C61A5F /* UIScrollView+DHSmartScreenshot.m in Sources */ = {isa = PBXBuildFile; fileRef = 98C1372C9CEF3E16E376B363B1880F2C /* UIScrollView+DHSmartScreenshot.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		3E71D98C3B5016337BDCD13BBDA32D84 /* UIScrollView+DHSmartScreenshot.h in Headers */ = {isa = PBXBuildFile; fileRef = 667332AC8AA04F766BD2BD25276B2F5C /* UIScrollView+DHSmartScreenshot.h */; };
+		45AFAE172761848DD083E335C99CD372 /* PPSSignatureView-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = AA016A8C04148E270F2501012161310D /* PPSSignatureView-dummy.m */; };
+		46857E39C10502ADA0076C553805558C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B15AD8DE9DAD3ACCD1C6DAF56A9FC9F7 /* Foundation.framework */; };
+		49F9D60334000BF19C85C7187CEBA192 /* UIImage+DHImageAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 4ACCCF7DBF79E52E950BA844570865A5 /* UIImage+DHImageAdditions.h */; };
+		5ACD8D86494123A48864B016C934B053 /* PPSSignatureView.h in Headers */ = {isa = PBXBuildFile; fileRef = AB6349467FADCD6C1E7B5349A349BE57 /* PPSSignatureView.h */; };
+		5D20051C2C8C306F4D73706053D897A7 /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A26852E21FD73D3BE394FBE84CC74EE4 /* GLKit.framework */; };
+		77FFB5977AE739C7BD27BD36EA5298C4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B15AD8DE9DAD3ACCD1C6DAF56A9FC9F7 /* Foundation.framework */; };
+		84D6BA94638DC8D09C392B96B7A9D062 /* UIImage+DHImageAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 6950075C508610083813118FB11AE79E /* UIImage+DHImageAdditions.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		9248AABD82E3863BF63D73B2102B2E11 /* Pods-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = DB4D1AE3C9077D770EF1BBDDD2F7454E /* Pods-dummy.m */; };
+		95764F5E2AC44EBE5D45B214E5E20AB8 /* UIView+DHSmartScreenshot.h in Headers */ = {isa = PBXBuildFile; fileRef = A5C707891CE4B1573B1F7B4040F7EAD9 /* UIView+DHSmartScreenshot.h */; };
+		AFCBD80F441EB25D9907ECAA436B3DCC /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46D604F77F07BE79CAEB629A4CFCF705 /* OpenGLES.framework */; };
+		B6178FD864A4B1D2F38E4547CBE5DD78 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B15AD8DE9DAD3ACCD1C6DAF56A9FC9F7 /* Foundation.framework */; };
+		C999E1D0BDE5B3B3A32D124D271DB061 /* PPSSignatureView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E14020642C4BCBB6DF68BEB18D14CFA /* PPSSignatureView.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		D79ACEECE02F6B25963098F5C18C847A /* UITableView+DHSmartScreenshot.m in Sources */ = {isa = PBXBuildFile; fileRef = AF0DFD760D2778758DA8D488B29C951F /* UITableView+DHSmartScreenshot.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		E28FB2447AB5F2DB88BFB963A46AF04C /* DHSmartScreenshot.h in Headers */ = {isa = PBXBuildFile; fileRef = C1CFBFCA36BDCB2D7211E3962C7A3100 /* DHSmartScreenshot.h */; };
+		E9A6134EFBA660DC74EDAFE802D0EDD8 /* DHSmartScreenshot-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = DF1F9E8E0AAC42E2E5428645D87CD3BF /* DHSmartScreenshot-dummy.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		A11C22A9EA730F4C1D14472BA494922F /* PBXContainerItemProxy */ = {
+		A4146E4182DAC8799CF2E7F6963C0F94 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 3B221D8D7815DA60F6A5DC3650F20C9F;
+			remoteGlobalIDString = EB6DD1B8378732C5DA0B2D7B4F1A7DE6;
+			remoteInfo = DHSmartScreenshot;
+		};
+		C897EA64A395D19FDB538AEBEE7FAC50 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6F9C9B2F0CA6E7F387209E400B4F0316;
 			remoteInfo = PPSSignatureView;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		1100C235E013FA1BDC876B9ADB56AFF3 /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/GLKit.framework; sourceTree = DEVELOPER_DIR; };
+		120B5FA65D95F1909875A69E5BDD99CB /* PPSSignatureView.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = PPSSignatureView.xcconfig; sourceTree = "<group>"; };
 		15A529C27057E4A57D259CBC6E6CE49C /* Pods-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-acknowledgements.markdown"; sourceTree = "<group>"; };
-		227C1A065D6FED2BFAD1BE35C49630BA /* PPSSignatureView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PPSSignatureView.m; path = Source/PPSSignatureView.m; sourceTree = "<group>"; };
-		2946F62992A247000D13D8CF7744018A /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Pods.debug.xcconfig; sourceTree = "<group>"; };
-		3954B74CD0734B4C1349C57C7F7FBADE /* PPSSignatureView-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "PPSSignatureView-Private.xcconfig"; sourceTree = "<group>"; };
-		55A4A3C3F9D8996451B3FA1DB84BAE84 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		5753F6502AB393AA858205B51F79A964 /* PPSSignatureView-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "PPSSignatureView-dummy.m"; sourceTree = "<group>"; };
+		1E1707BF6B8F81008CB55EE60EEF0182 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		2D6328712237AFB2FB758B47ADE103D5 /* DHSmartScreenshot-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "DHSmartScreenshot-prefix.pch"; sourceTree = "<group>"; };
+		46D604F77F07BE79CAEB629A4CFCF705 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/OpenGLES.framework; sourceTree = DEVELOPER_DIR; };
+		4ABD2936D0377F2D838BDE77A2062E4C /* UITableView+DHSmartScreenshot.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UITableView+DHSmartScreenshot.h"; path = "Classes/UITableView+DHSmartScreenshot.h"; sourceTree = "<group>"; };
+		4ACCCF7DBF79E52E950BA844570865A5 /* UIImage+DHImageAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIImage+DHImageAdditions.h"; path = "Classes/UIImage+DHImageAdditions.h"; sourceTree = "<group>"; };
+		53AD7DDCF1253876592FAD079F273A8C /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Pods.release.xcconfig; sourceTree = "<group>"; };
+		5C6224907FF2AC350FE42DD498167E57 /* PPSSignatureView-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "PPSSignatureView-Private.xcconfig"; sourceTree = "<group>"; };
 		641AE05DD55E5E6AC1590CD7B4A18F97 /* Pods-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-resources.sh"; sourceTree = "<group>"; };
-		7F967DDCB47AEE7BD36897CB7BFEC143 /* PPSSignatureView-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "PPSSignatureView-prefix.pch"; sourceTree = "<group>"; };
-		8C56C378F64883CCDB73281251745884 /* PPSSignatureView.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = PPSSignatureView.xcconfig; sourceTree = "<group>"; };
-		A241ACF50D2541CC8A5E3A9D66F0B559 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/OpenGLES.framework; sourceTree = DEVELOPER_DIR; };
-		B6765DC4CBC80F8B6DB96D6406AECDA9 /* PPSSignatureView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PPSSignatureView.h; path = Source/PPSSignatureView.h; sourceTree = "<group>"; };
+		667332AC8AA04F766BD2BD25276B2F5C /* UIScrollView+DHSmartScreenshot.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIScrollView+DHSmartScreenshot.h"; path = "Classes/UIScrollView+DHSmartScreenshot.h"; sourceTree = "<group>"; };
+		6950075C508610083813118FB11AE79E /* UIImage+DHImageAdditions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIImage+DHImageAdditions.m"; path = "Classes/UIImage+DHImageAdditions.m"; sourceTree = "<group>"; };
+		846FEF99E2B594C538C7482910EF9AA2 /* libDHSmartScreenshot.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libDHSmartScreenshot.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		8E14020642C4BCBB6DF68BEB18D14CFA /* PPSSignatureView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PPSSignatureView.m; path = Source/PPSSignatureView.m; sourceTree = "<group>"; };
+		98C1372C9CEF3E16E376B363B1880F2C /* UIScrollView+DHSmartScreenshot.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIScrollView+DHSmartScreenshot.m"; path = "Classes/UIScrollView+DHSmartScreenshot.m"; sourceTree = "<group>"; };
+		A26852E21FD73D3BE394FBE84CC74EE4 /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/GLKit.framework; sourceTree = DEVELOPER_DIR; };
+		A5C707891CE4B1573B1F7B4040F7EAD9 /* UIView+DHSmartScreenshot.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIView+DHSmartScreenshot.h"; path = "Classes/UIView+DHSmartScreenshot.h"; sourceTree = "<group>"; };
+		AA016A8C04148E270F2501012161310D /* PPSSignatureView-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "PPSSignatureView-dummy.m"; sourceTree = "<group>"; };
+		AB6349467FADCD6C1E7B5349A349BE57 /* PPSSignatureView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PPSSignatureView.h; path = Source/PPSSignatureView.h; sourceTree = "<group>"; };
+		AF0DFD760D2778758DA8D488B29C951F /* UITableView+DHSmartScreenshot.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UITableView+DHSmartScreenshot.m"; path = "Classes/UITableView+DHSmartScreenshot.m"; sourceTree = "<group>"; };
+		B15AD8DE9DAD3ACCD1C6DAF56A9FC9F7 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		B2F225F9BF4ABF258E25F8CAC30021EC /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Pods.debug.xcconfig; sourceTree = "<group>"; };
 		BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		BB54E5F59486DD4AD311E0B271B1666E /* DHSmartScreenshot-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "DHSmartScreenshot-Private.xcconfig"; sourceTree = "<group>"; };
 		BF59BC15D23E1E1912C8F334E7236813 /* Pods-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-acknowledgements.plist"; sourceTree = "<group>"; };
-		BFA4DF4695BB38D36BEFFFE1B6D65879 /* Pods-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-dummy.m"; sourceTree = "<group>"; };
-		C78337CDB4F236008A620A1C4019F111 /* libPPSSignatureView.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPPSSignatureView.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		E5F914924E35687D08DB434B4A8A5430 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		FCE27B36CC95E4F9E041F57DA16C8E4D /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Pods.release.xcconfig; sourceTree = "<group>"; };
+		C1CFBFCA36BDCB2D7211E3962C7A3100 /* DHSmartScreenshot.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DHSmartScreenshot.h; path = Classes/DHSmartScreenshot.h; sourceTree = "<group>"; };
+		C4367A80264E6FEA09EEFB68D535774F /* DHSmartScreenshot.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = DHSmartScreenshot.xcconfig; sourceTree = "<group>"; };
+		C7F9EB236F13F9D924CA32CA9243945C /* UIView+DHSmartScreenshot.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIView+DHSmartScreenshot.m"; path = "Classes/UIView+DHSmartScreenshot.m"; sourceTree = "<group>"; };
+		D9394B32E49D971F703D6BBC966EB101 /* libPPSSignatureView.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPPSSignatureView.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		DB4D1AE3C9077D770EF1BBDDD2F7454E /* Pods-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-dummy.m"; sourceTree = "<group>"; };
+		DF1F9E8E0AAC42E2E5428645D87CD3BF /* DHSmartScreenshot-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "DHSmartScreenshot-dummy.m"; sourceTree = "<group>"; };
+		E8D57BB57A4B7C1C0DCEB9D59C4BC680 /* PPSSignatureView-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "PPSSignatureView-prefix.pch"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		89772092F5C3196FB31F7CD2A8B2E7D7 /* Frameworks */ = {
+		3DE26042335C55BCB35AE6CB151D6F8E /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E5AA048A4E769A7701063345D7F44884 /* Foundation.framework in Frameworks */,
-				8C80D81809FB6CE18DA663D8B5BDFC0B /* GLKit.framework in Frameworks */,
-				AA3215ED287493C093F56ED41457D207 /* OpenGLES.framework in Frameworks */,
+				B6178FD864A4B1D2F38E4547CBE5DD78 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		98E89A282116621E83D2AC2BFDF7DE0E /* Frameworks */ = {
+		85237E38EB3B5DD52DA9DE94B310CA16 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BFFE21688ABD7F9015BC265EAACF7BE4 /* Foundation.framework in Frameworks */,
+				46857E39C10502ADA0076C553805558C /* Foundation.framework in Frameworks */,
+				5D20051C2C8C306F4D73706053D897A7 /* GLKit.framework in Frameworks */,
+				AFCBD80F441EB25D9907ECAA436B3DCC /* OpenGLES.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F588A97FADB4B15D6554240D1B8BEC83 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				77FFB5977AE739C7BD27BD36EA5298C4 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,22 +118,26 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		12E458F7837C0D6999308DA4FA6B70EF /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				120B5FA65D95F1909875A69E5BDD99CB /* PPSSignatureView.xcconfig */,
+				5C6224907FF2AC350FE42DD498167E57 /* PPSSignatureView-Private.xcconfig */,
+				AA016A8C04148E270F2501012161310D /* PPSSignatureView-dummy.m */,
+				E8D57BB57A4B7C1C0DCEB9D59C4BC680 /* PPSSignatureView-prefix.pch */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/PPSSignatureView";
+			sourceTree = "<group>";
+		};
 		590735B18D0BCDA8D66E654E6A00D442 /* iOS */ = {
 			isa = PBXGroup;
 			children = (
-				55A4A3C3F9D8996451B3FA1DB84BAE84 /* Foundation.framework */,
-				1100C235E013FA1BDC876B9ADB56AFF3 /* GLKit.framework */,
-				A241ACF50D2541CC8A5E3A9D66F0B559 /* OpenGLES.framework */,
+				B15AD8DE9DAD3ACCD1C6DAF56A9FC9F7 /* Foundation.framework */,
+				A26852E21FD73D3BE394FBE84CC74EE4 /* GLKit.framework */,
+				46D604F77F07BE79CAEB629A4CFCF705 /* OpenGLES.framework */,
 			);
 			name = iOS;
-			sourceTree = "<group>";
-		};
-		78F2ECF9A0F2E0763CAF6885397B85F1 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				CFEE873A0189B0F5B5D6946C1E004931 /* PPSSignatureView */,
-			);
-			name = Pods;
 			sourceTree = "<group>";
 		};
 		7DB346D0F39D3F0E887471402A8071AB = {
@@ -101,7 +145,7 @@
 			children = (
 				BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */,
 				122DA2E5084A4393C29BE363C764795C /* Frameworks */,
-				78F2ECF9A0F2E0763CAF6885397B85F1 /* Pods */,
+				E2B8C83DA13DE705668E11C2E158A592 /* Pods */,
 				CCA510CFBEA2D207524CDA0D73C3B561 /* Products */,
 				D2411A5FE7F7A004607BED49990C37F4 /* Targets Support Files */,
 			);
@@ -112,32 +156,45 @@
 			children = (
 				15A529C27057E4A57D259CBC6E6CE49C /* Pods-acknowledgements.markdown */,
 				BF59BC15D23E1E1912C8F334E7236813 /* Pods-acknowledgements.plist */,
-				BFA4DF4695BB38D36BEFFFE1B6D65879 /* Pods-dummy.m */,
+				DB4D1AE3C9077D770EF1BBDDD2F7454E /* Pods-dummy.m */,
 				641AE05DD55E5E6AC1590CD7B4A18F97 /* Pods-resources.sh */,
-				2946F62992A247000D13D8CF7744018A /* Pods.debug.xcconfig */,
-				FCE27B36CC95E4F9E041F57DA16C8E4D /* Pods.release.xcconfig */,
+				B2F225F9BF4ABF258E25F8CAC30021EC /* Pods.debug.xcconfig */,
+				53AD7DDCF1253876592FAD079F273A8C /* Pods.release.xcconfig */,
 			);
 			name = Pods;
 			path = "Target Support Files/Pods";
 			sourceTree = "<group>";
 		};
+		9C1EFB38231926D11C0DCEBAAB932AC4 /* PPSSignatureView */ = {
+			isa = PBXGroup;
+			children = (
+				AB6349467FADCD6C1E7B5349A349BE57 /* PPSSignatureView.h */,
+				8E14020642C4BCBB6DF68BEB18D14CFA /* PPSSignatureView.m */,
+				12E458F7837C0D6999308DA4FA6B70EF /* Support Files */,
+			);
+			path = PPSSignatureView;
+			sourceTree = "<group>";
+		};
+		A3E77044553921D5F67F7E6FAC7C0A3C /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				C4367A80264E6FEA09EEFB68D535774F /* DHSmartScreenshot.xcconfig */,
+				BB54E5F59486DD4AD311E0B271B1666E /* DHSmartScreenshot-Private.xcconfig */,
+				DF1F9E8E0AAC42E2E5428645D87CD3BF /* DHSmartScreenshot-dummy.m */,
+				2D6328712237AFB2FB758B47ADE103D5 /* DHSmartScreenshot-prefix.pch */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/DHSmartScreenshot";
+			sourceTree = "<group>";
+		};
 		CCA510CFBEA2D207524CDA0D73C3B561 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				C78337CDB4F236008A620A1C4019F111 /* libPPSSignatureView.a */,
-				E5F914924E35687D08DB434B4A8A5430 /* libPods.a */,
+				846FEF99E2B594C538C7482910EF9AA2 /* libDHSmartScreenshot.a */,
+				D9394B32E49D971F703D6BBC966EB101 /* libPPSSignatureView.a */,
+				1E1707BF6B8F81008CB55EE60EEF0182 /* libPods.a */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		CFEE873A0189B0F5B5D6946C1E004931 /* PPSSignatureView */ = {
-			isa = PBXGroup;
-			children = (
-				B6765DC4CBC80F8B6DB96D6406AECDA9 /* PPSSignatureView.h */,
-				227C1A065D6FED2BFAD1BE35C49630BA /* PPSSignatureView.m */,
-				EF4291E86DB641E4DD748DA43E06C9E5 /* Support Files */,
-			);
-			path = PPSSignatureView;
 			sourceTree = "<group>";
 		};
 		D2411A5FE7F7A004607BED49990C37F4 /* Targets Support Files */ = {
@@ -148,39 +205,65 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
-		EF4291E86DB641E4DD748DA43E06C9E5 /* Support Files */ = {
+		E2B8C83DA13DE705668E11C2E158A592 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				8C56C378F64883CCDB73281251745884 /* PPSSignatureView.xcconfig */,
-				3954B74CD0734B4C1349C57C7F7FBADE /* PPSSignatureView-Private.xcconfig */,
-				5753F6502AB393AA858205B51F79A964 /* PPSSignatureView-dummy.m */,
-				7F967DDCB47AEE7BD36897CB7BFEC143 /* PPSSignatureView-prefix.pch */,
+				E95DD5EE8E2EBBB2A0930A215922B1C3 /* DHSmartScreenshot */,
+				9C1EFB38231926D11C0DCEBAAB932AC4 /* PPSSignatureView */,
 			);
-			name = "Support Files";
-			path = "../Target Support Files/PPSSignatureView";
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		E95DD5EE8E2EBBB2A0930A215922B1C3 /* DHSmartScreenshot */ = {
+			isa = PBXGroup;
+			children = (
+				C1CFBFCA36BDCB2D7211E3962C7A3100 /* DHSmartScreenshot.h */,
+				4ACCCF7DBF79E52E950BA844570865A5 /* UIImage+DHImageAdditions.h */,
+				6950075C508610083813118FB11AE79E /* UIImage+DHImageAdditions.m */,
+				667332AC8AA04F766BD2BD25276B2F5C /* UIScrollView+DHSmartScreenshot.h */,
+				98C1372C9CEF3E16E376B363B1880F2C /* UIScrollView+DHSmartScreenshot.m */,
+				4ABD2936D0377F2D838BDE77A2062E4C /* UITableView+DHSmartScreenshot.h */,
+				AF0DFD760D2778758DA8D488B29C951F /* UITableView+DHSmartScreenshot.m */,
+				A5C707891CE4B1573B1F7B4040F7EAD9 /* UIView+DHSmartScreenshot.h */,
+				C7F9EB236F13F9D924CA32CA9243945C /* UIView+DHSmartScreenshot.m */,
+				A3E77044553921D5F67F7E6FAC7C0A3C /* Support Files */,
+			);
+			path = DHSmartScreenshot;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		05F792FD375D8BFDCC5B67563BF7EEFB /* Headers */ = {
+		5E10939385D427D00AF438EC6B46FD06 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6FB4E5FF2E1E76505438E1B630D9F5C1 /* PPSSignatureView.h in Headers */,
+				5ACD8D86494123A48864B016C934B053 /* PPSSignatureView.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B2D23ED6A95E308B3E9855724F217626 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E28FB2447AB5F2DB88BFB963A46AF04C /* DHSmartScreenshot.h in Headers */,
+				49F9D60334000BF19C85C7187CEBA192 /* UIImage+DHImageAdditions.h in Headers */,
+				3E71D98C3B5016337BDCD13BBDA32D84 /* UIScrollView+DHSmartScreenshot.h in Headers */,
+				093FA2F159CACA008777C5FA39E0EC3F /* UITableView+DHSmartScreenshot.h in Headers */,
+				95764F5E2AC44EBE5D45B214E5E20AB8 /* UIView+DHSmartScreenshot.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		3B221D8D7815DA60F6A5DC3650F20C9F /* PPSSignatureView */ = {
+		6F9C9B2F0CA6E7F387209E400B4F0316 /* PPSSignatureView */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = B170D6F54F14E9AF928DF2DB1F1B4391 /* Build configuration list for PBXNativeTarget "PPSSignatureView" */;
+			buildConfigurationList = F05A86FA93C51A1CCE60FB7984206C0A /* Build configuration list for PBXNativeTarget "PPSSignatureView" */;
 			buildPhases = (
-				C0FF878872EB8664BCA34225BBFAFFAA /* Sources */,
-				89772092F5C3196FB31F7CD2A8B2E7D7 /* Frameworks */,
-				05F792FD375D8BFDCC5B67563BF7EEFB /* Headers */,
+				C36B88E4DB4A4C9B55398DDB96B75AF1 /* Sources */,
+				85237E38EB3B5DD52DA9DE94B310CA16 /* Frameworks */,
+				5E10939385D427D00AF438EC6B46FD06 /* Headers */,
 			);
 			buildRules = (
 			);
@@ -188,24 +271,42 @@
 			);
 			name = PPSSignatureView;
 			productName = PPSSignatureView;
-			productReference = C78337CDB4F236008A620A1C4019F111 /* libPPSSignatureView.a */;
+			productReference = D9394B32E49D971F703D6BBC966EB101 /* libPPSSignatureView.a */;
 			productType = "com.apple.product-type.library.static";
 		};
-		9B7EE2B3D84D3516FFF6EB8496449B47 /* Pods */ = {
+		D669C1B146BE0100A902C67DDAFD513B /* Pods */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 4F4110D005ADEBF4E1F17FEFFA3D5285 /* Build configuration list for PBXNativeTarget "Pods" */;
+			buildConfigurationList = C594C27C574968EFF416EB2556F2974B /* Build configuration list for PBXNativeTarget "Pods" */;
 			buildPhases = (
-				D9696BAA57F21E79CFCA8ACD87415A8C /* Sources */,
-				98E89A282116621E83D2AC2BFDF7DE0E /* Frameworks */,
+				9A3C6AAC842375F77936803BF76F38C4 /* Sources */,
+				3DE26042335C55BCB35AE6CB151D6F8E /* Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				82882B7A65363FD2FABC08D8C117CE46 /* PBXTargetDependency */,
+				2F9EAFFB6A9B0E24607F3F82E488F338 /* PBXTargetDependency */,
+				2F761828458FC48E974F5F096AE08D43 /* PBXTargetDependency */,
 			);
 			name = Pods;
 			productName = Pods;
-			productReference = E5F914924E35687D08DB434B4A8A5430 /* libPods.a */;
+			productReference = 1E1707BF6B8F81008CB55EE60EEF0182 /* libPods.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		EB6DD1B8378732C5DA0B2D7B4F1A7DE6 /* DHSmartScreenshot */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A3C3020128313C337CA4543B30D5E16D /* Build configuration list for PBXNativeTarget "DHSmartScreenshot" */;
+			buildPhases = (
+				4B2ADAE2AE3566F5B664C9F3F06B6E41 /* Sources */,
+				F588A97FADB4B15D6554240D1B8BEC83 /* Frameworks */,
+				B2D23ED6A95E308B3E9855724F217626 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DHSmartScreenshot;
+			productName = DHSmartScreenshot;
+			productReference = 846FEF99E2B594C538C7482910EF9AA2 /* libDHSmartScreenshot.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 /* End PBXNativeTarget section */
@@ -229,61 +330,80 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				3B221D8D7815DA60F6A5DC3650F20C9F /* PPSSignatureView */,
-				9B7EE2B3D84D3516FFF6EB8496449B47 /* Pods */,
+				EB6DD1B8378732C5DA0B2D7B4F1A7DE6 /* DHSmartScreenshot */,
+				6F9C9B2F0CA6E7F387209E400B4F0316 /* PPSSignatureView */,
+				D669C1B146BE0100A902C67DDAFD513B /* Pods */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		C0FF878872EB8664BCA34225BBFAFFAA /* Sources */ = {
+		4B2ADAE2AE3566F5B664C9F3F06B6E41 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				06195D8411AAA62D86AD12172AD00419 /* PPSSignatureView-dummy.m in Sources */,
-				F4B70C409E45E1AE9FDE9A7814DDDFA8 /* PPSSignatureView.m in Sources */,
+				E9A6134EFBA660DC74EDAFE802D0EDD8 /* DHSmartScreenshot-dummy.m in Sources */,
+				84D6BA94638DC8D09C392B96B7A9D062 /* UIImage+DHImageAdditions.m in Sources */,
+				2F5308E81553057DADB26BB855C61A5F /* UIScrollView+DHSmartScreenshot.m in Sources */,
+				D79ACEECE02F6B25963098F5C18C847A /* UITableView+DHSmartScreenshot.m in Sources */,
+				27AF23C6AF03B6C77C48020A5B0C100F /* UIView+DHSmartScreenshot.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		D9696BAA57F21E79CFCA8ACD87415A8C /* Sources */ = {
+		9A3C6AAC842375F77936803BF76F38C4 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3CDE6F55FC85F9C8E83FD24BD02BB0B8 /* Pods-dummy.m in Sources */,
+				9248AABD82E3863BF63D73B2102B2E11 /* Pods-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C36B88E4DB4A4C9B55398DDB96B75AF1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				45AFAE172761848DD083E335C99CD372 /* PPSSignatureView-dummy.m in Sources */,
+				C999E1D0BDE5B3B3A32D124D271DB061 /* PPSSignatureView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		82882B7A65363FD2FABC08D8C117CE46 /* PBXTargetDependency */ = {
+		2F761828458FC48E974F5F096AE08D43 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = PPSSignatureView;
-			target = 3B221D8D7815DA60F6A5DC3650F20C9F /* PPSSignatureView */;
-			targetProxy = A11C22A9EA730F4C1D14472BA494922F /* PBXContainerItemProxy */;
+			target = 6F9C9B2F0CA6E7F387209E400B4F0316 /* PPSSignatureView */;
+			targetProxy = C897EA64A395D19FDB538AEBEE7FAC50 /* PBXContainerItemProxy */;
+		};
+		2F9EAFFB6A9B0E24607F3F82E488F338 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = DHSmartScreenshot;
+			target = EB6DD1B8378732C5DA0B2D7B4F1A7DE6 /* DHSmartScreenshot */;
+			targetProxy = A4146E4182DAC8799CF2E7F6963C0F94 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		22C5C7A0FDE29BAAE7168DEC4D2BF136 /* Release */ = {
+		0CDC00B671D93DE0666B68F484048623 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = FCE27B36CC95E4F9E041F57DA16C8E4D /* Pods.release.xcconfig */;
+			baseConfigurationReference = 5C6224907FF2AC350FE42DD498167E57 /* PPSSignatureView-Private.xcconfig */;
 			buildSettings = {
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/PPSSignatureView/PPSSignatureView-prefix.pch";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_ENABLE_DEBUG_INFO = YES;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 			};
-			name = Release;
+			name = Debug;
 		};
-		479D6730E6BBB47859E1416B68AD1AB3 /* Debug */ = {
+		4A0059E613AD184609DC939E4AC18C28 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2946F62992A247000D13D8CF7744018A /* Pods.debug.xcconfig */;
+			baseConfigurationReference = B2F225F9BF4ABF258E25F8CAC30021EC /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
@@ -336,6 +456,22 @@
 			};
 			name = Debug;
 		};
+		6EBBC30B9187E8488B3E8FA81DFDA124 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 53AD7DDCF1253876592FAD079F273A8C /* Pods.release.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
 		74857149DC1E0D599B8A01A78349A926 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -370,12 +506,28 @@
 			};
 			name = Release;
 		};
-		8F596C5C87FAB98ADE3EE0CC54C6176D /* Debug */ = {
+		97862A3A5CF909DDA70EFE0DB4FC453C /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3954B74CD0734B4C1349C57C7F7FBADE /* PPSSignatureView-Private.xcconfig */;
+			baseConfigurationReference = 5C6224907FF2AC350FE42DD498167E57 /* PPSSignatureView-Private.xcconfig */;
 			buildSettings = {
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_PREFIX_HEADER = "Target Support Files/PPSSignatureView/PPSSignatureView-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		ABD8A3E3D79241CCF21AF52DDF5E3D7C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BB54E5F59486DD4AD311E0B271B1666E /* DHSmartScreenshot-Private.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/DHSmartScreenshot/DHSmartScreenshot-prefix.pch";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				OTHER_LDFLAGS = "";
@@ -386,12 +538,12 @@
 			};
 			name = Debug;
 		};
-		C1BF06F0288409D7C7FEE2D62614AD31 /* Release */ = {
+		CF273A75D474C6F9932D69D35FBBCDCD /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3954B74CD0734B4C1349C57C7F7FBADE /* PPSSignatureView-Private.xcconfig */;
+			baseConfigurationReference = BB54E5F59486DD4AD311E0B271B1666E /* DHSmartScreenshot-Private.xcconfig */;
 			buildSettings = {
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/PPSSignatureView/PPSSignatureView-prefix.pch";
+				GCC_PREFIX_HEADER = "Target Support Files/DHSmartScreenshot/DHSmartScreenshot-prefix.pch";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				OTHER_LDFLAGS = "";
@@ -414,20 +566,29 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		4F4110D005ADEBF4E1F17FEFFA3D5285 /* Build configuration list for PBXNativeTarget "Pods" */ = {
+		A3C3020128313C337CA4543B30D5E16D /* Build configuration list for PBXNativeTarget "DHSmartScreenshot" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				479D6730E6BBB47859E1416B68AD1AB3 /* Debug */,
-				22C5C7A0FDE29BAAE7168DEC4D2BF136 /* Release */,
+				ABD8A3E3D79241CCF21AF52DDF5E3D7C /* Debug */,
+				CF273A75D474C6F9932D69D35FBBCDCD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		B170D6F54F14E9AF928DF2DB1F1B4391 /* Build configuration list for PBXNativeTarget "PPSSignatureView" */ = {
+		C594C27C574968EFF416EB2556F2974B /* Build configuration list for PBXNativeTarget "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				8F596C5C87FAB98ADE3EE0CC54C6176D /* Debug */,
-				C1BF06F0288409D7C7FEE2D62614AD31 /* Release */,
+				4A0059E613AD184609DC939E4AC18C28 /* Debug */,
+				6EBBC30B9187E8488B3E8FA81DFDA124 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F05A86FA93C51A1CCE60FB7984206C0A /* Build configuration list for PBXNativeTarget "PPSSignatureView" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0CDC00B671D93DE0666B68F484048623 /* Debug */,
+				97862A3A5CF909DDA70EFE0DB4FC453C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
