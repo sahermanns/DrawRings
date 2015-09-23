@@ -1,13 +1,19 @@
 PODS:
   - DHSmartScreenshot (1.3.1)
+  - jot (0.1.5):
+    - Masonry (~> 0.6.1)
+  - Masonry (0.6.3)
   - PPSSignatureView (0.1.2)
 
 DEPENDENCIES:
   - DHSmartScreenshot
+  - jot (~> 0.1)
   - PPSSignatureView
 
 SPEC CHECKSUMS:
   DHSmartScreenshot: ee749048bd7126c4826748f98df3a4adc6ad6c78
+  jot: 0f5dc333defa6ad805d01adc3834b201c22510a7
+  Masonry: ff105a956abcd19a618b2028b121cb638d7a8e2f
   PPSSignatureView: 746f1fc186dea15c248bc99cc64182f93af131b9
 
 COCOAPODS: 0.38.2

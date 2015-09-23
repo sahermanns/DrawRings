@@ -11,8 +11,9 @@
 #import "WordsTableViewCell.h"
 #import "PassItOnViewController.h"
 #import "PassViewController.h"
+#import "JotViewController.h"
 
-@interface ScrollTableViewController ()
+@interface ScrollTableViewController () <JotViewControllerDelegate>
 
 @property (nonatomic) NSInteger numberOfRows;
 //@property (strong, nonatomic) NSString *seedPrompt;
@@ -20,6 +21,7 @@
 @property (strong, nonatomic) NSMutableArray *promptArray;
 @property (strong, nonatomic) NSMutableArray *drawingArray;
 @property (strong, nonatomic) IBOutlet UITableView *scrollTableView;
+@property (nonatomic, strong) JotViewController *jotVC;
 //@property int counter;
 
 
@@ -30,7 +32,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
   NSLog(@"HEYO UNCLE DREASE IN THE HOUSE: %ld %ld", (long)self.numberOfPlayers, (long)self.durationOfRound);
-
+//  self.jotVC.delegate = self;
   self.scrollTableView.allowsSelection = NO;
   //[self scrollToRowAtIndexPath:indexPath atScrollPosition:UITableViewScrollPositionBottom animated:YES];
   //_seedPrompt = @"ARRRRGGGGHHH";
@@ -110,6 +112,15 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
   if (indexPath.row % 2 == 0) {
     DrawingTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"drawingCell" forIndexPath:indexPath];
+    self.jotVC = [[JotViewController alloc] init];
+    self.jotVC.delegate = self;
+    self.jotVC.state = JotViewStateDrawing;
+    [self addChildViewController:self.jotVC];
+    [cell.contentView addSubview:self.jotVC.view];
+    [cell setNeedsLayout];
+    [cell layoutIfNeeded];
+    [self.jotVC didMoveToParentViewController:self];
+    self.jotVC.view.frame = cell.drawingView.frame;
     cell.promptLabel.text = _seedPrompt;
     cell.timerLabel.text = [NSString stringWithFormat:@"%ld",(long)_durationOfRound];
     return cell;
