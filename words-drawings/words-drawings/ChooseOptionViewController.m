@@ -37,7 +37,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+  NSLog(@"%ld %ld", (long)self.numberOfPlayers, (long)self.durationOfRound);
   self.chosenCategoryLabel.text = self.chosenCategory;
 //  NSLog(@"chosen category %@", self.chosenCategory);
   NSLog(@"PASSED ARRAY COUNT IN CHOOSE OPTION VC: %lu", (unsigned long)_passedArrayOfOptions.count);
@@ -99,11 +99,14 @@
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-  if([[segue identifier] isEqualToString:@"OptionChosenStartGame"]){
-    PassItOnViewController *passItOnVC = (PassItOnViewController *)[segue destinationViewController];
+  if([[segue identifier] isEqualToString:@"OptionChosenStartGame"]) {
+    PassItOnViewController *passItOnVC = [segue destinationViewController];
     passItOnVC.stringToPass = _selectedOption;
+    passItOnVC.numberOfPlayers = self.numberOfPlayers;
+    passItOnVC.durationOfRound = self.durationOfRound;
 //    cvc.contacts = self.contacts;
 //    cvc.delegate = self;
+
   }
 }
 
