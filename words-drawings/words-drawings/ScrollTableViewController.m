@@ -22,6 +22,7 @@
 @property (strong, nonatomic) NSMutableArray *drawingArray;
 @property (strong, nonatomic) IBOutlet UITableView *scrollTableView;
 @property (strong,nonatomic) DrawingTableViewCell *currentDrawingCell;
+@property (nonatomic, strong) JotViewController *jotVC;
 //@property int counter;
 @property (weak, nonatomic) NSTimer *timer;
 
@@ -31,8 +32,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-  NSLog(@"%ld %ld", (long)self.numberOfPlayers, (long)self.durationOfRound);
-  
+  NSLog(@"HEYO UNCLE DREASE IN THE HOUSE: %ld %ld", (long)self.numberOfPlayers, (long)self.durationOfRound);
+//  self.jotVC.delegate = self;
   self.scrollTableView.allowsSelection = NO;
   //[self scrollToRowAtIndexPath:indexPath atScrollPosition:UITableViewScrollPositionBottom animated:YES];
   //_seedPrompt = @"ARRRRGGGGHHH";
@@ -41,7 +42,7 @@
   self.counter = 0;
   //NSLog(@"counter starts at %d", _counter);
   self.numberOfRows = self.numberOfPlayers;
-  
+
   UINib *wordsCell = [UINib nibWithNibName:@"wordsCell" bundle:nil];
   [self.scrollTableView registerNib:wordsCell forCellReuseIdentifier:@"wordsCell"];
   
@@ -142,6 +143,7 @@
     self.jotVC.view.frame = cell.drawingView.frame;
     cell.promptLabel.text = _seedPrompt;
     self.currentDrawingCell = cell;
+    cell.timerLabel.text = [NSString stringWithFormat:@"%ld",(long)_durationOfRound];
     return cell;
   } else {
     WordsTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"wordsCell" forIndexPath:indexPath];

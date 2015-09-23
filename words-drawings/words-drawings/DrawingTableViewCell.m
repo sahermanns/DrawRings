@@ -29,7 +29,11 @@
 - (void)awakeFromNib {
   
     // Initialization code
-//    self.timerLabel.text = @"%@", ;
+//  self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+  
+//UIViewController 
+  
+  
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

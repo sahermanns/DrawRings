@@ -14,4 +14,6 @@
 @interface DrawingTableViewCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UILabel *promptLabel;
 @property (weak, nonatomic) IBOutlet UILabel *timerLabel;
+@property (weak, nonatomic) IBOutlet UIView *drawingView;
+
 @end
