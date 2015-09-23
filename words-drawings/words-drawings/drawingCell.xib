@@ -68,10 +68,10 @@
                             </mask>
                         </variation>
                     </view>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YJ0-HI-u58">
+                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YJ0-HI-u58">
                         <rect key="frame" x="0.0" y="257" width="600" height="80"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Rainbow" translatesAutoresizingMaskIntoConstraints="NO" id="krz-QI-y03">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="Rainbow" translatesAutoresizingMaskIntoConstraints="NO" id="krz-QI-y03">
                                 <rect key="frame" x="8" y="8" width="161" height="64"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="krz-QI-y03" secondAttribute="height" multiplier="161:64" id="FJ0-Ga-JQ3"/>
@@ -129,37 +129,19 @@
                                     <action selector="doneButtonPressed:" destination="6jh-gQ-TMP" eventType="touchUpInside" id="biw-DN-0OH"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9AW-EK-pbD">
+                                <rect key="frame" x="177" y="20" width="40" height="40"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="UeW-an-Uq2" firstAttribute="bottom" secondItem="8vk-5W-ABP" secondAttribute="bottom" id="0XE-aA-bLR"/>
-                            <constraint firstItem="UeW-an-Uq2" firstAttribute="leading" secondItem="4Rr-XA-EHL" secondAttribute="trailing" constant="18" id="3ty-vY-Iuo"/>
-                            <constraint firstItem="UeW-an-Uq2" firstAttribute="leading" secondItem="YJ0-HI-u58" secondAttribute="leading" constant="198" id="5Lt-bZ-NN5"/>
-                            <constraint firstItem="UeW-an-Uq2" firstAttribute="top" secondItem="krz-QI-y03" secondAttribute="top" id="63y-oP-abH"/>
                             <constraint firstItem="krz-QI-y03" firstAttribute="leading" secondItem="YJ0-HI-u58" secondAttribute="leading" constant="8" id="9VE-hZ-NhK"/>
                             <constraint firstItem="rSM-7x-KAD" firstAttribute="centerY" secondItem="YJ0-HI-u58" secondAttribute="centerY" id="EZE-Mm-05u"/>
-                            <constraint firstItem="8vk-5W-ABP" firstAttribute="leading" secondItem="UeW-an-Uq2" secondAttribute="trailing" constant="15" id="Fq1-bZ-43E"/>
-                            <constraint firstItem="UeW-an-Uq2" firstAttribute="top" secondItem="gsD-t3-tNd" secondAttribute="top" id="H7G-7q-XoK"/>
-                            <constraint firstItem="4Rr-XA-EHL" firstAttribute="leading" secondItem="krz-QI-y03" secondAttribute="trailing" constant="8" id="NBW-Hy-aI9"/>
-                            <constraint firstItem="UeW-an-Uq2" firstAttribute="top" secondItem="4Rr-XA-EHL" secondAttribute="top" id="OV1-Rv-jQ1"/>
-                            <constraint firstItem="UeW-an-Uq2" firstAttribute="bottom" secondItem="gsD-t3-tNd" secondAttribute="bottom" id="Oh2-bd-Gp7"/>
-                            <constraint firstItem="UeW-an-Uq2" firstAttribute="top" secondItem="8vk-5W-ABP" secondAttribute="top" id="QPN-hI-nQV"/>
-                            <constraint firstItem="UeW-an-Uq2" firstAttribute="width" secondItem="UeW-an-Uq2" secondAttribute="height" multiplier="13:64" id="UXY-0D-4Oz"/>
-                            <constraint firstItem="gsD-t3-tNd" firstAttribute="leading" secondItem="8vk-5W-ABP" secondAttribute="trailing" constant="17" id="aGe-ys-lEa"/>
                             <constraint firstAttribute="bottom" secondItem="krz-QI-y03" secondAttribute="bottom" constant="8" id="bRq-p7-jTy"/>
-                            <constraint firstItem="UeW-an-Uq2" firstAttribute="bottom" secondItem="4Rr-XA-EHL" secondAttribute="bottom" id="d8O-bc-sQK"/>
-                            <constraint firstItem="8vk-5W-ABP" firstAttribute="width" secondItem="8vk-5W-ABP" secondAttribute="height" multiplier="13:64" id="pBE-Zh-xT4"/>
                             <constraint firstItem="krz-QI-y03" firstAttribute="top" secondItem="YJ0-HI-u58" secondAttribute="top" constant="8" id="tGa-Ai-hQm"/>
-                            <constraint firstItem="gsD-t3-tNd" firstAttribute="leading" secondItem="YJ0-HI-u58" secondAttribute="leading" constant="245" id="vKU-4L-5vS"/>
-                            <constraint firstItem="UeW-an-Uq2" firstAttribute="bottom" secondItem="krz-QI-y03" secondAttribute="bottom" id="yeP-a1-BgD"/>
                             <constraint firstAttribute="trailing" secondItem="rSM-7x-KAD" secondAttribute="trailing" constant="8" id="zx7-CC-Wei"/>
                         </constraints>
-                        <variation key="default">
-                            <mask key="constraints">
-                                <exclude reference="UXY-0D-4Oz"/>
-                                <exclude reference="pBE-Zh-xT4"/>
-                            </mask>
-                        </variation>
                     </view>
                     <glkView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" misplaced="YES" enableSetNeedsDisplay="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WLn-Vh-jQY" customClass="PPSSignatureView">
                         <rect key="frame" x="0.0" y="56" width="600" height="201"/>
@@ -167,6 +149,7 @@
                 </subviews>
                 <constraints>
                     <constraint firstAttribute="bottomMargin" secondItem="YJ0-HI-u58" secondAttribute="bottom" constant="-8" id="2aY-0J-ovc"/>
+                    <constraint firstItem="JYg-fm-8TD" firstAttribute="trailing" secondItem="FQl-nB-aQb" secondAttribute="trailingMargin" id="39X-Ro-Ran"/>
                     <constraint firstItem="YJ0-HI-u58" firstAttribute="leading" secondItem="FQl-nB-aQb" secondAttribute="leadingMargin" constant="-8" id="8rw-D7-fGJ"/>
                     <constraint firstItem="WLn-Vh-jQY" firstAttribute="top" secondItem="y5w-iw-PH2" secondAttribute="bottom" id="Vft-T4-sjg"/>
                     <constraint firstAttribute="trailingMargin" secondItem="WLn-Vh-jQY" secondAttribute="trailing" constant="-8" id="XXS-mr-A0E"/>
@@ -185,8 +168,6 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="Editing-Eraser-icon" width="512" height="512"/>
         <image name="Rainbow" width="600" height="200"/>
-        <image name="blackRect" width="1024" height="576"/>
     </resources>
 </document>

@@ -870,7 +870,7 @@
                                 <rect key="frame" x="316" y="118" width="248" height="210"/>
                                 <color key="backgroundColor" red="0.64001527960000004" green="0.8359912343" blue="0.8215960283" alpha="0.73999999999999999" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="42"/>
-                                <state key="normal" title="MUSIC">
+                                <state key="normal" title="[category 2]">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -881,7 +881,7 @@
                                 <rect key="frame" x="36" y="359" width="248" height="209"/>
                                 <color key="backgroundColor" red="0.64001527960000004" green="0.8359912343" blue="0.8215960283" alpha="0.73999999999999999" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="42"/>
-                                <state key="normal" title="MISC.">
+                                <state key="normal" title="[category 3]">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -898,7 +898,7 @@
                                 <rect key="frame" x="316" y="359" width="248" height="209"/>
                                 <color key="backgroundColor" red="0.64001527960000004" green="0.8359912343" blue="0.8215960283" alpha="0.73999999999999999" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="42"/>
-                                <state key="normal" title="CUSTOM">
+                                <state key="normal" title="DIY">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -909,7 +909,7 @@
                                 <rect key="frame" x="36" y="117" width="248" height="210"/>
                                 <color key="backgroundColor" red="0.64001527960000004" green="0.8359912343" blue="0.8215960283" alpha="0.73999999999999999" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="42"/>
-                                <state key="normal" title="MOVIES">
+                                <state key="normal" title="[category 1]">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -974,6 +974,9 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="category1Button" destination="S7V-B4-5ZK" id="2xm-5w-P9Z"/>
+                        <outlet property="category2Button" destination="NVm-2G-zL4" id="d6v-f2-oMx"/>
+                        <outlet property="category3Button" destination="bm9-oJ-pik" id="f75-q0-4Wp"/>
                         <segue destination="wY1-Yb-Itn" kind="show" identifier="ShowOptions" id="RL1-rb-53e"/>
                     </connections>
                 </viewController>

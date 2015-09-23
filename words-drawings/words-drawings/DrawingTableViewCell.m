@@ -8,6 +8,7 @@
 
 #import "DrawingTableViewCell.h"
 #import "ScrollTableViewController.h"
+#import "PPSSignatureView.h"
 
 @implementation DrawingTableViewCell
 
