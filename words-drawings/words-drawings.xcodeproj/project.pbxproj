@@ -39,6 +39,7 @@
 		3EF50B2B1BB08642007CCCD4 /* FacebookShareService.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EF50B2A1BB08642007CCCD4 /* FacebookShareService.m */; settings = {ASSET_TAGS = (); }; };
 		3EF50B361BB0CAE7007CCCD4 /* UIViewToPDF.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EF50B351BB0CAE7007CCCD4 /* UIViewToPDF.m */; settings = {ASSET_TAGS = (); }; };
 		3EF50B381BB1BBE4007CCCD4 /* EndOfGameStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3EF50B371BB1BBE4007CCCD4 /* EndOfGameStoryboard.storyboard */; settings = {ASSET_TAGS = (); }; };
+		9E32970F1BB208D700112456 /* InstructionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E32970E1BB208D700112456 /* InstructionViewController.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -115,6 +116,8 @@
 		3EF50B351BB0CAE7007CCCD4 /* UIViewToPDF.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIViewToPDF.m; sourceTree = "<group>"; };
 		3EF50B371BB1BBE4007CCCD4 /* EndOfGameStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = EndOfGameStoryboard.storyboard; sourceTree = "<group>"; };
 		8B8F9765CC7BC07A43A7A7D6 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		9E32970D1BB208D700112456 /* InstructionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InstructionViewController.h; sourceTree = "<group>"; };
+		9E32970E1BB208D700112456 /* InstructionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InstructionViewController.m; sourceTree = "<group>"; };
 		FAC4FF7C4ADB7504CC95B3BF /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -265,6 +268,8 @@
 				342BE8281BA3D27D00700F02 /* ScrollTableViewController.m */,
 				348667B61BAF6AFF002C5825 /* EndOfGameViewController.h */,
 				348667B71BAF6AFF002C5825 /* EndOfGameViewController.m */,
+				9E32970D1BB208D700112456 /* InstructionViewController.h */,
+				9E32970E1BB208D700112456 /* InstructionViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -486,6 +491,7 @@
 				3430FC231BA3A07C007C108D /* MainViewController.m in Sources */,
 				3EF50B361BB0CAE7007CCCD4 /* UIViewToPDF.m in Sources */,
 				3EF50B281BB074EE007CCCD4 /* FacebookLogin.m in Sources */,
+				9E32970F1BB208D700112456 /* InstructionViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

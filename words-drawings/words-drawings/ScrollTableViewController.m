@@ -29,7 +29,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-  
+  NSLog(@"%ld %ld", (long)self.numberOfPlayers, (long)self.durationOfRound);
+
   self.scrollTableView.allowsSelection = NO;
   //[self scrollToRowAtIndexPath:indexPath atScrollPosition:UITableViewScrollPositionBottom animated:YES];
   //_seedPrompt = @"ARRRRGGGGHHH";

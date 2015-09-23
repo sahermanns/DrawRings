@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
+@class InstructionViewController;
 @interface MainViewController : UIViewController
 
 @end

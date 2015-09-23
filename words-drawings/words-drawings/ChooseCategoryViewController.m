@@ -130,6 +130,8 @@
     ChooseOptionViewController *chooseOptionVC = [segue destinationViewController];
     chooseOptionVC.chosenCategory = self.categoryPressed;
     chooseOptionVC.passedArrayOfOptions = self.selectedArray;
+    chooseOptionVC.numberOfPlayers = self.numberOfPlayers;
+    chooseOptionVC.durationOfRound = self.durationOfRound;
   }
 }
 

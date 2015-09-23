@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+@class ChooseCategoryViewController;
+
 @interface SeedViewController : UIViewController
 
 @property (strong,nonatomic) NSString *seedSentence;

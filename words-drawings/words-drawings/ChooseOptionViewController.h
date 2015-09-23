@@ -8,9 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
-@class PassItOnViewController, ChooseCategoryViewController;
+@class PassItOnViewController, ChooseCategoryViewController, PassItOnViewController;
 
 @interface ChooseOptionViewController : UIViewController
+
+@property NSInteger numberOfPlayers;
+@property NSInteger durationOfRound;
 
 @property (strong,nonatomic) NSString *chosenCategory;
 @property (strong,nonatomic) NSMutableArray *passedArrayOfOptions;
