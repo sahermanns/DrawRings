@@ -231,9 +231,9 @@
 			isa = PBXGroup;
 			children = (
 				3430FBF11BA3A00D007C108D /* Main.storyboard */,
+				172D2A051BB1180C00120637 /* PassViewController.xib */,
 				3EF50B371BB1BBE4007CCCD4 /* EndOfGameStoryboard.storyboard */,
 				3481D33E1BA7BF7400BFBCC5 /* wordsCell.xib */,
-				172D2A051BB1180C00120637 /* PassViewController.xib */,
 				3488D26D1BB08A78007384FA /* WordsTableViewCell.h */,
 				3488D26E1BB08A78007384FA /* WordsTableViewCell.m */,
 				3481D3401BA7BF8500BFBCC5 /* drawingCell.xib */,

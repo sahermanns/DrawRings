@@ -22,7 +22,7 @@
 @property (strong, nonatomic) NSMutableArray *drawingArray;
 @property (strong, nonatomic) IBOutlet UITableView *scrollTableView;
 @property (nonatomic, strong) JotViewController *jotVC;
-//@property int counter;
+@property int counter;
 
 
 @end
@@ -31,15 +31,19 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-  NSLog(@"HEYO UNCLE DREASE IN THE HOUSE: %ld %ld", (long)self.numberOfPlayers, (long)self.durationOfRound);
-//  self.jotVC.delegate = self;
+
   self.scrollTableView.allowsSelection = NO;
-  //[self scrollToRowAtIndexPath:indexPath atScrollPosition:UITableViewScrollPositionBottom animated:YES];
-  //_seedPrompt = @"ARRRRGGGGHHH";
+
   NSLog(@"SEED PROMPT: %@", _seedPrompt);
   
+  _promptArray = [[NSMutableArray alloc] init];
+  [_promptArray addObject: _seedPrompt];
+  
+  _drawingArray = [[NSMutableArray alloc] init];
+  
   self.counter = 0;
-  //NSLog(@"counter starts at %d", _counter);
+  NSLog(@"counter starts at %d", _counter);
+  
   self.numberOfRows = self.numberOfPlayers;
 
   UINib *wordsCell = [UINib nibWithNibName:@"wordsCell" bundle:nil];
@@ -47,34 +51,36 @@
   
   UINib *drawingCell = [UINib nibWithNibName:@"drawingCell" bundle:nil];
   [self.scrollTableView registerNib:drawingCell forCellReuseIdentifier:@"drawingCell"];
-//  NSIndexPath *indexPath = [NSIndexPath indexPathForItem:_counter inSection:0];
-//  [self.scrollTableView scrollToRowAtIndexPath:indexPath
-//                        atScrollPosition:UITableViewScrollPositionMiddle
-//                                animated:NO];
-  /*
-  NSIndexPath *indexPath = 1;
-  
-  [self.scrollTableView scrollToRowAtIndexPath: atScrollPosition: UITableViewScrollPositionTop animated: YES];
-    */
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
   
   [[NSNotificationCenter defaultCenter] addObserverForName:@"doneDrawingNotification" object:nil queue:nil usingBlock:^(NSNotification * _Nonnull note) {
-    [self showNextCell];
+    UIImage *drawnImage = [self.jotVC renderImageWithScale:2.f
+                                                               onColor:self.view.backgroundColor];
+    
+    [_drawingArray addObject:drawnImage];
+    
+    [self.jotVC clearAll];
 
+    [self showNextCell];
+    _counter++;
     PassViewController *passView = [[PassViewController alloc] initWithNibName:@"PassViewController" bundle:[NSBundle mainBundle]];
     [_navController pushViewController:passView animated:YES];
   }];
   
+  //press the GO button on the pass vc
   [[NSNotificationCenter defaultCenter] addObserverForName:@"popButtonPressed" object:nil queue:nil usingBlock:^(NSNotification * _Nonnull note) {
     [_navController popViewControllerAnimated:YES];
   }];
   
   [[NSNotificationCenter defaultCenter] addObserverForName:@"doneGuessingNotification" object:nil queue:nil usingBlock:^(NSNotification * _Nonnull note) {
     [self showNextCell];
+    
+    WordsTableViewCell *wordsTVC = [[WordsTableViewCell alloc] init];
+    NSString *enteredString = wordsTVC.textField.text;
+    [_promptArray addObject:enteredString];
+    
+    for (NSString *string in _promptArray){
+      NSLog(@"IN PROMPT ARRAY: %@", string);
+    }
     
     PassViewController *passView = [[PassViewController alloc] initWithNibName:@"PassViewController" bundle:[NSBundle mainBundle]];
     [_navController pushViewController:passView animated:YES];
@@ -126,6 +132,12 @@
     return cell;
   } else {
     WordsTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"wordsCell" forIndexPath:indexPath];
+//    UIImage *currentImage = _drawingArray[0];
+//    NSLog(@"currentImage descrip: %@", currentImage.description);
+    //cell.imageView.image = [UIImage image];
+    cell.imageView.image = [_drawingArray objectAtIndex:0];
+//    WordsTableViewCell *wordsTVC = [[WordsTableViewCell alloc] init];
+//    wordsTVC.textField
     return cell;
   }
 }
