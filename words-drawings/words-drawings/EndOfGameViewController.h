@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ExperimentalViewController.h"
 
 @interface EndOfGameViewController : UIViewController
+
+@property (strong, nonatomic) UIView *tableViewScreenshot;
 
 @end
