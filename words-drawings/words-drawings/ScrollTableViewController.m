@@ -22,6 +22,7 @@
 @property (strong, nonatomic) NSMutableArray *drawingArray;
 @property (strong, nonatomic) IBOutlet UITableView *scrollTableView;
 @property (strong,nonatomic) DrawingTableViewCell *currentDrawingCell;
+@property (strong, nonatomic) WordsTableViewCell *currentWordsCell;
 @property (nonatomic, strong) JotViewController *jotVC;
 //@property int counter;
 @property (weak, nonatomic) NSTimer *timer;
@@ -68,6 +69,7 @@
 
     PassViewController *passView = [[PassViewController alloc] initWithNibName:@"PassViewController" bundle:[NSBundle mainBundle]];
     [_navController pushViewController:passView animated:YES];
+    [self.timer invalidate];
   }];
   
   [[NSNotificationCenter defaultCenter] addObserverForName:@"popButtonPressed" object:nil queue:nil usingBlock:^(NSNotification * _Nonnull note) {
@@ -79,7 +81,7 @@
     
     PassViewController *passView = [[PassViewController alloc] initWithNibName:@"PassViewController" bundle:[NSBundle mainBundle]];
     [_navController pushViewController:passView animated:YES];
-    
+    [self.timer invalidate];
   }];
   
   
@@ -87,19 +89,38 @@
 
 -(void)viewDidAppear:(BOOL)animated {
   [super viewDidAppear:animated];
-//  self.currentDrawingCell.timerLabel.text = [NSString stringWithFormat:@"%ld", self.durationOfRound];
-  self.timer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(decrementTimeLabel:) userInfo:nil repeats:true];
+  
+  if (self.currentDrawingCell) {
+      self.timer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(decrementTimeLabel:) userInfo:nil repeats:true];
+  }
+
 }
 
 -(void)decrementTimeLabel:(NSTimer *)timer {
-  NSInteger newTime = [self.currentDrawingCell.timerLabel.text integerValue] -1;
-  NSString *newTimeString = [NSString stringWithFormat: @"%ld",newTime];
-  self.currentDrawingCell.timerLabel.text = newTimeString;
   
-  if (newTime == 0) {
-    [timer invalidate];
+  if (self.currentDrawingCell) {
+    NSInteger newTime = [self.currentDrawingCell.timerLabel.text integerValue] -1;
+    NSString *newTimeString = [NSString stringWithFormat: @"%ld",newTime];
+    self.currentDrawingCell.timerLabel.text = newTimeString;
+    
+    if (newTime == 0) {
+      [timer invalidate];
+      [[NSNotificationCenter defaultCenter] postNotificationName:@"doneDrawingNotification" object:self];
+    }
+  }
+  
+  if (self.currentWordsCell) {
+    NSInteger newTime = [self.currentWordsCell.timeLabel.text integerValue] -1;
+    NSString *newTimeString = [NSString stringWithFormat: @"%ld",newTime];
+    self.currentWordsCell.timeLabel.text = newTimeString;
+    
+    if (newTime == 0) {
+      [timer invalidate];
+      [[NSNotificationCenter defaultCenter] postNotificationName:@"doneDrawingNotification" object:self];
+    }
   }
 }
+
 
 - (void)showNextCell {
   self.counter++;
@@ -147,6 +168,8 @@
     return cell;
   } else {
     WordsTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"wordsCell" forIndexPath:indexPath];
+    self.currentWordsCell = cell;
+    cell.timeLabel.text = [NSString stringWithFormat:@"%ld",(long)_durationOfRound];
     return cell;
   }
 }
