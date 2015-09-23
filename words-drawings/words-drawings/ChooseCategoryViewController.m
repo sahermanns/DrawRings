@@ -23,20 +23,6 @@
 - (IBAction)category1Pressed:(UIButton *)sender;
 - (IBAction)category2Pressed:(UIButton *)sender;
 - (IBAction)category3Pressed:(UIButton *)sender;
-//- (NSMutableArray *)selectArray: (NSString *)categoryString;
-
-//@property (strong,nonatomic) NSMutableArray *filmArray;
-//@property (strong,nonatomic) NSMutableArray *tvArray;
-//@property (strong,nonatomic) NSMutableArray *theatreArray;
-//@property (strong,nonatomic) NSMutableArray *musicArray;
-//@property (strong,nonatomic) NSMutableArray *sportsArray;
-//@property (strong,nonatomic) NSMutableArray *historyArray;
-//@property (strong,nonatomic) NSMutableArray *scienceArray;
-//@property (strong,nonatomic) NSMutableArray *natureArray;
-//@property (strong,nonatomic) NSMutableArray *geographyArray;
-//@property (strong,nonatomic) NSMutableArray *artArray;
-//@property (strong,nonatomic) NSMutableArray *literatureArray;
-//@property (strong,nonatomic) NSMutableArray *zanyMiscellanyArray;
 
 @property (strong,nonatomic) NSMutableArray *categoriesArray;
 @property (strong,nonatomic) NSMutableArray *thisRoundsArray;
@@ -81,22 +67,6 @@
   [_category2Button setTitle: _thisRoundsArray[1] forState: UIControlStateNormal];
   [_category3Button setTitle: _thisRoundsArray[2] forState: UIControlStateNormal];
 }
-/*
-- (void)selectArray:(NSString *)categoryString {
-  //NSMutableArray *selectedArray = [[NSMutableArray alloc] init];
-  
-  if ([categoryString  isEqual: @"FILM"]){
-    self.selectedArray = _filmArray;
-  } else if ([categoryString  isEqual: @"TV"]){
-    self.selectedArray = _tvArray;
-  } else if ([categoryString  isEqual: @"MUSIC"]){
-    self.selectedArray = _musicArray;
-  } else if ([categoryString  isEqual: @"THEATRE"]){
-    self.selectedArray = _theatreArray;
-  }
-  //return selectedArray;
-}
-*/
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -110,9 +80,7 @@
   if ([[segue identifier] isEqualToString:@"ShowOptions"])
   {
     ChooseOptionViewController *chooseOptionVC = (ChooseOptionViewController *)[segue destinationViewController];
-
     chooseOptionVC.chosenCategory = self.categoryPressed;
-//    chooseOptionVC.passedArrayOfOptions = self.selectedArray;
     chooseOptionVC.numberOfPlayers = self.numberOfPlayers;
     chooseOptionVC.durationOfRound = self.durationOfRound;
   }

@@ -29,7 +29,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-  NSLog(@"%ld %ld", (long)self.numberOfPlayers, (long)self.durationOfRound);
+  NSLog(@"HEYO UNCLE DREASE IN THE HOUSE: %ld %ld", (long)self.numberOfPlayers, (long)self.durationOfRound);
 
   self.scrollTableView.allowsSelection = NO;
   //[self scrollToRowAtIndexPath:indexPath atScrollPosition:UITableViewScrollPositionBottom animated:YES];
@@ -38,7 +38,7 @@
   
   self.counter = 0;
   //NSLog(@"counter starts at %d", _counter);
-  self.numberOfRows = 4;
+  self.numberOfRows = self.numberOfPlayers;
 
   UINib *wordsCell = [UINib nibWithNibName:@"wordsCell" bundle:nil];
   [self.scrollTableView registerNib:wordsCell forCellReuseIdentifier:@"wordsCell"];
@@ -65,7 +65,6 @@
 
     PassViewController *passView = [[PassViewController alloc] initWithNibName:@"PassViewController" bundle:[NSBundle mainBundle]];
     [_navController pushViewController:passView animated:YES];
-    
   }];
   
   [[NSNotificationCenter defaultCenter] addObserverForName:@"popButtonPressed" object:nil queue:nil usingBlock:^(NSNotification * _Nonnull note) {
@@ -93,7 +92,6 @@
   } else {
     //go to souvenir page ending
   }
-  
 }
 
 - (void)didReceiveMemoryWarning {
@@ -113,6 +111,7 @@
   if (indexPath.row % 2 == 0) {
     DrawingTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"drawingCell" forIndexPath:indexPath];
     cell.promptLabel.text = _seedPrompt;
+    cell.timerLabel.text = [NSString stringWithFormat:@"%ld",(long)_durationOfRound];
     return cell;
   } else {
     WordsTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"wordsCell" forIndexPath:indexPath];

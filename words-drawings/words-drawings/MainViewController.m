@@ -53,7 +53,7 @@ CGFloat const kInstructionMenuWidthMultiplier = 0.75;
   [self addChildViewController:instructionVC];
   
   instructionVC.view.frame = CGRectMake((self.view.frame.size.width - instructionVC.view.frame.size.width)/2, (self.view.frame.size.height - instructionVC.view.frame.size.height)/2, self.view.frame.size.width * kInstructionMenuWidthMultiplier, self.view.frame.size.height * kInstructionMenuHeightMultiplier);
-  instructionVC.view.layer.cornerRadius = 50.0;
+  //instructionVC.view.layer.cornerRadius = 0.0;
   instructionVC.view.layer.masksToBounds = false;
   instructionVC.view.center = self.view.center;
   [self.view addSubview:instructionVC.view];
@@ -61,7 +61,7 @@ CGFloat const kInstructionMenuWidthMultiplier = 0.75;
   
   instructionVC.view.alpha = 0;
   [UIView animateWithDuration:0.4 animations:^{
-    instructionVC.view.alpha = 0.85;
+    instructionVC.view.alpha = 1;
   }];
   
   
