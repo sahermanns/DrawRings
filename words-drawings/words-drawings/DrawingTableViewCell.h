@@ -8,9 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-@class ScrollTableViewController;
+@class ScrollTableViewController, PPSSignatureView;
 
 @interface DrawingTableViewCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UILabel *promptLabel;
+
+
 
 @end
