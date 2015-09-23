@@ -60,7 +60,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="OHv-if-i9c">
                                 <rect key="frame" x="147" y="206" width="552" height="188"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="sketches &amp; guesses" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Mt-LJ-zFy">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="sketches &amp; guesses" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Mt-LJ-zFy">
                                         <rect key="frame" x="0.0" y="0.0" width="552" height="82"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="80" id="xLV-1c-B7a"/>
@@ -79,7 +79,7 @@
                                             </mask>
                                         </variation>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yRP-87-uAO">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yRP-87-uAO">
                                         <rect key="frame" x="199" y="82" width="153" height="53"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="80" id="5qy-PK-b9Q">
@@ -107,7 +107,7 @@
                                             <action selector="instructionsButton:" destination="LeC-lg-oZz" eventType="touchUpInside" id="vzf-zi-GBZ"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DDg-ws-YSF">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DDg-ws-YSF">
                                         <rect key="frame" x="237" y="135" width="78" height="53"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="60" id="SEZ-Tc-8KO"/>

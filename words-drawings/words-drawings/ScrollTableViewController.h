@@ -17,7 +17,7 @@
 
 @property (strong,nonatomic) NSString *seedPrompt;
 - (void)showNextCell;
-@property int counter;
+//@property int counter;
 @property (weak, nonatomic) UINavigationController *navController;
 
 @end
