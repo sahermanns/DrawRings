@@ -21,9 +21,10 @@
 @property (strong, nonatomic) NSMutableArray *promptArray;
 @property (strong, nonatomic) NSMutableArray *drawingArray;
 @property (strong, nonatomic) IBOutlet UITableView *scrollTableView;
+@property (strong,nonatomic) DrawingTableViewCell *currentDrawingCell;
 @property (nonatomic, strong) JotViewController *jotVC;
 //@property int counter;
-
+@property (weak, nonatomic) NSTimer *timer;
 
 @end
 
@@ -78,7 +79,26 @@
     
     PassViewController *passView = [[PassViewController alloc] initWithNibName:@"PassViewController" bundle:[NSBundle mainBundle]];
     [_navController pushViewController:passView animated:YES];
+    
   }];
+  
+  
+}
+
+-(void)viewDidAppear:(BOOL)animated {
+  [super viewDidAppear:animated];
+//  self.currentDrawingCell.timerLabel.text = [NSString stringWithFormat:@"%ld", self.durationOfRound];
+  self.timer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(decrementTimeLabel:) userInfo:nil repeats:true];
+}
+
+-(void)decrementTimeLabel:(NSTimer *)timer {
+  NSInteger newTime = [self.currentDrawingCell.timerLabel.text integerValue] -1;
+  NSString *newTimeString = [NSString stringWithFormat: @"%ld",newTime];
+  self.currentDrawingCell.timerLabel.text = newTimeString;
+  
+  if (newTime == 0) {
+    [timer invalidate];
+  }
 }
 
 - (void)showNextCell {
@@ -122,6 +142,7 @@
     [self.jotVC didMoveToParentViewController:self];
     self.jotVC.view.frame = cell.drawingView.frame;
     cell.promptLabel.text = _seedPrompt;
+    self.currentDrawingCell = cell;
     cell.timerLabel.text = [NSString stringWithFormat:@"%ld",(long)_durationOfRound];
     return cell;
   } else {

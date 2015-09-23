@@ -13,11 +13,7 @@
 
 @interface DrawingTableViewCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UILabel *promptLabel;
-//@property (nonatomic, strong) JotViewController *jotVC;
 @property (weak, nonatomic) IBOutlet UILabel *timerLabel;
 @property (weak, nonatomic) IBOutlet UIView *drawingView;
-
-//@property (strong, nonatomic) UIWindow *window;
-
 
 @end
