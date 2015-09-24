@@ -12,6 +12,9 @@
 		172D2A0B1BB2000C00120637 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 172D2A0A1BB2000C00120637 /* Foundation.framework */; };
 		172D2A0D1BB2001400120637 /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 172D2A0C1BB2001400120637 /* GLKit.framework */; };
 		172D2A0F1BB2001D00120637 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 172D2A0E1BB2001D00120637 /* OpenGLES.framework */; };
+		175DDE511BB4654600CAE642 /* Sketch.m in Sources */ = {isa = PBXBuildFile; fileRef = 175DDE501BB4654600CAE642 /* Sketch.m */; settings = {ASSET_TAGS = (); }; };
+		175DDE541BB465EC00CAE642 /* Guess.m in Sources */ = {isa = PBXBuildFile; fileRef = 175DDE531BB465EC00CAE642 /* Guess.m */; settings = {ASSET_TAGS = (); }; };
+		175DDE571BB4662F00CAE642 /* SketchGuess.m in Sources */ = {isa = PBXBuildFile; fileRef = 175DDE561BB4662F00CAE642 /* SketchGuess.m */; settings = {ASSET_TAGS = (); }; };
 		342BE8291BA3D27D00700F02 /* ScrollTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 342BE8281BA3D27D00700F02 /* ScrollTableViewController.m */; };
 		3430FBEA1BA3A00D007C108D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3430FBE91BA3A00D007C108D /* main.m */; };
 		3430FBED1BA3A00D007C108D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3430FBEC1BA3A00D007C108D /* AppDelegate.m */; };
@@ -65,6 +68,12 @@
 		172D2A0A1BB2000C00120637 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		172D2A0C1BB2001400120637 /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
 		172D2A0E1BB2001D00120637 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
+		175DDE4F1BB4654600CAE642 /* Sketch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Sketch.h; sourceTree = "<group>"; };
+		175DDE501BB4654600CAE642 /* Sketch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Sketch.m; sourceTree = "<group>"; };
+		175DDE521BB465EC00CAE642 /* Guess.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Guess.h; sourceTree = "<group>"; };
+		175DDE531BB465EC00CAE642 /* Guess.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Guess.m; sourceTree = "<group>"; };
+		175DDE551BB4662F00CAE642 /* SketchGuess.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SketchGuess.h; sourceTree = "<group>"; };
+		175DDE561BB4662F00CAE642 /* SketchGuess.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SketchGuess.m; sourceTree = "<group>"; };
 		342BE8271BA3D27D00700F02 /* ScrollTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScrollTableViewController.h; sourceTree = "<group>"; };
 		342BE8281BA3D27D00700F02 /* ScrollTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScrollTableViewController.m; sourceTree = "<group>"; };
 		3430FBE51BA3A00D007C108D /* words-drawings.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "words-drawings.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -220,6 +229,12 @@
 				3EF50B351BB0CAE7007CCCD4 /* UIViewToPDF.m */,
 				3EF50B261BB074EE007CCCD4 /* FacebookLogin.h */,
 				3EF50B271BB074EE007CCCD4 /* FacebookLogin.m */,
+				175DDE4F1BB4654600CAE642 /* Sketch.h */,
+				175DDE521BB465EC00CAE642 /* Guess.h */,
+				175DDE551BB4662F00CAE642 /* SketchGuess.h */,
+				175DDE561BB4662F00CAE642 /* SketchGuess.m */,
+				175DDE531BB465EC00CAE642 /* Guess.m */,
+				175DDE501BB4654600CAE642 /* Sketch.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -484,6 +499,9 @@
 				3488D2721BB08C5D007384FA /* DrawingTableViewCell.m in Sources */,
 				3430FC261BA3A86C007C108D /* SetUpGameViewController.m in Sources */,
 				3430FC231BA3A07C007C108D /* MainViewController.m in Sources */,
+				175DDE571BB4662F00CAE642 /* SketchGuess.m in Sources */,
+				175DDE511BB4654600CAE642 /* Sketch.m in Sources */,
+				175DDE541BB465EC00CAE642 /* Guess.m in Sources */,
 				3EF50B361BB0CAE7007CCCD4 /* UIViewToPDF.m in Sources */,
 				3EF50B281BB074EE007CCCD4 /* FacebookLogin.m in Sources */,
 			);
