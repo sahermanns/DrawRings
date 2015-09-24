@@ -24,6 +24,7 @@
 		3430FC231BA3A07C007C108D /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3430FC221BA3A07C007C108D /* MainViewController.m */; };
 		347685D41BB4700D00C58742 /* souvenirCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 347685D31BB4700D00C58742 /* souvenirCell.xib */; settings = {ASSET_TAGS = (); }; };
 		347685DA1BB476BC00C58742 /* SouvenirCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 347685D91BB476BC00C58742 /* SouvenirCollectionViewCell.m */; settings = {ASSET_TAGS = (); }; };
+		347685DD1BB4A88300C58742 /* BetterInstructionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 347685DC1BB4A88300C58742 /* BetterInstructionsViewController.m */; settings = {ASSET_TAGS = (); }; };
 		3481D33F1BA7BF7400BFBCC5 /* wordsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3481D33E1BA7BF7400BFBCC5 /* wordsCell.xib */; };
 		3481D3411BA7BF8500BFBCC5 /* drawingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3481D3401BA7BF8500BFBCC5 /* drawingCell.xib */; };
 		3486387A1BA3CBC0001AA58D /* SeedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 348638791BA3CBC0001AA58D /* SeedViewController.m */; };
@@ -88,6 +89,8 @@
 		347685D31BB4700D00C58742 /* souvenirCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = souvenirCell.xib; sourceTree = "<group>"; };
 		347685D81BB476BC00C58742 /* SouvenirCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SouvenirCollectionViewCell.h; sourceTree = "<group>"; };
 		347685D91BB476BC00C58742 /* SouvenirCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SouvenirCollectionViewCell.m; sourceTree = "<group>"; };
+		347685DB1BB4A88300C58742 /* BetterInstructionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BetterInstructionsViewController.h; sourceTree = "<group>"; };
+		347685DC1BB4A88300C58742 /* BetterInstructionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BetterInstructionsViewController.m; sourceTree = "<group>"; };
 		3481D33E1BA7BF7400BFBCC5 /* wordsCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = wordsCell.xib; sourceTree = "<group>"; };
 		3481D3401BA7BF8500BFBCC5 /* drawingCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = drawingCell.xib; sourceTree = "<group>"; };
 		348638781BA3CBC0001AA58D /* SeedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SeedViewController.h; sourceTree = "<group>"; };
@@ -268,6 +271,8 @@
 				342BE8281BA3D27D00700F02 /* ScrollTableViewController.m */,
 				348667B61BAF6AFF002C5825 /* EndOfGameViewController.h */,
 				348667B71BAF6AFF002C5825 /* EndOfGameViewController.m */,
+				347685DB1BB4A88300C58742 /* BetterInstructionsViewController.h */,
+				347685DC1BB4A88300C58742 /* BetterInstructionsViewController.m */,
 				3E1B2D651BB210D800EF25B7 /* ExperimentalViewController.h */,
 				3E1B2D661BB210D800EF25B7 /* ExperimentalViewController.m */,
 			);
@@ -478,6 +483,7 @@
 				3488D26F1BB08A78007384FA /* WordsTableViewCell.m in Sources */,
 				348667B51BAF499B002C5825 /* SettingsViewController.m in Sources */,
 				347685DA1BB476BC00C58742 /* SouvenirCollectionViewCell.m in Sources */,
+				347685DD1BB4A88300C58742 /* BetterInstructionsViewController.m in Sources */,
 				172D2A091BB123AB00120637 /* PassViewController.m in Sources */,
 				348667B81BAF6AFF002C5825 /* EndOfGameViewController.m in Sources */,
 				3486387A1BA3CBC0001AA58D /* SeedViewController.m in Sources */,

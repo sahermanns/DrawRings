@@ -20,9 +20,16 @@
 
 @property (strong, nonatomic) NSMutableArray *prompts;
 @property (strong, nonatomic) NSMutableArray *sketches;
+
+@property (weak, nonatomic) IBOutlet UIImageView *screenShotImage;
+
+
 //@property (weak, nonatomic) IBOutlet UIImageView *gameTokenImage;
 //@property (strong, nonatomic) NSMutableArray *gameTokenArray;
 //
+
+- (IBAction)cvScreenshot:(UIButton *)sender;
+
 
 
 @end
@@ -45,7 +52,7 @@
   [_sketches addObject:image1];
   UIImage *image2 = [UIImage imageNamed:@"gradient2.jpg"];
   [_sketches addObject:image2];
-  UIImage *image3 = [UIImage imageNamed:@"Rainbow.jpg"];
+  UIImage *image3 = [UIImage imageNamed:@"gradient2.jpg"];
   [_sketches addObject:image3];
   UIImage *image4 = [UIImage imageNamed:@"gradient2.jpg"];
   [_sketches addObject:image4];
@@ -67,6 +74,13 @@
 //  self.gameTokenImage.image = self.gameTokenArray[0];
   
  
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+  [super viewDidAppear:animated];
+  //YOUR STUFF
+  //GOES HERE
 }
 
 #pragma mark -
@@ -155,4 +169,16 @@
   
 }
 
+- (IBAction)cvScreenshot:(UIButton *)sender {
+  
+  //this works
+  CGRect rect = [_collectionView bounds];
+  UIGraphicsBeginImageContextWithOptions(rect.size,YES,0.0f);
+  CGContextRef context = UIGraphicsGetCurrentContext();
+  [_collectionView.layer renderInContext:context];
+  UIImage *capturedImage = UIGraphicsGetImageFromCurrentImageContext();
+  UIGraphicsEndImageContext();
+  _screenShotImage.image = capturedImage;
+  
+}
 @end

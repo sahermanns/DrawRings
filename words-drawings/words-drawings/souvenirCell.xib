@@ -20,7 +20,7 @@
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EsN-mm-pGE">
                         <rect key="frame" x="0.0" y="0.0" width="471" height="38.5"/>
-                        <color key="backgroundColor" red="0.55450760690000001" green="0.6978091488" blue="0.73460629109999998" alpha="0.85999999999999999" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.71647100750000003" green="0.90772708830000004" blue="0.95215285039999997" alpha="0.73999999999999999" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="40" id="Qse-rn-drh"/>
                         </constraints>

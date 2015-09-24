@@ -41,7 +41,6 @@
             <string>Avenir-Heavy</string>
             <string>Avenir-Book</string>
             <string>Avenir-Heavy</string>
-            <string>Avenir-Book</string>
         </mutableArray>
     </customFonts>
     <scenes>
@@ -1022,10 +1021,10 @@
             </objects>
             <point key="canvasLocation" x="130" y="143"/>
         </scene>
-        <!--Instruction View Controller-->
+        <!--Better Instructions View Controller-->
         <scene sceneID="UIN-Zk-gV7">
             <objects>
-                <viewController storyboardIdentifier="InstructionVC" id="0kV-Om-zVf" customClass="InstructionViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="InstructionVC" id="0kV-Om-zVf" customClass="BetterInstructionsViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="A0s-Rr-vfE"/>
                         <viewControllerLayoutGuide type="bottom" id="GdV-bf-qEE"/>
@@ -1034,17 +1033,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Instructions" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3mN-JB-eSv">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Instructions" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3mN-JB-eSv">
                                 <rect key="frame" x="213" y="36" width="173.5" height="44"/>
-                                <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="32"/>
+                                <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="50"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XS2-q2-b80">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" ambiguous="YES" misplaced="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XS2-q2-b80">
                                 <rect key="frame" x="52" y="88" width="496" height="401.5"/>
-                                <string key="text">Here's how to play this fucking game! Someone enters a sentence. The next person draws it. Pretty great! and so on and so forth! There's also an option for multiple devices, and then some more instructions and text. So there. And some more words. And words and phrases and words and drawrings.</string>
-                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="28"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <string key="text">This game is best experienced with 5 or more players. First, choose a category and prompt or create your own. Then pass the device to the person on your right. That person will draw a picture of the prompt chosen. (No text is allowed in a drawing.) They then pass the device to the next person who has to enter a guess of what the last image was. The process is repeated as the device moves around the circle.</string>
+                                <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="28"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iXl-H7-Nhm">
@@ -1059,11 +1058,11 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="closeInstructions:" destination="0kV-Om-zVf" eventType="touchUpInside" id="vof-CG-iSN"/>
+                                    <action selector="closeThisButton:" destination="0kV-Om-zVf" eventType="touchUpInside" id="N76-3S-aJ5"/>
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="0.87420300842583165" blue="0.87456516372963922" alpha="0.73999999999999999" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="1" green="0.87420300842583165" blue="0.87456516372963922" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="iXl-H7-Nhm" firstAttribute="centerX" secondItem="Trh-1X-NpW" secondAttribute="centerX" id="53R-Ik-oWX"/>
                             <constraint firstItem="iXl-H7-Nhm" firstAttribute="top" secondItem="XS2-q2-b80" secondAttribute="bottom" constant="8" id="5Y0-m1-Qpn"/>
