@@ -68,8 +68,12 @@
     [self showGuessCell];
     
     //Present the interstitial View Controller
-    PassViewController *passView = [[PassViewController alloc] initWithNibName:@"PassViewController" bundle:[NSBundle mainBundle]];
-    [_navController pushViewController:passView animated:YES];
+    
+    if([[_scrollTableView indexPathsForVisibleRows] firstObject].row < _currentSketchGuessIndex)
+    {
+      PassViewController *passView = [[PassViewController alloc] initWithNibName:@"PassViewController" bundle:[NSBundle mainBundle]];
+      [_navController pushViewController:passView animated:YES];
+    }
   }];
   
   //press the GO button on the pass vc
