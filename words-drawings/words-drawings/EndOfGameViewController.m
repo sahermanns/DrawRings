@@ -12,12 +12,17 @@
 #import "FacebookLogin.h"
 #import <ImageIO/ImageIO.h>
 #import <MobileCoreServices/MobileCoreServices.h>
+#import "SouvenirCollectionViewCell.h"
 
-@interface EndOfGameViewController ()
+@interface EndOfGameViewController ()<UICollectionViewDataSource, UICollectionViewDelegate>
 
-@property (weak, nonatomic) IBOutlet UIImageView *gameTokenImage;
-@property (strong, nonatomic) NSMutableArray *gameTokenArray;
+@property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 
+@property (strong, nonatomic) NSMutableArray *prompts;
+@property (strong, nonatomic) NSMutableArray *sketches;
+//@property (weak, nonatomic) IBOutlet UIImageView *gameTokenImage;
+//@property (strong, nonatomic) NSMutableArray *gameTokenArray;
+//
 
 
 @end
@@ -26,55 +31,103 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-  self.gameTokenArray = [[NSMutableArray alloc] init];
-  for (int i = 0; i < self.gameTokenArray.count; i++) {
-    UIImage *screenShot = [UIImage imageNamed:[NSString stringWithFormat:@"screen_%d", i]];
-    [self.gameTokenArray addObject:screenShot];
-  }
   
-  self.gameTokenImage.animationImages = self.gameTokenArray;
-  self.gameTokenImage.animationRepeatCount = 1;
-  self.gameTokenImage.animationDuration = .25;
+  _numberOfCells = 4;
+  
+  _collectionView.dataSource = self;
+  _collectionView.delegate = self;
+  
+  _prompts = [NSMutableArray arrayWithObjects: @"The Godfather", @"Woody Allen", @"Steven Spielberg", @"Rocky", @"Rushmore", @"Back to the Future II", @"Alice in Wonderland", nil];
+  
+  _sketches = [[NSMutableArray alloc] init];
+  
+  UIImage *image1 = [UIImage imageNamed:@"gradient2.jpg"];
+  [_sketches addObject:image1];
+  UIImage *image2 = [UIImage imageNamed:@"gradient2.jpg"];
+  [_sketches addObject:image2];
+  UIImage *image3 = [UIImage imageNamed:@"Rainbow.jpg"];
+  [_sketches addObject:image3];
+  UIImage *image4 = [UIImage imageNamed:@"gradient2.jpg"];
+  [_sketches addObject:image4];
+  
+  UINib *souvenirCell = [UINib nibWithNibName:@"souvenirCell" bundle:nil];
+  [self.collectionView registerNib:souvenirCell forCellWithReuseIdentifier:@"collectionCell"];
+  
+//#pragma MARK - Animation 
+//  self.gameTokenArray = [[NSMutableArray alloc] init];
+//  for (int i = 0; i < self.gameTokenArray.count; i++) {
+//    UIImage *screenShot = [UIImage imageNamed:[NSString stringWithFormat:@"screen_%d", i]];
+//    [self.gameTokenArray addObject:screenShot];
+//  }
+//  
+//  self.gameTokenImage.animationImages = self.gameTokenArray;
+//  self.gameTokenImage.animationRepeatCount = 1;
+//  self.gameTokenImage.animationDuration = .25;
   
 //  self.gameTokenImage.image = self.gameTokenArray[0];
   
  
 }
 
-- (IBAction)animateGameGIF:(id)sender {
-  if (!self.gameTokenImage.isAnimating) {
-    [self.gameTokenImage startAnimating];
-    [self.gameTokenImage setImage:[self.gameTokenImage.animationImages lastObject]];
-    [self performSelector:@selector(gameTokenAnimationDidFinish) withObject:nil afterDelay:self.gameTokenImage.animationDuration];
-  }
+#pragma mark -
+
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
+  return _numberOfCells;
 }
 
--(void)gameTokenAnimationDidFinish {
-  NSArray *reversedImages = [[self.gameTokenImage.animationImages reverseObjectEnumerator] allObjects];
-  self.gameTokenImage.animationImages = reversedImages;
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
+  SouvenirCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"collectionCell" forIndexPath:indexPath];
+  cell.promptLabel.text = _prompts[indexPath.row];
+  UIImage *cellImage = _sketches[indexPath.row];
+  cell.sketchImage.image = cellImage;
+  cell.sketchImage.backgroundColor = [UIColor redColor];
+  return cell;
 }
 
--(void)exportGIF {
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
+{
   
-  UIImage *screen1 = [UIImage imageNamed:@"screen1.jpeg"];
-  UIImage *screen2 = [UIImage imageNamed:@"screen2.jpeg"];
-  
-  NSString *path = [[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject] stringByAppendingPathComponent:@"animated.gif"];
-  CGImageDestinationRef destination = CGImageDestinationCreateWithURL((CFURLRef)[NSURL fileURLWithPath:path], kUTTypeGIF, self.gameTokenArray.count, NULL);
-  int count = (int)self.gameTokenArray.count;
-  
-  NSDictionary *frameProperties = [NSDictionary dictionaryWithObject:[NSDictionary dictionaryWithObject:[NSNumber numberWithInt:count] forKey:(NSString *)kCGImagePropertyGIFDelayTime]
-                                                              forKey:(NSString *)kCGImagePropertyGIFDictionary];
-  NSDictionary *gifProperties = [NSDictionary dictionaryWithObject:[NSDictionary dictionaryWithObject:[NSNumber numberWithInt:0] forKey:(NSString *)kCGImagePropertyGIFLoopCount]
-                                                            forKey:(NSString *)kCGImagePropertyGIFDictionary];
-  CGImageDestinationAddImage(destination, screen1.CGImage, (CFDictionaryRef)frameProperties);
-  CGImageDestinationAddImage(destination, screen2.CGImage, (CFDictionaryRef)frameProperties);
-  CGImageDestinationSetProperties(destination, (CFDictionaryRef)gifProperties);
-  CGImageDestinationFinalize(destination);
-  CFRelease(destination);
-  NSLog(@"animated GIF file created at %@", path);
- 
+  CGFloat CVwidth = collectionView.frame.size.width;
+  CGFloat CVheight = collectionView.frame.size.height;
+  return CGSizeMake(CVwidth, CVheight);
 }
+
+
+//- (IBAction)animateGameGIF:(id)sender {
+//  if (!self.gameTokenImage.isAnimating) {
+//    [self.gameTokenImage startAnimating];
+//    [self.gameTokenImage setImage:[self.gameTokenImage.animationImages lastObject]];
+//    [self performSelector:@selector(gameTokenAnimationDidFinish) withObject:nil afterDelay:self.gameTokenImage.animationDuration];
+//  }
+//}
+
+//-(void)gameTokenAnimationDidFinish {
+//  NSArray *reversedImages = [[self.gameTokenImage.animationImages reverseObjectEnumerator] allObjects];
+//  self.gameTokenImage.animationImages = reversedImages;
+//}
+
+//#pragma MARK- Export image as GIF
+//-(void)exportGIF {
+//  
+//  UIImage *screen1 = [UIImage imageNamed:@"screen1.jpeg"];
+//  UIImage *screen2 = [UIImage imageNamed:@"screen2.jpeg"];
+//  
+//  NSString *path = [[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject] stringByAppendingPathComponent:@"animated.gif"];
+//  CGImageDestinationRef destination = CGImageDestinationCreateWithURL((CFURLRef)[NSURL fileURLWithPath:path], kUTTypeGIF, self.gameTokenArray.count, NULL);
+//  int count = (int)self.gameTokenArray.count;
+//  
+//  NSDictionary *frameProperties = [NSDictionary dictionaryWithObject:[NSDictionary dictionaryWithObject:[NSNumber numberWithInt:count] forKey:(NSString *)kCGImagePropertyGIFDelayTime]
+//                                                              forKey:(NSString *)kCGImagePropertyGIFDictionary];
+//  NSDictionary *gifProperties = [NSDictionary dictionaryWithObject:[NSDictionary dictionaryWithObject:[NSNumber numberWithInt:0] forKey:(NSString *)kCGImagePropertyGIFLoopCount]
+//                                                            forKey:(NSString *)kCGImagePropertyGIFDictionary];
+//  CGImageDestinationAddImage(destination, screen1.CGImage, (CFDictionaryRef)frameProperties);
+//  CGImageDestinationAddImage(destination, screen2.CGImage, (CFDictionaryRef)frameProperties);
+//  CGImageDestinationSetProperties(destination, (CFDictionaryRef)gifProperties);
+//  CGImageDestinationFinalize(destination);
+//  CFRelease(destination);
+//  NSLog(@"animated GIF file created at %@", path);
+// 
+//}
 
 
 

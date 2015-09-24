@@ -12,5 +12,6 @@
 @interface EndOfGameViewController : UIViewController
 
 @property (strong, nonatomic) UIView *tableViewScreenshot;
+@property int numberOfCells;
 
 @end
