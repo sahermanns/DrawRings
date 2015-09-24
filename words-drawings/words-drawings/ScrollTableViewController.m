@@ -24,7 +24,7 @@
 @property (strong, nonatomic) DrawingTableViewCell *currentDrawingCell;
 @property (strong, nonatomic) WordsTableViewCell *currentWordsCell;
 @property (nonatomic, strong) JotViewController *jotVC;
-
+@property (weak, nonatomic) NSTimer *timer;
 @end
 
 @implementation ScrollTableViewController
@@ -61,6 +61,7 @@
     //Present the interstitial View Controller
     PassViewController *passView = [[PassViewController alloc] initWithNibName:@"PassViewController" bundle:[NSBundle mainBundle]];
     [_navController pushViewController:passView animated:YES];
+    [self.timer invalidate];
   }];
   
   //press the GO button on the pass vc
@@ -84,8 +85,44 @@
       PassViewController *passView = [[PassViewController alloc] initWithNibName:@"PassViewController" bundle:[NSBundle mainBundle]];
       [_navController pushViewController:passView animated:YES];
     }
+    [self.timer invalidate];
   }];
 }
+
+-(void)viewDidAppear:(BOOL)animated {
+  [super viewDidAppear:animated];
+  
+  if (self.currentDrawingCell) {
+    self.timer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(decrementTimeLabel:) userInfo:nil repeats:true];
+  }
+  
+}
+
+-(void)decrementTimeLabel:(NSTimer *)timer {
+  
+  if (self.currentDrawingCell) {
+    NSInteger newTime = [self.currentDrawingCell.timerLabel.text integerValue] -1;
+    NSString *newTimeString = [NSString stringWithFormat: @"%ld",newTime];
+    self.currentDrawingCell.timerLabel.text = newTimeString;
+    
+    if (newTime == 0) {
+      [timer invalidate];
+      [[NSNotificationCenter defaultCenter] postNotificationName:@"doneDrawingNotification" object:self];
+    }
+  }
+  
+  if (self.currentWordsCell) {
+    NSInteger newTime = [self.currentWordsCell.timeLabel.text integerValue] -1;
+    NSString *newTimeString = [NSString stringWithFormat: @"%ld",newTime];
+    self.currentWordsCell.timeLabel.text = newTimeString;
+    
+    if (newTime == 0) {
+      [timer invalidate];
+      [[NSNotificationCenter defaultCenter] postNotificationName:@"doneDrawingNotification" object:self];
+    }
+  }
+}
+
 
 - (void)showNextCell {
   NSIndexPath *indexPath = [[_scrollTableView indexPathsForVisibleRows] firstObject];
@@ -99,6 +136,7 @@
     [self performSegueWithIdentifier:@"ShowEndOfGame" sender:self];
   }
 }
+
 
 
 //-(void)viewDidAppear:(BOOL)animated {
@@ -149,7 +187,7 @@
 //    cell.imageView.clipsToBounds = true;
 //    cell.imageView.contentMode = UIViewContentModeScaleToFill;
     
-
+    cell.timeLabel.text = [NSString stringWithFormat:@"%ld",(long)_durationOfRound];
     return cell;
   }
 }
