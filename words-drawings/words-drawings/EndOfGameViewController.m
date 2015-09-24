@@ -26,7 +26,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-  self.gameTokenArray = [[NSMutableArray alloc]init];
+  self.gameTokenArray = [[NSMutableArray alloc] init];
   for (int i = 0; i < self.gameTokenArray.count; i++) {
     UIImage *screenShot = [UIImage imageNamed:[NSString stringWithFormat:@"screen_%d", i]];
     [self.gameTokenArray addObject:screenShot];
@@ -36,7 +36,7 @@
   self.gameTokenImage.animationRepeatCount = 1;
   self.gameTokenImage.animationDuration = .25;
   
-  self.gameTokenImage.image = self.gameTokenArray[0];
+//  self.gameTokenImage.image = self.gameTokenArray[0];
   
  
 }

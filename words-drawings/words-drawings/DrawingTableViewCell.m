@@ -18,21 +18,10 @@
 @implementation DrawingTableViewCell
 
 - (IBAction)doneButtonPressed:(UIButton *)sender {
-  
   [[NSNotificationCenter defaultCenter] postNotificationName:@"doneDrawingNotification" object:self];
-
-//  int thisCounter = [scrollTableVC counter];
-//  thisCounter++;
-  NSLog(@"UFO");
-  //NSLog(@"DSUFIODSUDIOFU");
 }
 
 - (void)awakeFromNib {
-  
-    // Initialization code
-//  self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-  
-//UIViewController 
   
   
 }

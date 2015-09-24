@@ -55,29 +55,29 @@
   NSLog(@"You chose... wisely: %@", self.chosenCategory);
   
   
-   _filmArray = [NSMutableArray arrayWithObjects: @"The Godfather", @"Woody Allen", @"Steven Spielberg", @"Rocky", @"Rushmore", @"Back to the Future II", @"Alice in Wonderland", @"Boogie Nights", @"Space Jam", @"Mission: Impossible", @"Annie Hall", @"Being John Malkovich", @"Metropolis", @"The Dark Crystal", @"Vertigo", @"Star Trek", @"Iron Man", @"Hannibal Lecter", @"Meet the Parents", @"Beetlejuice", @"Kindergarten Cop", @"Easy Rider", @"Rosemary's Baby", @"The Exorcist", @"Princess Bride", @"The Dark Knight", @"The Matrix", @"Brazil", @"Jean Claude Van Damme", @"Breathless", @"Freddy Krueger", @"Scream", @"Julia Roberts", @"Taxi Driver", nil];
+   _filmArray = [NSMutableArray arrayWithObjects: @"The Godfather", @"Woody Allen", @"Steven Spielberg", @"Rocky", @"Rushmore", @"Back to the Future II", @"Alice in Wonderland", @"Boogie Nights", @"Space Jam", @"Mission: Impossible", @"Annie Hall", @"Being John Malkovich", @"Metropolis", @"The Dark Crystal", @"Vertigo", @"Star Trek", @"Iron Man", @"Hannibal Lecter", @"Meet the Parents", @"Beetlejuice", nil];
    
-   _tvArray = [NSMutableArray arrayWithObjects: @"Seinfeld", @"Gilligan's Island", @"The Simpsons", @"Futurama", @"Arrested Development", @"Mork and Mindy", @"GI-Joe", @"Weeds", @"Lost", @"The Twilight Zone", @"24", @"House, M.D.", @"X-Files", @"Mulder", @"Scully", @"Kenny Powers", @"Cheers", @"Frasier", @"The Wire", @"Jersey Shore", @"Adventure Time", @"Star Trek", @"Homer Simpson", @"I Love Lucy", @"Bewitched", @"Chandler Bing", @"Twin Peaks", @"Friends", @"John Stamos", nil];
+   _tvArray = [NSMutableArray arrayWithObjects: @"Seinfeld", @"Gilligan's Island", @"The Cosby Show", @"Arrested Development", @"Mork and Mindy", @"GI-Joe", @"Weeds", @"Lost", @"The Twilight Zone", @"24", @"House, M.D.", nil];
    
    _theatreArray = [NSMutableArray arrayWithObjects: @"Death of a Salesman", @"Romeo and Juliet", @"The Book of Mormon", @"Titus Andronicus", @"Neil Patrick Harris", @"The Tony Awards", @"West Side Story", @"Hamlet", @"Stephen Sondheim", @"Jesus Christ Superstar", @"Cat On a Hot Tin Roof", @"Hairspray", @"Pirates of the Carribean", @"Mean Girls", @"Tim Burton", nil];
    
-   _musicArray = [NSMutableArray arrayWithObjects: @"Madonna", @"Beethoven", @"Heartbreak Hotel", @"U Can't Touch This", @"Thriller", @"The Sound of Silence", @"I Feel Pretty", @"November Rain", @"Paranoid Android", @"A String Quartet", @"John Cage", @"Nirvana", @"Guided By Voices", @"Cyndi Lauper", @"Metallica", @"2 Pac", @"Stone Roses", @"Notorious BIG", @"Good Vibrations", @"The Jam", @"Rolling Stones", @"Teenage Fanclub", @"The Beach Boys", @"NWA", @"Miley Cyrus", @"Nicki Minaj", @"Britney Spears", @"Pusha T", @"Eminem", @"Snoop Dogg", @"The Ramones", @"Talking Heads", @"Tears for Fears", @"Joy Division", @"Beyonce",  @"Drake", nil];
+   _musicArray = [NSMutableArray arrayWithObjects: @"Madonna", @"Beethoven", @"Heartbreak Hotel", @"U Can't Touch This", @"Thriller", @"The Sound of Silence", @"I Feel Pretty", @"November Rain", @"Paranoid Android", @"A String Quartet", @"John Cage", @"Nirvana", nil];
    
-   _sportsArray = [NSMutableArray arrayWithObjects: @"Babe Ruth", @"Magic Johnson", @"7th Inning Stretch", @"Cricket", @"Chicago Bulls", @"Tom Brady", @"Dennis Rodman", @"Tiger Woods", @"Hole In One", @"Touchdown", @"Slam Dunk", @"LA Lakers", @"Goalie", @"Cristiano Ronaldo", @"Grand Slam", @"Bowling", @"Volleyball", @"Curve Ball", @"Hail Mary", nil];
+   _sportsArray = [NSMutableArray arrayWithObjects: @"Babe Ruth", @"Magic Johnson", @"7th Inning Stretch", @"Cricket", nil];
    
-   _historyArray = [NSMutableArray arrayWithObjects: @"The French Revolution", @"The Cuban Missle Crisis", @"Catherine the Great", @"D-Day", @"Y2K", @"George Washington", nil];
+   _historyArray = [NSMutableArray arrayWithObjects: @"The French Revolution", @"The Cuban Missle Crisis", @"Catherine the Great", @"D-Day", nil];
    
    _scienceArray = [NSMutableArray arrayWithObjects: @"The Heisenberg Uncertainty Principle", @"Relativity", @"Jonas Salk", @"Isaac Newton", nil];
    
-   _natureArray = [NSMutableArray arrayWithObjects: @"Three-Toed Sloths", @"Mt. Rainier", @"The Grand Canyon", @"The Pacific Ocean", @"Bee Hive", nil];
+   _natureArray = [NSMutableArray arrayWithObjects: @"Three-Toed Sloths", @"Mt. Rainier", @"The Grand Canyon", @"The Pacific Ocean", nil];
    
-   _geographyArray = [NSMutableArray arrayWithObjects: @"Paris", @"Antarctica", @"Las Vegas", @"The Nile River", @"Detroit", @"Russia", nil];
+   _geographyArray = [NSMutableArray arrayWithObjects: @"Paris", @"Antarctica", @"Las Vegas", @"The Nile River", nil];
    
    _artArray = [NSMutableArray arrayWithObjects: @"The Mona Lisa", @"Pablo Picasso", @"Girl With Pearl Earring", @"Guernica", nil];
    
-   _literatureArray = [NSMutableArray arrayWithObjects: @"A Tale of Two Cities", @"Where the Sidewalk Ends", @"The Hobbit", @"Nausea", @"Goosebumps", @"The Shining", nil];
+   _literatureArray = [NSMutableArray arrayWithObjects: @"A Tale of Two Cities", @"Where the Sidewalk Ends", @"The Hobbit", @"Nausea", nil];
    
-   _zanyMiscellanyArray = [NSMutableArray arrayWithObjects: @"42", @"Penguins Playing Golf", @"Insomnia", @"Public Restroom", @"Grumpy Cat", @"Prom Night", @"Cat Fight", @"Mom Jeans", @"Virtual Reality", @"Vaping", @"Santa Clause", nil];
+   _zanyMiscellanyArray = [NSMutableArray arrayWithObjects: @"42", @"Penguins Playing Golf", @"Insomnia", @"Public Restroom", @"Grumpy Cat", @"Prom Night", @"Cat Fight", @"Mom Jeans", nil];
     
   self.chosenCategoryLabel.text = self.chosenCategory;
 
