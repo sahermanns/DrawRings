@@ -22,10 +22,10 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="COb-hc-R3f">
-                        <rect key="frame" x="0.0" y="291" width="631" height="80"/>
+                        <rect key="frame" x="0.0" y="291" width="631" height="79.5"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cw1-Lw-aAJ">
-                                <rect key="frame" x="8" y="41" width="548" height="31"/>
+                                <rect key="frame" x="8" y="41.5" width="548" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
@@ -36,7 +36,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bza-0c-bts">
-                                <rect key="frame" x="564" y="8" width="59" height="64"/>
+                                <rect key="frame" x="564" y="8" width="59" height="63.5"/>
                                 <color key="backgroundColor" red="0.64001527960000004" green="0.8359912343" blue="0.8215960283" alpha="0.73999999999999999" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="24"/>
                                 <state key="normal" title="Done">
@@ -66,6 +66,7 @@
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
+                                <exclude reference="Kry-zb-xJo"/>
                                 <exclude reference="TV6-xV-wlK"/>
                                 <exclude reference="fny-PH-UUE"/>
                             </mask>
@@ -75,10 +76,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="631" height="56"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mk6-X5-9Js">
-                                <rect key="frame" x="582.5" y="8" width="40" height="40"/>
+                                <rect key="frame" x="583" y="8" width="40" height="40"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="30" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wsp-Hc-PqE">
-                                        <rect key="frame" x="8" y="5" width="26.5" height="27"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="30" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wsp-Hc-PqE">
+                                        <rect key="frame" x="8" y="8" width="24" height="27.5"/>
                                         <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="20"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
@@ -110,22 +111,29 @@
                         </variation>
                     </view>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Me9-fe-jrz">
-                        <rect key="frame" x="0.0" y="64" width="631" height="219"/>
+                        <rect key="frame" x="0.0" y="64" width="631" height="219.5"/>
                         <color key="backgroundColor" red="1" green="0.87420300839999998" blue="0.87456516370000004" alpha="0.73999999999999999" colorSpace="calibratedRGB"/>
                     </imageView>
                 </subviews>
                 <constraints>
+                    <constraint firstAttribute="trailingMargin" secondItem="Me9-fe-jrz" secondAttribute="trailing" constant="-8" id="0wL-zg-btP"/>
+                    <constraint firstItem="Me9-fe-jrz" firstAttribute="top" secondItem="shJ-Rs-53Z" secondAttribute="bottom" constant="8" id="5ax-H6-b84"/>
+                    <constraint firstItem="COb-hc-R3f" firstAttribute="top" secondItem="Me9-fe-jrz" secondAttribute="bottom" constant="8" symbolic="YES" id="6b5-LD-xIz"/>
                     <constraint firstAttribute="trailingMargin" secondItem="shJ-Rs-53Z" secondAttribute="trailing" constant="-8" id="EA0-Gj-SWr"/>
-                    <constraint firstItem="Me9-fe-jrz" firstAttribute="leading" secondItem="akf-V4-KQs" secondAttribute="leadingMargin" constant="-8" id="G1f-h4-wdl"/>
-                    <constraint firstAttribute="trailingMargin" secondItem="Me9-fe-jrz" secondAttribute="trailing" constant="-8" id="GLV-02-pK5"/>
                     <constraint firstItem="shJ-Rs-53Z" firstAttribute="leading" secondItem="akf-V4-KQs" secondAttribute="leadingMargin" constant="-8" id="Nr3-wx-b82"/>
-                    <constraint firstItem="Me9-fe-jrz" firstAttribute="top" secondItem="shJ-Rs-53Z" secondAttribute="bottom" constant="8" id="Nz6-kK-Lri"/>
                     <constraint firstItem="COb-hc-R3f" firstAttribute="leading" secondItem="akf-V4-KQs" secondAttribute="leadingMargin" constant="-8" id="Rnr-AL-R8J"/>
+                    <constraint firstItem="COb-hc-R3f" firstAttribute="top" secondItem="Me9-fe-jrz" secondAttribute="bottom" constant="8" id="Snp-6A-coP"/>
                     <constraint firstAttribute="trailingMargin" secondItem="COb-hc-R3f" secondAttribute="trailing" constant="-8" id="ZPk-3Z-G2H"/>
                     <constraint firstItem="shJ-Rs-53Z" firstAttribute="top" secondItem="akf-V4-KQs" secondAttribute="topMargin" constant="-8" id="gKj-9h-MOD"/>
-                    <constraint firstItem="COb-hc-R3f" firstAttribute="top" secondItem="Me9-fe-jrz" secondAttribute="bottom" constant="8" id="jhW-oo-dLB"/>
                     <constraint firstAttribute="bottomMargin" secondItem="COb-hc-R3f" secondAttribute="bottom" constant="-8" id="k7d-uN-P7w"/>
+                    <constraint firstItem="Me9-fe-jrz" firstAttribute="centerX" secondItem="akf-V4-KQs" secondAttribute="centerX" id="teN-Ku-OIM"/>
+                    <constraint firstItem="Me9-fe-jrz" firstAttribute="leading" secondItem="akf-V4-KQs" secondAttribute="leadingMargin" constant="-8" id="tsF-tc-1G6"/>
                 </constraints>
+                <variation key="default">
+                    <mask key="constraints">
+                        <exclude reference="Snp-6A-coP"/>
+                    </mask>
+                </variation>
             </tableViewCellContentView>
             <connections>
                 <outlet property="imageView" destination="Me9-fe-jrz" id="LIq-5a-IL8"/>

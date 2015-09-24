@@ -19,7 +19,6 @@
 
 - (IBAction)doneButtonPressed:(UIButton *)sender {
   [[NSNotificationCenter defaultCenter] postNotificationName:@"doneDrawingNotification" object:self];
-  
 }
 
 - (void)awakeFromNib {

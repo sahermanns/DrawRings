@@ -24,8 +24,6 @@
 @property (strong, nonatomic) DrawingTableViewCell *currentDrawingCell;
 @property (strong, nonatomic) WordsTableViewCell *currentWordsCell;
 @property (nonatomic, strong) JotViewController *jotVC;
-@property int counter;
-
 
 @end
 
@@ -43,10 +41,7 @@
   
   _drawingArray = [[NSMutableArray alloc] init];
   
-  self.counter = 0;
-  NSLog(@"counter starts at %d", _counter);
-  
-  self.numberOfRows = self.numberOfPlayers;
+  self.numberOfRows = self.numberOfPlayers - 1;
 
   UINib *wordsCell = [UINib nibWithNibName:@"wordsCell" bundle:nil];
   [self.scrollTableView registerNib:wordsCell forCellReuseIdentifier:@"wordsCell"];
@@ -55,15 +50,15 @@
   [self.scrollTableView registerNib:drawingCell forCellReuseIdentifier:@"drawingCell"];
   
   [[NSNotificationCenter defaultCenter] addObserverForName:@"doneDrawingNotification" object:nil queue:nil usingBlock:^(NSNotification * _Nonnull note) {
-    UIImage *drawnImage = [self.jotVC renderImageWithScale:2.f
-                                                               onColor:self.view.backgroundColor];
-    
+    //Save the current drawing
+    UIImage *drawnImage = [self.jotVC renderImageWithScale:2.f onColor:self.view.backgroundColor];
     [_drawingArray addObject:drawnImage];
 
+    //Prepare the next Cell
     [self.jotVC clearAll];
-
     [self showNextCell];
-//    _counter++;
+    
+    //Present the interstitial View Controller
     PassViewController *passView = [[PassViewController alloc] initWithNibName:@"PassViewController" bundle:[NSBundle mainBundle]];
     [_navController pushViewController:passView animated:YES];
   }];
@@ -71,6 +66,7 @@
   //press the GO button on the pass vc
   [[NSNotificationCenter defaultCenter] addObserverForName:@"popButtonPressed" object:nil queue:nil usingBlock:^(NSNotification * _Nonnull note) {
     [_navController popViewControllerAnimated:YES];
+    [_scrollTableView reloadData];
   }];
   
   [[NSNotificationCenter defaultCenter] addObserverForName:@"doneGuessingNotification" object:nil queue:nil usingBlock:^(NSNotification * _Nonnull note) {
@@ -82,24 +78,21 @@
     for (NSString *string in _promptArray){
       NSLog(@"IN PROMPT ARRAY: %@", string);
     }
-//
-    PassViewController *passView = [[PassViewController alloc] initWithNibName:@"PassViewController" bundle:[NSBundle mainBundle]];
-    [_navController pushViewController:passView animated:YES];
+    
+    if([[_scrollTableView indexPathsForVisibleRows] firstObject].row < _numberOfRows -1)
+    {
+      PassViewController *passView = [[PassViewController alloc] initWithNibName:@"PassViewController" bundle:[NSBundle mainBundle]];
+      [_navController pushViewController:passView animated:YES];
+    }
   }];
 }
 
 - (void)showNextCell {
-  self.counter++;
-  NSLog(@"UMM %d", self.counter);
-//  NSIndexPath *indexPath = [NSIndexPath indexPathForItem:_counter inSection:0];
-//  [self.scrollTableView scrollToRowAtIndexPath:indexPath
-//                              atScrollPosition:UITableViewScrollPositionMiddle
-//                                      animated:NO];
-  
-  if (_counter < _numberOfRows) {
-    NSIndexPath *indexPath = [NSIndexPath indexPathForItem:_counter inSection:0];
-    [self.scrollTableView scrollToRowAtIndexPath:indexPath
-                                atScrollPosition:UITableViewScrollPositionMiddle
+  NSIndexPath *indexPath = [[_scrollTableView indexPathsForVisibleRows] firstObject];
+  if (indexPath.row < _numberOfRows - 1) {
+    NSIndexPath *nextIndexPath = [NSIndexPath indexPathForRow:indexPath.row+1 inSection:0];
+    [self.scrollTableView scrollToRowAtIndexPath:nextIndexPath
+                                atScrollPosition:UITableViewScrollPositionTop
                                         animated:NO];
 
   } else {
@@ -140,12 +133,8 @@
     [cell setNeedsLayout];
     [cell layoutIfNeeded];
     self.currentDrawingCell = cell;
-    int counterMinusOne = (_counter - 1);
-    if (indexPath.row == 0) {
-      cell.promptLabel.text = self.promptArray[0];
-    } else {
-      cell.promptLabel.text = self.promptArray[counterMinusOne];
-    }
+    cell.promptLabel.text = self.promptArray.count > indexPath.row/2 ? self.promptArray[(indexPath.row)/2] : nil;
+
     
     [self.jotVC didMoveToParentViewController:self];
     self.jotVC.view.frame = cell.drawingView.frame;
@@ -155,7 +144,7 @@
   } else {
     WordsTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"wordsCell" forIndexPath:indexPath];
     self.currentWordsCell = cell;
-    cell.imageView.image = [_drawingArray objectAtIndex:indexPath.row-1];
+    cell.imageView.image = [_drawingArray objectAtIndex:(indexPath.row/2)];
 
     return cell;
   }
