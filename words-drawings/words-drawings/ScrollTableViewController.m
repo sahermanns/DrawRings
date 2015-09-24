@@ -60,7 +60,6 @@
   [[NSNotificationCenter defaultCenter] addObserverForName:@"doneDrawingNotification" object:nil queue:nil usingBlock:^(NSNotification * _Nonnull note) {
     //Save the current drawing
     UIImage *drawnImage = [self.jotVC renderImageWithScale:2.f onColor:self.view.backgroundColor];
-//    [_drawingArray addObject:drawnImage];
     SketchGuess *currentSketchGuess = self.sketchGuesses[self.currentSketchGuessIndex];
     currentSketchGuess.sketch.sketchImage = drawnImage;
 
@@ -81,8 +80,6 @@
   
   [[NSNotificationCenter defaultCenter] addObserverForName:@"doneGuessingNotification" object:nil queue:nil usingBlock:^(NSNotification * _Nonnull note) {
     
-    
-    
     NSString *enteredString;
     enteredString = self.currentWordsCell.textField.text;
     SketchGuess *currentSketchGuess = self.sketchGuesses[self.currentSketchGuessIndex];
@@ -94,7 +91,7 @@
       NSLog(@"IN PROMPT ARRAY: %@", string);
     }
     
-    if([[_scrollTableView indexPathsForVisibleRows] firstObject].row < _numberOfRows -1)
+    if([[_scrollTableView indexPathsForVisibleRows] firstObject].row < _currentSketchGuessIndex)
     {
       PassViewController *passView = [[PassViewController alloc] initWithNibName:@"PassViewController" bundle:[NSBundle mainBundle]];
       [_navController pushViewController:passView animated:YES];
@@ -151,29 +148,8 @@
                                 atScrollPosition:UITableViewScrollPositionTop
                                         animated:NO];
   }
-  
-  
-//  NSIndexPath *indexPath = [[_scrollTableView indexPathsForVisibleRows] firstObject];
-//  if (indexPath.row < _numberOfRows - 1) {
-//    NSIndexPath *nextIndexPath = [NSIndexPath indexPathForRow:indexPath.row+1 inSection:0];
-//    [self.scrollTableView scrollToRowAtIndexPath:nextIndexPath
-//                                atScrollPosition:UITableViewScrollPositionTop
-//                                        animated:NO];
-//
-//  } else {
-//    [self performSegueWithIdentifier:@"ShowEndOfGame" sender:self];
-//  }
 }
 
-
-//-(void)viewDidAppear:(BOOL)animated {
-//  [super viewDidAppear:animated];
-//  if (self.currentWordsCell) {
-//    NSString *enteredString;
-//    enteredString = self.currentWordsCell.textField.text;
-//    [self.promptArray addObject:enteredString];
-//  }
-//}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -221,18 +197,15 @@
   } else {
     WordsTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"wordsCell" forIndexPath:indexPath];
     self.currentWordsCell = cell;
+    cell.textField.text = @"";
     cell.drawingImageView.backgroundColor = [UIColor blueColor];
     cell.drawingImageView.image = sketchGuess.sketch.sketchImage;
-//    cell.drawingImageView.image = [_drawingArray objectAtIndex:(indexPath.row/2)];
-    //    cell.imageView.clipsToBounds = true;
-    //    cell.imageView.contentMode = UIViewContentModeScaleToFill;
     return cell;
 
   }
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-//  [self.scrollTableView scrollToRowAtIndexPath:indexPath atScrollPosition: UITableViewScrollPositionMiddle animated: YES];
   CGFloat cellHeight = tableView.frame.size.height;
   return cellHeight;
 }

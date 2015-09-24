@@ -14,10 +14,7 @@
 
 @property NSInteger numberOfPlayers;
 @property NSInteger durationOfRound;
-
 @property (strong,nonatomic) NSString *seedPrompt;
-- (void)showNextCell;
-//@property int counter;
 @property (weak, nonatomic) UINavigationController *navController;
 
 @end
