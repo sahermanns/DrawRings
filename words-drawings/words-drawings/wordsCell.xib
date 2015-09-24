@@ -71,13 +71,13 @@
                             </mask>
                         </variation>
                     </view>
-                    <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="shJ-Rs-53Z">
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="shJ-Rs-53Z">
                         <rect key="frame" x="0.0" y="0.0" width="631" height="56"/>
                         <subviews>
-                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Mk6-X5-9Js">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mk6-X5-9Js">
                                 <rect key="frame" x="582.5" y="8" width="40" height="40"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="30" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wsp-Hc-PqE">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="30" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wsp-Hc-PqE">
                                         <rect key="frame" x="8" y="5" width="26.5" height="27"/>
                                         <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="20"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -109,7 +109,7 @@
                             </mask>
                         </variation>
                     </view>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="Rainbow" translatesAutoresizingMaskIntoConstraints="NO" id="Me9-fe-jrz">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Me9-fe-jrz">
                         <rect key="frame" x="0.0" y="64" width="631" height="219"/>
                         <color key="backgroundColor" red="1" green="0.87420300839999998" blue="0.87456516370000004" alpha="0.73999999999999999" colorSpace="calibratedRGB"/>
                     </imageView>
@@ -129,12 +129,9 @@
             </tableViewCellContentView>
             <connections>
                 <outlet property="imageView" destination="Me9-fe-jrz" id="LIq-5a-IL8"/>
-                <outlet property="textField" destination="cw1-Lw-aAJ" id="fZ4-Yo-gDR"/>
+                <outlet property="textField" destination="cw1-Lw-aAJ" id="dik-bo-leT"/>
             </connections>
             <point key="canvasLocation" x="355.5" y="-278.5"/>
         </tableViewCell>
     </objects>
-    <resources>
-        <image name="Rainbow" width="600" height="200"/>
-    </resources>
 </document>

@@ -19,14 +19,7 @@
 
 
 - (IBAction)doneButtonPressed:(UIButton *)sender {
-//  PassItOnViewController *passViewController = [[PassItOnViewController alloc] initWithNibName:@"PassItOnViewController" bundle:[NSBundle mainBundle]];
-  
-  
-  //  ScrollTableViewController *scrollTableVC = [[ScrollTableViewController alloc] init];
-//  [scrollTableVC showNextCell];
-//  int thisCounter = [scrollTableVC counter];
-//  thisCounter++;
-//  NSLog(@"wordsXibButtonPressed");
+
   [[NSNotificationCenter defaultCenter] postNotificationName:@"doneGuessingNotification" object:self];
 }
 
