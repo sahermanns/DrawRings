@@ -144,7 +144,11 @@
   } else {
     WordsTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"wordsCell" forIndexPath:indexPath];
     self.currentWordsCell = cell;
-    cell.imageView.image = [_drawingArray objectAtIndex:(indexPath.row/2)];
+    cell.drawingImageView.backgroundColor = [UIColor blueColor];
+    cell.drawingImageView.image = [_drawingArray objectAtIndex:(indexPath.row/2)];
+//    cell.imageView.clipsToBounds = true;
+//    cell.imageView.contentMode = UIViewContentModeScaleToFill;
+    
 
     return cell;
   }

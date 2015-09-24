@@ -136,7 +136,7 @@
                 </variation>
             </tableViewCellContentView>
             <connections>
-                <outlet property="imageView" destination="Me9-fe-jrz" id="LIq-5a-IL8"/>
+                <outlet property="drawingImageView" destination="Me9-fe-jrz" id="6n5-Cq-kev"/>
                 <outlet property="textField" destination="cw1-Lw-aAJ" id="dik-bo-leT"/>
             </connections>
             <point key="canvasLocation" x="355.5" y="-278.5"/>
