@@ -43,6 +43,10 @@
   
   _numberOfCells = (int)_sketchGuesses.count;
   
+  for (SketchGuess *item in _sketchGuesses){
+    NSLog(@"BING BONG: %@",item.description);
+  }
+  
 //  ScrollTableViewController *scrollTVC = [[ScrollTableViewController alloc] init];
 //  _sketchGuesses = scrollTVC.sketchGuesses;
 //  
