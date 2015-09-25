@@ -67,13 +67,7 @@
     [self.jotVC clearAll];
     [self showGuessCell];
     
-    //Present the interstitial View Controller
-    
-    if([[_scrollTableView indexPathsForVisibleRows] firstObject].row < _currentSketchGuessIndex)
-    {
-      PassViewController *passView = [[PassViewController alloc] initWithNibName:@"PassViewController" bundle:[NSBundle mainBundle]];
-      [_navController pushViewController:passView animated:YES];
-    }
+    //Present the interstitial View Controlle
   }];
   
   //press the GO button on the pass vc
@@ -94,12 +88,7 @@
     for (NSString *string in _promptArray){
       NSLog(@"IN PROMPT ARRAY: %@", string);
     }
-    
-    if([[_scrollTableView indexPathsForVisibleRows] firstObject].row < _currentSketchGuessIndex)
-    {
-      PassViewController *passView = [[PassViewController alloc] initWithNibName:@"PassViewController" bundle:[NSBundle mainBundle]];
-      [_navController pushViewController:passView animated:YES];
-    }
+
   }];
 }
 -(void)sketchGuessesForNumberOfPlayers {
@@ -136,6 +125,11 @@
     [self.scrollTableView scrollToRowAtIndexPath:destinationIndexPath
                                 atScrollPosition:UITableViewScrollPositionTop
                                         animated:NO];
+    
+    
+      PassViewController *passView = [[PassViewController alloc] initWithNibName:@"PassViewController" bundle:[NSBundle mainBundle]];
+      [_navController pushViewController:passView animated:YES];
+    
   } else {
      [self performSegueWithIdentifier:@"ShowEndOfGame" sender:self];
   }
@@ -151,6 +145,8 @@
     [self.scrollTableView scrollToRowAtIndexPath:destinationIndexPath
                                 atScrollPosition:UITableViewScrollPositionTop
                                         animated:NO];
+    PassViewController *passView = [[PassViewController alloc] initWithNibName:@"PassViewController" bundle:[NSBundle mainBundle]];
+    [_navController pushViewController:passView animated:YES];
   }
 }
 
