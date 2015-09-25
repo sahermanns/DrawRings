@@ -70,7 +70,10 @@
     [self.jotVC clearAll];
     [self showGuessCell];
     
-    //Present the interstitial View Controlle
+    //Present the interstitial View Controller
+    PassViewController *passView = [[PassViewController alloc] initWithNibName:@"PassViewController" bundle:[NSBundle mainBundle]];
+    [_navController pushViewController:passView animated:YES];
+    [self.timer invalidate];
   }];
   
   //press the GO button on the pass vc
@@ -91,7 +94,13 @@
     for (NSString *string in _promptArray){
       NSLog(@"IN PROMPT ARRAY: %@", string);
     }
-
+    
+    if([[_scrollTableView indexPathsForVisibleRows] firstObject].row < _numberOfRows -1)
+    {
+      PassViewController *passView = [[PassViewController alloc] initWithNibName:@"PassViewController" bundle:[NSBundle mainBundle]];
+      [_navController pushViewController:passView animated:YES];
+    }
+    [self.timer invalidate];
   }];
 }
 -(void)sketchGuessesForNumberOfPlayers {
@@ -125,8 +134,40 @@
   
   if (currentSketchGuess.guess) {
     NSIndexPath *destinationIndexPath = [NSIndexPath indexPathForRow:1 inSection:self.currentSketchGuessIndex];
+}
+
+-(void)decrementTimeLabel:(NSTimer *)timer {
+  
+  if (self.currentDrawingCell) {
+    NSInteger newTime = [self.currentDrawingCell.timerLabel.text integerValue] -1;
+    NSString *newTimeString = [NSString stringWithFormat: @"%ld",newTime];
+    self.currentDrawingCell.timerLabel.text = newTimeString;
     
     [self.scrollTableView scrollToRowAtIndexPath:destinationIndexPath
+    if (newTime == 0) {
+      [timer invalidate];
+      [[NSNotificationCenter defaultCenter] postNotificationName:@"doneDrawingNotification" object:self];
+    }
+  }
+  
+  if (self.currentWordsCell) {
+    NSInteger newTime = [self.currentWordsCell.timeLabel.text integerValue] -1;
+    NSString *newTimeString = [NSString stringWithFormat: @"%ld",newTime];
+    self.currentWordsCell.timeLabel.text = newTimeString;
+    
+    if (newTime == 0) {
+      [timer invalidate];
+      [[NSNotificationCenter defaultCenter] postNotificationName:@"doneDrawingNotification" object:self];
+    }
+  }
+}
+
+
+- (void)showNextCell {
+  NSIndexPath *indexPath = [[_scrollTableView indexPathsForVisibleRows] firstObject];
+  if (indexPath.row < _numberOfRows - 1) {
+    NSIndexPath *nextIndexPath = [NSIndexPath indexPathForRow:indexPath.row+1 inSection:0];
+    [self.scrollTableView scrollToRowAtIndexPath:nextIndexPath
                                 atScrollPosition:UITableViewScrollPositionTop
                                         animated:NO];
     
@@ -154,6 +195,16 @@
   }
 }
 
+
+
+//-(void)viewDidAppear:(BOOL)animated {
+//  [super viewDidAppear:animated];
+//  if (self.currentWordsCell) {
+//    NSString *enteredString;
+//    enteredString = self.currentWordsCell.textField.text;
+//    [self.promptArray addObject:enteredString];
+//  }
+//}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
