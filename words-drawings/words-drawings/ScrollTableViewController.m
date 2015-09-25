@@ -15,14 +15,15 @@
 #import "SketchGuess.h"
 #import "Sketch.h"
 #import "Guess.h"
+#import "EndOfGameViewController.h"
 
 @interface ScrollTableViewController () <JotViewControllerDelegate, UITextFieldDelegate>
 
 @property (nonatomic) NSInteger numberOfRows;
 //@property (strong, nonatomic) NSString *seedPrompt;
 @property (strong, nonatomic) NSString *currentPrompt;
-@property (strong, nonatomic) NSMutableArray *promptArray;
-@property (strong, nonatomic) NSMutableArray *drawingArray;
+  //@property (strong, nonatomic) NSMutableArray *promptArray;
+  //@property (strong, nonatomic) NSMutableArray *drawingArray;
 @property (strong, nonatomic) IBOutlet UITableView *scrollTableView;
 @property (strong, nonatomic) DrawingTableViewCell *currentDrawingCell;
 @property (strong, nonatomic) WordsTableViewCell *currentWordsCell;
@@ -43,11 +44,11 @@
   self.scrollTableView.allowsSelection = NO;
   self.currentWordsCell.textField.delegate = self;
   NSLog(@"SEED PROMPT: %@", _seedPrompt);
+//  
+//  _promptArray = [[NSMutableArray alloc] init];
+//  [_promptArray addObject: _seedPrompt];
   
-  _promptArray = [[NSMutableArray alloc] init];
-  [_promptArray addObject: _seedPrompt];
-  
-  _drawingArray = [[NSMutableArray alloc] init];
+    // _drawingArray = [[NSMutableArray alloc] init];
   
   self.numberOfRows = self.numberOfPlayers - 1;
 
@@ -85,9 +86,6 @@
    
     self.currentSketchGuessIndex++;
     [self showNextSketchGuess];
-    for (NSString *string in _promptArray){
-      NSLog(@"IN PROMPT ARRAY: %@", string);
-    }
 
   }];
 }
@@ -100,6 +98,7 @@
       sketchGuess.guess = [[Guess alloc] init];
       sketchGuess.sketch = [[Sketch alloc] init];
       [self.sketchGuesses addObject:sketchGuess];
+      NSLog(@"** SKETCHGUESSTS COUNT IS: %lu", (unsigned long)_sketchGuesses.count);
     }
   } else {
 //    NSInteger numberOfSketchGuesses = numberOfSketchersAndGuessers / 2;
@@ -109,9 +108,12 @@
       sketchGuess.guess = [[Guess alloc] init];
       sketchGuess.sketch = [[Sketch alloc] init];
       [self.sketchGuesses addObject:sketchGuess];
+      NSLog(@"** SKETCHGUESSTS COUNT IS: %lu", (unsigned long)_sketchGuesses.count);
     }
     SketchGuess *lastSketchGuess = self.sketchGuesses.lastObject;
     lastSketchGuess.guess = nil;
+    SketchGuess *firstSketchGuess = self.sketchGuesses.firstObject;
+    firstSketchGuess.prompt = _seedPrompt;
   }
 }
 
@@ -132,6 +134,9 @@
     
   } else {
      [self performSegueWithIdentifier:@"ShowEndOfGame" sender:self];
+//this is where I need to pass the array of sketchGuesses to EndOfGameVC
+    
+
   }
 
 }
@@ -140,6 +145,7 @@
   if (self.currentSketchGuessIndex == self.sketchGuesses.count
       ) {
      [self performSegueWithIdentifier:@"ShowEndOfGame" sender:self];
+    //this is where I need to pass the array of sketchGuesses to EndOfGameVC
   } else {
     NSIndexPath *destinationIndexPath = [NSIndexPath indexPathForRow:0 inSection:self.currentSketchGuessIndex];
     [self.scrollTableView scrollToRowAtIndexPath:destinationIndexPath
@@ -209,6 +215,19 @@
   CGFloat cellHeight = tableView.frame.size.height;
   return cellHeight;
 }
+
+#pragma mark - Navigation
+
+  // In a storyboard-based application, you will often want to do a little preparation before navigation
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+  if([[segue identifier] isEqualToString:@"ShowEndOfGame"]) {
+    EndOfGameViewController *endOfGameVC = [segue destinationViewController];
+    endOfGameVC.sketchGuesses = self.sketchGuesses;
+    
+  }
+}
+
+
 
 
 @end

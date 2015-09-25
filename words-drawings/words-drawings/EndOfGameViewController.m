@@ -13,13 +13,16 @@
 #import <ImageIO/ImageIO.h>
 #import <MobileCoreServices/MobileCoreServices.h>
 #import "SouvenirCollectionViewCell.h"
+#import "SketchGuess.h"
+
 
 @interface EndOfGameViewController ()<UICollectionViewDataSource, UICollectionViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
+//@property (weak, nonatomic) IBOutlet UICollectionViewCell *collectionViewCell;
 
-@property (strong, nonatomic) NSMutableArray *prompts;
-@property (strong, nonatomic) NSMutableArray *sketches;
+//@property (strong, nonatomic) NSMutableArray *prompts;
+//@property (strong, nonatomic) NSMutableArray *sketches;
 
 @property (weak, nonatomic) IBOutlet UIImageView *screenShotImage;
 
@@ -39,40 +42,30 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
   
-  _numberOfCells = 4;
+  _numberOfCells = (int)_sketchGuesses.count;
+  
+  NSLog(@"%lu", _sketchGuesses.count);
   
   _collectionView.dataSource = self;
   _collectionView.delegate = self;
+//  
+//  _prompts = [NSMutableArray arrayWithObjects: @"The Godfather", @"Woody Allen", @"Steven Spielberg", @"Rocky", @"Rushmore", @"Back to the Future II", @"Alice in Wonderland", nil];
   
-  _prompts = [NSMutableArray arrayWithObjects: @"The Godfather", @"Woody Allen", @"Steven Spielberg", @"Rocky", @"Rushmore", @"Back to the Future II", @"Alice in Wonderland", nil];
-  
-  _sketches = [[NSMutableArray alloc] init];
-  
-  UIImage *image1 = [UIImage imageNamed:@"gradient2.jpg"];
-  [_sketches addObject:image1];
-  UIImage *image2 = [UIImage imageNamed:@"gradient2.jpg"];
-  [_sketches addObject:image2];
-  UIImage *image3 = [UIImage imageNamed:@"gradient2.jpg"];
-  [_sketches addObject:image3];
-  UIImage *image4 = [UIImage imageNamed:@"gradient2.jpg"];
-  [_sketches addObject:image4];
+//  _sketches = [[NSMutableArray alloc] init];
+//  
+//  UIImage *image1 = [UIImage imageNamed:@"gradient2.jpg"];
+//  [_sketches addObject:image1];
+//  UIImage *image2 = [UIImage imageNamed:@"gradient2.jpg"];
+//  [_sketches addObject:image2];
+//  UIImage *image3 = [UIImage imageNamed:@"gradient2.jpg"];
+//  [_sketches addObject:image3];
+//  UIImage *image4 = [UIImage imageNamed:@"gradient2.jpg"];
+//  [_sketches addObject:image4];
   
   UINib *souvenirCell = [UINib nibWithNibName:@"souvenirCell" bundle:nil];
   [self.collectionView registerNib:souvenirCell forCellWithReuseIdentifier:@"collectionCell"];
   
-//#pragma MARK - Animation 
-//  self.gameTokenArray = [[NSMutableArray alloc] init];
-//  for (int i = 0; i < self.gameTokenArray.count; i++) {
-//    UIImage *screenShot = [UIImage imageNamed:[NSString stringWithFormat:@"screen_%d", i]];
-//    [self.gameTokenArray addObject:screenShot];
-//  }
-//  
-//  self.gameTokenImage.animationImages = self.gameTokenArray;
-//  self.gameTokenImage.animationRepeatCount = 1;
-//  self.gameTokenImage.animationDuration = .25;
-  
-//  self.gameTokenImage.image = self.gameTokenArray[0];
-  
+
  
 }
 
@@ -91,10 +84,17 @@
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
   SouvenirCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"collectionCell" forIndexPath:indexPath];
-  cell.promptLabel.text = _prompts[indexPath.row];
-  UIImage *cellImage = _sketches[indexPath.row];
-  cell.sketchImage.image = cellImage;
-  cell.sketchImage.backgroundColor = [UIColor redColor];
+  if (indexPath.row == 0){
+    cell.promptLabel.text = [_sketchGuesses[indexPath.row] prompt];
+    cell.sketchImage.image = [_sketchGuesses[indexPath.row] sketch];
+  } else if (indexPath.row < _sketchGuesses.count - 1) {
+    SketchGuess *previousSketchGuess = _sketchGuesses[indexPath.row-1];
+    cell.promptLabel.text = previousSketchGuess.guess;
+    cell.sketchImage.image = _sketchGuesses[indexPath.row];
+  } else {
+    cell.promptLabel.text = [_sketchGuesses[indexPath.row] guess];
+    cell.sketchImage.image = [_sketchGuesses[indexPath.row] sketch];
+  }
   return cell;
 }
 
@@ -172,6 +172,16 @@
 - (IBAction)cvScreenshot:(UIButton *)sender {
   
   //this works
+//  CGRect rect = [_collectionViewCell bounds];
+//  UIGraphicsBeginImageContextWithOptions(rect.size,YES,0.0f);
+//  CGContextRef context = UIGraphicsGetCurrentContext();
+//  [_collectionViewCell.layer renderInContext:context];
+//  UIImage *capturedImage = UIGraphicsGetImageFromCurrentImageContext();
+//  UIGraphicsEndImageContext();
+//  _screenShotImage.image = capturedImage;
+
+ 
+  
   CGRect rect = [_collectionView bounds];
   UIGraphicsBeginImageContextWithOptions(rect.size,YES,0.0f);
   CGContextRef context = UIGraphicsGetCurrentContext();

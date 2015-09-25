@@ -7,11 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "ExperimentalViewController.h"
+
+@class SketchGuess;
 
 @interface EndOfGameViewController : UIViewController
 
 @property (strong, nonatomic) UIView *tableViewScreenshot;
 @property int numberOfCells;
 
+@property (strong, nonatomic) NSMutableArray *sketchGuesses;
 @end
