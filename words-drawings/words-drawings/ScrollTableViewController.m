@@ -42,6 +42,8 @@
   self.currentSketchGuessIndex = 0;
   self.scrollTableView.allowsSelection = NO;
   self.currentWordsCell.textField.delegate = self;
+
+//  self.currentWordsCell.textField.autocorrectionType = UITextAutocorrectionTypeNo;
   NSLog(@"SEED PROMPT: %@", _seedPrompt);
   
   _promptArray = [[NSMutableArray alloc] init];
