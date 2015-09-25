@@ -57,7 +57,7 @@
   
    _filmArray = [NSMutableArray arrayWithObjects: @"The Godfather", @"Woody Allen", @"Steven Spielberg", @"Rocky", @"Rushmore", @"Back to the Future II", @"Alice in Wonderland", @"Boogie Nights", @"Space Jam", @"Mission: Impossible", @"Annie Hall", @"Being John Malkovich", @"Metropolis", @"The Dark Crystal", @"Vertigo", @"Star Trek", @"Iron Man", @"Hannibal Lecter", @"Meet the Parents", @"Beetlejuice", nil];
    
-   _tvArray = [NSMutableArray arrayWithObjects: @"Seinfeld", @"Gilligan's Island", @"The Cosby Show", @"Arrested Development", @"Mork and Mindy", @"GI-Joe", @"Weeds", @"Lost", @"The Twilight Zone", @"24", @"House, M.D.", nil];
+   _tvArray = [NSMutableArray arrayWithObjects: @"Seinfeld", @"Gilligan's Island", @"Home Improvement", @"Arrested Development", @"Mork and Mindy", @"GI-Joe", @"Weeds", @"Lost", @"The Twilight Zone", @"24", @"House, M.D.", nil];
    
    _theatreArray = [NSMutableArray arrayWithObjects: @"Death of a Salesman", @"Romeo and Juliet", @"The Book of Mormon", @"Titus Andronicus", @"Neil Patrick Harris", @"The Tony Awards", @"West Side Story", @"Hamlet", @"Stephen Sondheim", @"Jesus Christ Superstar", @"Cat On a Hot Tin Roof", @"Hairspray", @"Pirates of the Carribean", @"Mean Girls", @"Tim Burton", nil];
    
@@ -67,11 +67,11 @@
    
    _historyArray = [NSMutableArray arrayWithObjects: @"The French Revolution", @"The Cuban Missle Crisis", @"Catherine the Great", @"D-Day", nil];
    
-   _scienceArray = [NSMutableArray arrayWithObjects: @"The Heisenberg Uncertainty Principle", @"Relativity", @"Jonas Salk", @"Isaac Newton", nil];
+   _scienceArray = [NSMutableArray arrayWithObjects: @"Carl Sagan", @"Relativity", @"Jonas Salk", @"Isaac Newton", @"protons", nil];
    
    _natureArray = [NSMutableArray arrayWithObjects: @"Three-Toed Sloths", @"Mt. Rainier", @"The Grand Canyon", @"The Pacific Ocean", nil];
    
-   _geographyArray = [NSMutableArray arrayWithObjects: @"Paris", @"Antarctica", @"Las Vegas", @"The Nile River", nil];
+   _geographyArray = [NSMutableArray arrayWithObjects: @"Paris", @"Antarctica", @"Las Vegas", @"South Dakota", @"Chicago", @"The Nile River", nil];
    
    _artArray = [NSMutableArray arrayWithObjects: @"The Mona Lisa", @"Pablo Picasso", @"Girl With Pearl Earring", @"Guernica", nil];
    
@@ -111,23 +111,6 @@
     _pickedObjects = _zanyMiscellanyArray;
   }
   
-  
-  
-  //int remaining = 4;
-  
-  //NSInteger arrayCount = [_passedArrayOfOptions count];
-  /*
-  if (_passedArrayOfOptions.count >= remaining) {
-    while (remaining > 0) {
-      id item = _passedArrayOfOptions[arc4random_uniform((u_int32_t)arrayCount)];
-      
-      if (![_pickedObjects containsObject:item]) {
-        [_pickedObjects addObject:item];
-        remaining--;
-      }
-    }
-  }
-  */
   //set text on buttons
   NSString *option1Text = (NSString *)[_pickedObjects objectAtIndex:0];
   [_option1Button setTitle: option1Text forState: UIControlStateNormal];
@@ -176,9 +159,6 @@
     passItOnVC.stringToPass = _selectedOption;
     passItOnVC.numberOfPlayers = self.numberOfPlayers;
     passItOnVC.durationOfRound = self.durationOfRound;
-//    cvc.contacts = self.contacts;
-//    cvc.delegate = self;
-
   }
 }
 

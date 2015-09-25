@@ -1,18 +1,22 @@
 //
-//  SetUpGameViewController.m
+//  BetterInstructionsViewController.m
 //  words-drawings
 //
-//  Created by Matthew McClure on 9/11/15.
+//  Created by Matthew McClure on 9/24/15.
 //  Copyright © 2015 Matthew McClure. All rights reserved.
 //
 
-#import "SetUpGameViewController.h"
+#import "BetterInstructionsViewController.h"
+#import "MainViewController.h"
 
-@interface SetUpGameViewController ()
+@interface BetterInstructionsViewController ()
+
+- (IBAction)closeThisButton:(UIButton *)sender;
+
 
 @end
 
-@implementation SetUpGameViewController
+@implementation BetterInstructionsViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -34,4 +38,13 @@
 }
 */
 
+- (IBAction)closeThisButton:(UIButton *)sender {
+  
+  [UIView animateWithDuration:0.4 animations:^{
+    self.view.alpha = 0;
+    [self.view removeFromSuperview];
+    [self removeFromParentViewController];
+  }];
+  
+}
 @end

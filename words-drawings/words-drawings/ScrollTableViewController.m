@@ -12,6 +12,9 @@
 #import "PassItOnViewController.h"
 #import "PassViewController.h"
 #import "JotViewController.h"
+#import "SketchGuess.h"
+#import "Sketch.h"
+#import "Guess.h"
 
 @interface ScrollTableViewController () <JotViewControllerDelegate, UITextFieldDelegate>
 
@@ -32,8 +35,13 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
+  self.sketchGuesses = [[NSMutableArray alloc] init];
+  [self sketchGuessesForNumberOfPlayers];
+  self.currentSketchGuessIndex = 0;
   self.scrollTableView.allowsSelection = NO;
   self.currentWordsCell.textField.delegate = self;
+
+//  self.currentWordsCell.textField.autocorrectionType = UITextAutocorrectionTypeNo;
   NSLog(@"SEED PROMPT: %@", _seedPrompt);
   
   _promptArray = [[NSMutableArray alloc] init];
@@ -41,7 +49,7 @@
   
   _drawingArray = [[NSMutableArray alloc] init];
   
-  self.numberOfRows = self.numberOfPlayers - 1;
+  //self.numberOfRows = self.numberOfPlayers - 1;
 
   UINib *wordsCell = [UINib nibWithNibName:@"wordsCell" bundle:nil];
   [self.scrollTableView registerNib:wordsCell forCellReuseIdentifier:@"wordsCell"];
@@ -52,11 +60,12 @@
   [[NSNotificationCenter defaultCenter] addObserverForName:@"doneDrawingNotification" object:nil queue:nil usingBlock:^(NSNotification * _Nonnull note) {
     //Save the current drawing
     UIImage *drawnImage = [self.jotVC renderImageWithScale:2.f onColor:self.view.backgroundColor];
-    [_drawingArray addObject:drawnImage];
+    SketchGuess *currentSketchGuess = self.sketchGuesses[self.currentSketchGuessIndex];
+    currentSketchGuess.sketch.sketchImage = drawnImage;
 
     //Prepare the next Cell
     [self.jotVC clearAll];
-    [self showNextCell];
+    [self showGuessCell];
     
     //Present the interstitial View Controller
     PassViewController *passView = [[PassViewController alloc] initWithNibName:@"PassViewController" bundle:[NSBundle mainBundle]];
@@ -71,11 +80,14 @@
   }];
   
   [[NSNotificationCenter defaultCenter] addObserverForName:@"doneGuessingNotification" object:nil queue:nil usingBlock:^(NSNotification * _Nonnull note) {
-    [self showNextCell];
+    
     NSString *enteredString;
     enteredString = self.currentWordsCell.textField.text;
-    [self.promptArray addObject:enteredString];
-    
+    SketchGuess *currentSketchGuess = self.sketchGuesses[self.currentSketchGuessIndex];
+    currentSketchGuess.guess.guessString = enteredString;
+   
+    self.currentSketchGuessIndex++;
+    [self showNextSketchGuess];
     for (NSString *string in _promptArray){
       NSLog(@"IN PROMPT ARRAY: %@", string);
     }
@@ -87,6 +99,29 @@
     }
     [self.timer invalidate];
   }];
+}
+-(void)sketchGuessesForNumberOfPlayers {
+  NSInteger numberOfSketchersAndGuessers = self.numberOfPlayers - 1;
+  if (numberOfSketchersAndGuessers % 2 == 0) {
+    NSInteger numberOfSketchGuesses = numberOfSketchersAndGuessers / 2;
+    for (int i = 0; i < numberOfSketchGuesses; i++) {
+      SketchGuess *sketchGuess = [[SketchGuess alloc] init];
+      sketchGuess.guess = [[Guess alloc] init];
+      sketchGuess.sketch = [[Sketch alloc] init];
+      [self.sketchGuesses addObject:sketchGuess];
+    }
+  } else {
+//    NSInteger numberOfSketchGuesses = numberOfSketchersAndGuessers / 2;
+    NSInteger numberOfSketchGuesses = (numberOfSketchersAndGuessers + 1) / 2;
+    for (int i = 0; i < numberOfSketchGuesses; i++) {
+      SketchGuess *sketchGuess = [[SketchGuess alloc] init];
+      sketchGuess.guess = [[Guess alloc] init];
+      sketchGuess.sketch = [[Sketch alloc] init];
+      [self.sketchGuesses addObject:sketchGuess];
+    }
+    SketchGuess *lastSketchGuess = self.sketchGuesses.lastObject;
+    lastSketchGuess.guess = nil;
+  }
 }
 
 -(void)viewDidAppear:(BOOL)animated {
@@ -131,9 +166,28 @@
     [self.scrollTableView scrollToRowAtIndexPath:nextIndexPath
                                 atScrollPosition:UITableViewScrollPositionTop
                                         animated:NO];
-
+    
+    
+      PassViewController *passView = [[PassViewController alloc] initWithNibName:@"PassViewController" bundle:[NSBundle mainBundle]];
+      [_navController pushViewController:passView animated:YES];
+    
   } else {
-    [self performSegueWithIdentifier:@"ShowEndOfGame" sender:self];
+     [self performSegueWithIdentifier:@"ShowEndOfGame" sender:self];
+  }
+
+}
+- (void)showNextSketchGuess {
+  
+  if (self.currentSketchGuessIndex == self.sketchGuesses.count
+      ) {
+     [self performSegueWithIdentifier:@"ShowEndOfGame" sender:self];
+  } else {
+    NSIndexPath *destinationIndexPath = [NSIndexPath indexPathForRow:0 inSection:self.currentSketchGuessIndex];
+    [self.scrollTableView scrollToRowAtIndexPath:destinationIndexPath
+                                atScrollPosition:UITableViewScrollPositionTop
+                                        animated:NO];
+    PassViewController *passView = [[PassViewController alloc] initWithNibName:@"PassViewController" bundle:[NSBundle mainBundle]];
+    [_navController pushViewController:passView animated:YES];
   }
 }
 
@@ -154,14 +208,20 @@
 
 #pragma mark - Table view data source
 
-
+-(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+  return self.sketchGuesses.count;
+}
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-
-    return _numberOfRows;
+  SketchGuess *sketchGuess = self.sketchGuesses[section];
+  if (sketchGuess.guess) {
+    return 2;
+  }
+    return 1;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-  if (indexPath.row % 2 == 0) {
+  SketchGuess *sketchGuess = self.sketchGuesses[indexPath.section];
+  if (indexPath.row == 0) {
     DrawingTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"drawingCell" forIndexPath:indexPath];
     self.jotVC = [[JotViewController alloc] init];
     self.jotVC.delegate = self;
@@ -171,17 +231,24 @@
     [cell setNeedsLayout];
     [cell layoutIfNeeded];
     self.currentDrawingCell = cell;
-    cell.promptLabel.text = self.promptArray.count > indexPath.row/2 ? self.promptArray[(indexPath.row)/2] : nil;
-
+    if (self.currentSketchGuessIndex > 0) {
+      SketchGuess *previousSketchGuess = self.sketchGuesses[self.currentSketchGuessIndex - 1];
+      cell.promptLabel.text = previousSketchGuess.guess.guessString;
+    } else {
+      cell.promptLabel.text = _seedPrompt;
+    }
+    
     
     [self.jotVC didMoveToParentViewController:self];
     self.jotVC.view.frame = cell.drawingView.frame;
-//    cell.promptLabel.text = _seedPrompt;
+    //    cell.promptLabel.text = _seedPrompt;
     cell.timerLabel.text = [NSString stringWithFormat:@"%ld",(long)_durationOfRound];
     return cell;
+
   } else {
     WordsTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"wordsCell" forIndexPath:indexPath];
     self.currentWordsCell = cell;
+    cell.textField.text = @"";
     cell.drawingImageView.backgroundColor = [UIColor blueColor];
     cell.drawingImageView.image = [_drawingArray objectAtIndex:(indexPath.row/2)];
 //    cell.imageView.clipsToBounds = true;
@@ -189,11 +256,11 @@
     
     cell.timeLabel.text = [NSString stringWithFormat:@"%ld",(long)_durationOfRound];
     return cell;
+
   }
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-//  [self.scrollTableView scrollToRowAtIndexPath:indexPath atScrollPosition: UITableViewScrollPositionMiddle animated: YES];
   CGFloat cellHeight = tableView.frame.size.height;
   return cellHeight;
 }

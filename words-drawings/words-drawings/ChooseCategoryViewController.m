@@ -8,6 +8,7 @@
 
 #import "ChooseCategoryViewController.h"
 #import "ChooseOptionViewController.h"
+#import "SeedViewController.h"
 #import <stdlib.h>
 
 @interface ChooseCategoryViewController ()
@@ -19,10 +20,15 @@
 @property (weak, nonatomic) IBOutlet UIButton *category1Button;
 @property (weak, nonatomic) IBOutlet UIButton *category2Button;
 @property (weak, nonatomic) IBOutlet UIButton *category3Button;
+@property (weak, nonatomic) IBOutlet UIButton *diyButton;
+
 
 - (IBAction)category1Pressed:(UIButton *)sender;
 - (IBAction)category2Pressed:(UIButton *)sender;
 - (IBAction)category3Pressed:(UIButton *)sender;
+- (IBAction)diyPressed:(UIButton *)sender;
+
+
 
 @property (strong,nonatomic) NSMutableArray *categoriesArray;
 @property (strong,nonatomic) NSMutableArray *thisRoundsArray;
@@ -83,6 +89,10 @@
     chooseOptionVC.chosenCategory = self.categoryPressed;
     chooseOptionVC.numberOfPlayers = self.numberOfPlayers;
     chooseOptionVC.durationOfRound = self.durationOfRound;
+  } else if ([[segue identifier] isEqualToString:@"showSeedVC"]){
+    SeedViewController *seedVC = (SeedViewController *)[segue destinationViewController];
+    seedVC.numberOfPlayers = self.numberOfPlayers;
+    seedVC.durationOfRound = self.durationOfRound;
   }
 }
 
@@ -93,10 +103,7 @@
 - (IBAction)category1Pressed:(UIButton *)sender {
   NSLog(@"YOU PRESSED %@", sender.titleLabel.text);
   self.categoryPressed = sender.titleLabel.text;
-  //NSLog(@"%@", self.categoryPressed);
-  //[self selectArray:self.categoryPressed];
-  //self.selectedArray = _filmArray;
-  //NSLog(@"ARRAY WAS>>> %@", self.selectedArray);
+ 
  [self performSegueWithIdentifier:@"ShowOptions" sender:self];
 }
 
@@ -115,6 +122,9 @@
   //self.selectedArray = _filmArray;
   //NSLog(@"ARRAY WAS>>> %@", self.selectedArray);
   [self performSegueWithIdentifier:@"ShowOptions" sender:self];
+}
+
+- (IBAction)diyPressed:(UIButton *)sender {
 }
 
 @end
