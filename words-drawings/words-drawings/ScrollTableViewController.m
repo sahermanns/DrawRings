@@ -49,7 +49,7 @@
   
   _drawingArray = [[NSMutableArray alloc] init];
   
-  self.numberOfRows = self.numberOfPlayers - 1;
+  //self.numberOfRows = self.numberOfPlayers - 1;
 
   UINib *wordsCell = [UINib nibWithNibName:@"wordsCell" bundle:nil];
   [self.scrollTableView registerNib:wordsCell forCellReuseIdentifier:@"wordsCell"];

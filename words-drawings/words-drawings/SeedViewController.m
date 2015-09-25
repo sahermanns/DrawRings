@@ -10,7 +10,7 @@
 #import "PassItOnViewController.h"
 #import "ChooseCategoryViewController.h"
 
-@interface SeedViewController ()
+@interface SeedViewController () <UITextFieldDelegate>
 
 @property (weak, nonatomic) IBOutlet UITextField *seedSentenceTextField;
 - (IBAction)doneButton:(UIButton *)sender;
@@ -21,7 +21,20 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+  
+  _seedSentenceTextField.delegate = self;
+  
+  _seedSentenceTextField.layer.borderColor = (__bridge CGColorRef _Nullable)([UIColor whiteColor]);
+  
+  
+}
+
+-(BOOL) textFieldShouldReturn: (UITextField *) textField
+{
+  [_seedSentenceTextField resignFirstResponder];
+  [self performSegueWithIdentifier:@"showPassItOnVC" sender:self];
+  
+  return YES;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -29,21 +42,23 @@
     // Dispose of any resources that can be recreated.
 }
 
+
+
 - (IBAction)doneButton:(UIButton *)sender {
   self.seedSentence = [_seedSentenceTextField text];
   NSLog(@"%@", self.seedSentence);
-  
   [self performSegueWithIdentifier:@"showPassItOnVC" sender:self];
 }
 
  #pragma mark - Navigation
 
  - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
- // Get the new view controller using [segue destinationViewController].
- // Pass the selected object to the new view controller.
+
    if ([segue.identifier isEqual: @"showPassItOnVC"]) {
      PassItOnViewController *passItOnVC = [segue destinationViewController];
      passItOnVC.stringToPass = self.seedSentence;
+     passItOnVC.numberOfPlayers = self.numberOfPlayers;
+     passItOnVC.durationOfRound = self.durationOfRound;
    }
  }
  

@@ -111,23 +111,6 @@
     _pickedObjects = _zanyMiscellanyArray;
   }
   
-  
-  
-  //int remaining = 4;
-  
-  //NSInteger arrayCount = [_passedArrayOfOptions count];
-  /*
-  if (_passedArrayOfOptions.count >= remaining) {
-    while (remaining > 0) {
-      id item = _passedArrayOfOptions[arc4random_uniform((u_int32_t)arrayCount)];
-      
-      if (![_pickedObjects containsObject:item]) {
-        [_pickedObjects addObject:item];
-        remaining--;
-      }
-    }
-  }
-  */
   //set text on buttons
   NSString *option1Text = (NSString *)[_pickedObjects objectAtIndex:0];
   [_option1Button setTitle: option1Text forState: UIControlStateNormal];
@@ -176,9 +159,6 @@
     passItOnVC.stringToPass = _selectedOption;
     passItOnVC.numberOfPlayers = self.numberOfPlayers;
     passItOnVC.durationOfRound = self.durationOfRound;
-//    cvc.contacts = self.contacts;
-//    cvc.delegate = self;
-
   }
 }
 
