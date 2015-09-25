@@ -38,7 +38,6 @@
             <string>Avenir-Heavy</string>
             <string>Avenir-Light</string>
             <string>Avenir-Heavy</string>
-            <string>Avenir-Heavy</string>
             <string>Avenir-Book</string>
             <string>Avenir-Heavy</string>
         </mutableArray>
@@ -816,7 +815,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="95V-7o-WoA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2884" y="1605"/>
+            <point key="canvasLocation" x="2990" y="1642"/>
         </scene>
         <!--Scroll Table View Controller-->
         <scene sceneID="SQY-1K-ya1">
@@ -853,7 +852,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9nK-eZ-pP1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3696" y="863"/>
+            <point key="canvasLocation" x="3697" y="871"/>
         </scene>
         <!--Choose Category View Controller-->
         <scene sceneID="hpg-wj-2JL">
@@ -895,15 +894,23 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ncx-LC-zfI">
-                                <rect key="frame" x="316" y="359" width="248" height="209"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ncx-LC-zfI">
+                                <rect key="frame" x="90" y="359" width="701" height="209"/>
                                 <color key="backgroundColor" red="0.64001527960000004" green="0.8359912343" blue="0.8215960283" alpha="0.73999999999999999" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="42"/>
-                                <state key="normal" title="DIY">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="WRITE YOUR OWN">
+                                            <attributes>
+                                                <color key="NSColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <font key="NSFont" size="42" name="Avenir-Heavy"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
                                 </state>
                                 <connections>
-                                    <segue destination="Hwh-cx-CZh" kind="show" identifier="ShowSeedVC" id="dX4-Hc-hfb"/>
+                                    <action selector="diyPressed:" destination="8NM-oV-yso" eventType="touchUpInside" id="Q2y-6u-Qus"/>
+                                    <segue destination="Hwh-cx-CZh" kind="show" identifier="showSeedVC" id="XKD-Zw-yjX"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S7V-B4-5ZK">
@@ -978,6 +985,7 @@
                         <outlet property="category1Button" destination="S7V-B4-5ZK" id="2xm-5w-P9Z"/>
                         <outlet property="category2Button" destination="NVm-2G-zL4" id="d6v-f2-oMx"/>
                         <outlet property="category3Button" destination="bm9-oJ-pik" id="f75-q0-4Wp"/>
+                        <outlet property="diyButton" destination="ncx-LC-zfI" id="Y8y-WS-bdz"/>
                         <segue destination="wY1-Yb-Itn" kind="show" identifier="ShowOptions" id="RL1-rb-53e"/>
                     </connections>
                 </viewController>
@@ -1001,7 +1009,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="55q-sJ-Mvr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3004" y="871"/>
+            <point key="canvasLocation" x="3009" y="932"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="bko-5O-4mt">

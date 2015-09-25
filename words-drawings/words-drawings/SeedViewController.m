@@ -24,13 +24,15 @@
   
   _seedSentenceTextField.delegate = self;
   
-  _seedSentenceTextField.layer.borderColor = (__bridge CGColorRef _Nullable)([UIColor whiteColor]);
-  
-  
+//  _seedSentenceTextField.layer.borderColor = (__bridge CGColorRef _Nullable)([UIColor whiteColor]);
+//  
+  NSLog(@"NUM PLAYERS PAASED: %ld, DURATION PASSED: %ld",(long)_numberOfPlayers, (long)_durationOfRound);
 }
 
 -(BOOL) textFieldShouldReturn: (UITextField *) textField
 {
+  self.seedSentence = [_seedSentenceTextField text];
+  NSLog(@"WOULD YOU LOOK AT THAT%@", self.seedSentence);
   [_seedSentenceTextField resignFirstResponder];
   [self performSegueWithIdentifier:@"showPassItOnVC" sender:self];
   
@@ -46,7 +48,7 @@
 
 - (IBAction)doneButton:(UIButton *)sender {
   self.seedSentence = [_seedSentenceTextField text];
-  NSLog(@"%@", self.seedSentence);
+  NSLog(@"WOULD YOU LOOK AT THAT%@", self.seedSentence);
   [self performSegueWithIdentifier:@"showPassItOnVC" sender:self];
 }
 
