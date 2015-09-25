@@ -28,6 +28,9 @@
 @property (strong, nonatomic) WordsTableViewCell *currentWordsCell;
 @property (nonatomic, strong) JotViewController *jotVC;
 @property (weak, nonatomic) NSTimer *timer;
+@property (strong, nonatomic) NSMutableArray *sketchGuesses;
+@property (nonatomic) NSInteger currentSketchGuessIndex;
+
 @end
 
 @implementation ScrollTableViewController
@@ -124,13 +127,12 @@
   }
 }
 
--(void)viewDidAppear:(BOOL)animated {
-  [super viewDidAppear:animated];
+-(void)showGuessCell {
   
-  if (self.currentDrawingCell) {
-    self.timer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(decrementTimeLabel:) userInfo:nil repeats:true];
-  }
+  SketchGuess *currentSketchGuess = self.sketchGuesses[self.currentSketchGuessIndex];
   
+  if (currentSketchGuess.guess) {
+    NSIndexPath *destinationIndexPath = [NSIndexPath indexPathForRow:1 inSection:self.currentSketchGuessIndex];
 }
 
 -(void)decrementTimeLabel:(NSTimer *)timer {
@@ -140,6 +142,7 @@
     NSString *newTimeString = [NSString stringWithFormat: @"%ld",newTime];
     self.currentDrawingCell.timerLabel.text = newTimeString;
     
+    [self.scrollTableView scrollToRowAtIndexPath:destinationIndexPath
     if (newTime == 0) {
       [timer invalidate];
       [[NSNotificationCenter defaultCenter] postNotificationName:@"doneDrawingNotification" object:self];
@@ -250,11 +253,7 @@
     self.currentWordsCell = cell;
     cell.textField.text = @"";
     cell.drawingImageView.backgroundColor = [UIColor blueColor];
-    cell.drawingImageView.image = [_drawingArray objectAtIndex:(indexPath.row/2)];
-//    cell.imageView.clipsToBounds = true;
-//    cell.imageView.contentMode = UIViewContentModeScaleToFill;
-    
-    cell.timeLabel.text = [NSString stringWithFormat:@"%ld",(long)_durationOfRound];
+    cell.drawingImageView.image = sketchGuess.sketch.sketchImage;
     return cell;
 
   }
