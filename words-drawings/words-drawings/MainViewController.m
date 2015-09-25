@@ -23,6 +23,7 @@ CGFloat const kInstructionMenuWidthMultiplier = 0.75;
 
 - (void)viewDidLoad {
   [super viewDidLoad];
+  
   //UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0.0f, 0.0f, 320.0f, 50.0f)];
   //  CAGradientLayer *gradient = [CAGradientLayer layer];
   //  gradient.frame = self.view.bounds;

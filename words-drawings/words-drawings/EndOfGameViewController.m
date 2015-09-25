@@ -13,6 +13,8 @@
 #import <ImageIO/ImageIO.h>
 #import <MobileCoreServices/MobileCoreServices.h>
 #import "SouvenirCollectionViewCell.h"
+#import "SketchGuess.h"
+#import "ScrollTableViewController.h"
 
 @interface EndOfGameViewController ()<UICollectionViewDataSource, UICollectionViewDelegate>
 
@@ -39,7 +41,14 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
   
-  _numberOfCells = 4;
+  _numberOfCells = (int)_sketchGuesses.count;
+  
+//  ScrollTableViewController *scrollTVC = [[ScrollTableViewController alloc] init];
+//  _sketchGuesses = scrollTVC.sketchGuesses;
+//  
+//  for (SketchGuess *thing in _sketchGuesses){
+//    NSLog(@"Hiphophooray: %@", thing.description);
+//  }
   
   _collectionView.dataSource = self;
   _collectionView.delegate = self;
@@ -91,10 +100,17 @@
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
   SouvenirCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"collectionCell" forIndexPath:indexPath];
-  cell.promptLabel.text = _prompts[indexPath.row];
-  UIImage *cellImage = _sketches[indexPath.row];
-  cell.sketchImage.image = cellImage;
-  cell.sketchImage.backgroundColor = [UIColor redColor];
+  if (indexPath.row == 0){
+    cell.promptLabel.text = [_sketchGuesses[indexPath.row] prompt];
+    cell.sketchImage.image = [[_sketchGuesses[indexPath.row] sketch] sketchImage];
+  } else if ((indexPath.row > 0) && (indexPath.row < _sketchGuesses.count - 1)) {
+    SketchGuess *previousSketchGuess = _sketchGuesses[indexPath.row-1];
+    cell.promptLabel.text = previousSketchGuess.guess.guessString;
+    cell.sketchImage.image = _sketchGuesses[indexPath.row];
+  } else {
+    cell.promptLabel.text = [[_sketchGuesses[indexPath.row] guess] guessString];
+    cell.sketchImage.image = [[_sketchGuesses[indexPath.row] sketch] sketchImage];
+  }
   return cell;
 }
 

@@ -15,6 +15,7 @@
 #import "SketchGuess.h"
 #import "Sketch.h"
 #import "Guess.h"
+#import "EndOfGameViewController.h"
 
 @interface ScrollTableViewController () <JotViewControllerDelegate, UITextFieldDelegate>
 
@@ -27,7 +28,7 @@
 @property (strong, nonatomic) DrawingTableViewCell *currentDrawingCell;
 @property (strong, nonatomic) WordsTableViewCell *currentWordsCell;
 @property (nonatomic, strong) JotViewController *jotVC;
-@property (strong, nonatomic) NSMutableArray *sketchGuesses;
+//@property (strong, nonatomic) NSMutableArray *sketchGuesses;
 @property (nonatomic) NSInteger currentSketchGuessIndex;
 
 @end
@@ -101,6 +102,7 @@
       SketchGuess *sketchGuess = [[SketchGuess alloc] init];
       sketchGuess.guess = [[Guess alloc] init];
       sketchGuess.sketch = [[Sketch alloc] init];
+      //sketchGuess.prompt = _seedPrompt;
       [self.sketchGuesses addObject:sketchGuess];
     }
   } else {
@@ -212,5 +214,15 @@
   return cellHeight;
 }
 
+#pragma mark - Navigation
+
+// In a storyboard-based application, you will often want to do a little preparation before navigation
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+  if([[segue identifier] isEqualToString:@"ShowEndOfGame"]) {
+    EndOfGameViewController *endOfGameVC = [segue destinationViewController];
+    endOfGameVC.sketchGuesses = self.sketchGuesses;
+    
+  }
+}
 
 @end

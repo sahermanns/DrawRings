@@ -13,5 +13,6 @@
 
 @property (strong, nonatomic) UIView *tableViewScreenshot;
 @property int numberOfCells;
+@property (strong, nonatomic) NSMutableArray *sketchGuesses;
 
 @end

@@ -16,5 +16,6 @@
 @property NSInteger durationOfRound;
 @property (strong,nonatomic) NSString *seedPrompt;
 @property (weak, nonatomic) UINavigationController *navController;
+@property (strong, nonatomic) NSMutableArray *sketchGuesses;
 
 @end
