@@ -103,6 +103,7 @@
       sketchGuess.guess = [[Guess alloc] init];
       sketchGuess.sketch = [[Sketch alloc] init];
       //sketchGuess.prompt = _seedPrompt;
+      
       [self.sketchGuesses addObject:sketchGuess];
     }
   } else {

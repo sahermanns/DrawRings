@@ -110,7 +110,7 @@
   } else if ((indexPath.row > 0) && (indexPath.row < _sketchGuesses.count - 1)) {
     SketchGuess *previousSketchGuess = _sketchGuesses[indexPath.row-1];
     cell.promptLabel.text = previousSketchGuess.guess.guessString;
-    cell.sketchImage.image = _sketchGuesses[indexPath.row];
+    cell.sketchImage.image = [[_sketchGuesses[indexPath.row] sketch] sketchImage];
   } else {
     cell.promptLabel.text = [[_sketchGuesses[indexPath.row] guess] guessString];
     cell.sketchImage.image = [[_sketchGuesses[indexPath.row] sketch] sketchImage];
