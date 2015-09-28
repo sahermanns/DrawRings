@@ -40,10 +40,8 @@
 		34A681FD1BAF267F0053C9F0 /* ChooseCategoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34A681FC1BAF267F0053C9F0 /* ChooseCategoryViewController.m */; settings = {ASSET_TAGS = (); }; };
 		34A682001BAF268D0053C9F0 /* ChooseOptionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34A681FF1BAF268D0053C9F0 /* ChooseOptionViewController.m */; settings = {ASSET_TAGS = (); }; };
 		39CF558820BF152E6722B0F4 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FAC4FF7C4ADB7504CC95B3BF /* libPods.a */; };
-		3E1B2D671BB210D800EF25B7 /* ExperimentalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E1B2D661BB210D800EF25B7 /* ExperimentalViewController.m */; settings = {ASSET_TAGS = (); }; };
 		3EF50B281BB074EE007CCCD4 /* FacebookLogin.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EF50B271BB074EE007CCCD4 /* FacebookLogin.m */; settings = {ASSET_TAGS = (); }; };
 		3EF50B361BB0CAE7007CCCD4 /* UIViewToPDF.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EF50B351BB0CAE7007CCCD4 /* UIViewToPDF.m */; settings = {ASSET_TAGS = (); }; };
-		3EF50B381BB1BBE4007CCCD4 /* EndOfGameStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3EF50B371BB1BBE4007CCCD4 /* EndOfGameStoryboard.storyboard */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -121,13 +119,10 @@
 		34A681FE1BAF268D0053C9F0 /* ChooseOptionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChooseOptionViewController.h; sourceTree = "<group>"; };
 		34A681FF1BAF268D0053C9F0 /* ChooseOptionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChooseOptionViewController.m; sourceTree = "<group>"; };
 		3A7B88D51D617685143CB19D /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
-		3E1B2D651BB210D800EF25B7 /* ExperimentalViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExperimentalViewController.h; sourceTree = "<group>"; };
-		3E1B2D661BB210D800EF25B7 /* ExperimentalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExperimentalViewController.m; sourceTree = "<group>"; };
 		3EF50B261BB074EE007CCCD4 /* FacebookLogin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FacebookLogin.h; sourceTree = "<group>"; };
 		3EF50B271BB074EE007CCCD4 /* FacebookLogin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FacebookLogin.m; sourceTree = "<group>"; };
 		3EF50B341BB0CAE7007CCCD4 /* UIViewToPDF.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIViewToPDF.h; sourceTree = "<group>"; };
 		3EF50B351BB0CAE7007CCCD4 /* UIViewToPDF.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIViewToPDF.m; sourceTree = "<group>"; };
-		3EF50B371BB1BBE4007CCCD4 /* EndOfGameStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = EndOfGameStoryboard.storyboard; sourceTree = "<group>"; };
 		8B8F9765CC7BC07A43A7A7D6 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		FAC4FF7C4ADB7504CC95B3BF /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -256,7 +251,6 @@
 				3488D2701BB08C5D007384FA /* DrawingTableViewCell.h */,
 				3488D2711BB08C5D007384FA /* DrawingTableViewCell.m */,
 				34A681F81BAF1C430053C9F0 /* BackgroundGradient.h */,
-				3EF50B371BB1BBE4007CCCD4 /* EndOfGameStoryboard.storyboard */,
 				347685D31BB4700D00C58742 /* souvenirCell.xib */,
 				347685D81BB476BC00C58742 /* SouvenirCollectionViewCell.h */,
 				347685D91BB476BC00C58742 /* SouvenirCollectionViewCell.m */,
@@ -288,8 +282,6 @@
 				348667B71BAF6AFF002C5825 /* EndOfGameViewController.m */,
 				347685DB1BB4A88300C58742 /* BetterInstructionsViewController.h */,
 				347685DC1BB4A88300C58742 /* BetterInstructionsViewController.m */,
-				3E1B2D651BB210D800EF25B7 /* ExperimentalViewController.h */,
-				3E1B2D661BB210D800EF25B7 /* ExperimentalViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -428,7 +420,6 @@
 			files = (
 				3430FBFB1BA3A00D007C108D /* LaunchScreen.storyboard in Resources */,
 				3481D33F1BA7BF7400BFBCC5 /* wordsCell.xib in Resources */,
-				3EF50B381BB1BBE4007CCCD4 /* EndOfGameStoryboard.storyboard in Resources */,
 				3430FBF81BA3A00D007C108D /* Assets.xcassets in Resources */,
 				347685D41BB4700D00C58742 /* souvenirCell.xib in Resources */,
 				3481D3411BA7BF8500BFBCC5 /* drawingCell.xib in Resources */,
@@ -491,7 +482,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3E1B2D671BB210D800EF25B7 /* ExperimentalViewController.m in Sources */,
 				3430FBF61BA3A00D007C108D /* words_drawings.xcdatamodeld in Sources */,
 				34A682001BAF268D0053C9F0 /* ChooseOptionViewController.m in Sources */,
 				34A681FD1BAF267F0053C9F0 /* ChooseCategoryViewController.m in Sources */,
